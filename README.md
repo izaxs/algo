@@ -5,7 +5,7 @@ C++ compiler that supports C++17
 Linux Debian:
 ```bash
 sudo apt update
-sudo apt install build-essential gbd
+sudo apt install build-essential gdb
 ```
 
 # Build
