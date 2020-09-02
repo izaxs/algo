@@ -8,10 +8,11 @@ sudo apt update
 sudo apt install build-essential gdb
 ```
 
-# Build
+# Build & Run
 
 ```bash
-make
+make build
+make run
 ```
 
 # Debug
