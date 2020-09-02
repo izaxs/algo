@@ -1,8 +1,5 @@
-#include <iostream>
-
-using std::cout;
-using std::endl;
+extern void lib_func();
 
 int main() {
-    cout << "Hello world!" << endl;
+    lib_func();
 }
