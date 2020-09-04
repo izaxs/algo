@@ -1,19 +1,19 @@
 # Directory alias
-SRC_DIR=src
-INC_DIR=inc
-OBJ_DIR=obj
-BIN_DIR=bin
+SRC_DIR:=src
+INC_DIR:=inc
+OBJ_DIR:=obj
+BIN_DIR:=bin
 
 # Compiler & flags
-CC=g++
-CFLAGS=-I$(INC_DIR) -g
+CC:=g++
+CFLAGS:=-I$(INC_DIR) -g
 
 # Get all cpp files in source
-ALL_SOURCES=$(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/**/*.cpp)
+ALL_SOURCES:=$(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/**/*.cpp)
 # Get all object files to compile later based on source files automatically
-ALL_OBJS=$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(ALL_SOURCES))
+ALL_OBJS:=$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(ALL_SOURCES))
 
-LINK_TARGET_MAIN=$(BIN_DIR)/main
+LINK_TARGET_MAIN:=$(BIN_DIR)/main
 
 ## build: produce executable from source files
 .PHONY: build
