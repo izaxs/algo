@@ -1,19 +1,21 @@
 # Directory alias
-SRC_DIR:=src
-INC_DIR:=inc
 OBJ_DIR:=obj
 BIN_DIR:=bin
+LEETCODE_SRC_DIR:=leetcode
+LEETCODE_INC_DIR:=$(LEETCODE_SRC_DIR)/include
 
 # Compiler & flags
 CC:=g++
-CFLAGS:=-I$(INC_DIR) -g
+# CFLAGS:=-I$(INC_DIR) -g
+CFLAGS:=-g
 
+ALL_INCS:=$(wildcard $(LEETCODE_INC_DIR)/*.hpp) $(wildcard $(LEETCODE_INC_DIR)/**/*.hpp)
 # Get all cpp files in source
-ALL_SOURCES:=$(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/**/*.cpp)
+ALL_SOURCES:=$(wildcard $(LEETCODE_SRC_DIR)/*.cpp) $(wildcard $(LEETCODE_SRC_DIR)/**/*.cpp)
 # Get all object files to compile later based on source files automatically
-ALL_OBJS:=$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(ALL_SOURCES))
+ALL_OBJS:=$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(ALL_SOURCES))
 
-LINK_TARGET_MAIN:=$(BIN_DIR)/main
+LEETCODE_LINK_TARGET:=$(BIN_DIR)/leetcode
 
 ## build: produce executable from source files
 .PHONY: build
@@ -21,9 +23,9 @@ build: compile link
 
 ## run: execute main
 .PHONY: run
-run: $(LINK_TARGET_MAIN)
+run: $(LEETCODE_LINK_TARGET)
 	@echo
-	@./$(LINK_TARGET_MAIN)
+	@./$(LEETCODE_LINK_TARGET)
 	@echo
 
 ## compile: compile all source files to object files
@@ -32,12 +34,14 @@ compile: $(ALL_OBJS)
 	
 ## link: link object files to executable
 .PHONY: link
-link: $(LINK_TARGET_MAIN)
+link: $(LEETCODE_LINK_TARGET)
 
 ## check: detect source files
 .PHONY: check
 check:
-	@echo "detected source files:" $(ALL_SOURCES)
+	@echo "detecting c++ files ..."
+	@echo "header files:" $(ALL_INCS)
+	@echo "source files:" $(ALL_SOURCES)
 
 ## clean: remove obj and exe dirs
 .PHONY: clean
@@ -49,10 +53,10 @@ help : Makefile
 	@sed -n 's/^##//p' $<
 
 # Compile single cpp source file to object file
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(OBJ_DIR)/%.o: %.cpp $(ALL_INCS)
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(LINK_TARGET_MAIN): $(ALL_OBJS)
+$(LEETCODE_LINK_TARGET): $(ALL_OBJS)
 	@mkdir -p $(BIN_DIR)
-	$(CC) $(CFLAGS) -o $(LINK_TARGET_MAIN) $(ALL_OBJS)
+	$(CC) $(CFLAGS) -o $(LEETCODE_LINK_TARGET) $(ALL_OBJS)
