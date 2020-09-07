@@ -11,7 +11,6 @@ sudo apt install build-essential gdb
 # Build & Run
 
 ```bash
-make build
 make run
 ```
 
@@ -19,8 +18,22 @@ make run
 
 Use GDB in VSCode, select "g++ - Debug main" in debug options
 
-# Clean up
+# Other Commands
+## Call help for Makefile
+```bash
+make help
+```
+## Build project only
+```bash
+make build
+```
 
+## Check all header and source files in project
+```bash
+make check
+```
+
+## Clean up binary files
 ```bash
 make clean
 ```
