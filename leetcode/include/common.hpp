@@ -7,7 +7,7 @@
 
 namespace leetcode {
     template<typename T>
-    std::string stringifyVector(std::vector<T> nums) {
+    std::string stringify(std::vector<T> nums) {
         using namespace std;
         string output = "{ ";
         for (int i = 0; i < nums.size(); i++) {

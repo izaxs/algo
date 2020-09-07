@@ -23,8 +23,8 @@ namespace leetcode {
         int target = 3;
         auto output = twoSum(input, target);
         vector<int> expect{3, 5};
-        cout << "expect: " << stringifyVector(expect) << endl;
-        cout << "result: " << stringifyVector(output) << endl;
+        cout << "expect: " << stringify(expect) << endl;
+        cout << "result: " << stringify(output) << endl;
         assert(output == expect);
         std::cout << "LC 1: Two Sum passed test!" << std::endl;
     }
