@@ -3,6 +3,11 @@
         "iostream": "cpp",
         "vector": "cpp",
         "cassert": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "queue": "cpp",
+        "map": "cpp",
+        "unordered_map": "cpp",
+        "deque": "cpp",
+        "stack": "cpp"
     }
 }

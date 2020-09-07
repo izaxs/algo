@@ -1,6 +1,11 @@
 #include <iostream>
+
 #include <vector>
+#include <stack>
+#include <queue>
+#include <deque>
 #include <unordered_map>
+#include <map>
 
 // #include "catch.hpp"
 #include "cassert"

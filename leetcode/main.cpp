@@ -3,7 +3,6 @@
 using namespace leetcode;
 
 int main() {
-    test_archived();
     test_twoSum();
 }
 
