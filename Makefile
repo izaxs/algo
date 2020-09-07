@@ -6,6 +6,7 @@ LEETCODE_INC_DIR:=$(LEETCODE_SRC_DIR)/include
 
 # Compiler & flags
 CC:=g++
+# CFLAGS:=-O3 -s
 # CFLAGS:=-I$(INC_DIR) -g
 CFLAGS:=-g
 
