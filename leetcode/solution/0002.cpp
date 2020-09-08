@@ -34,5 +34,6 @@ namespace leetcode {
         auto result = addTwoNumbers(head1, head2);
 
         cout << "predict: " << (listEqual(expect, result) ? "true" : "false") << endl;
+        assert(to_string(expect) == to_string(result));
     }
 }
