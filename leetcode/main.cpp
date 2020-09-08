@@ -1,4 +1,4 @@
-#include "include/tests.hpp"
+#include "include/test_table.hpp"
 
 using namespace leetcode;
 
