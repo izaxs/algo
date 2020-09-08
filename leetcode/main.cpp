@@ -3,10 +3,11 @@
 using namespace leetcode;
 
 int main() {
-    test_twoSum();
-    test_addTwoNumbers();
+    test_lengthOfLongestSubstring();
 }
 
-void test_archived() {
-    // list of history tests
+void archived_test() {
+    // list of tests history
+    // test_twoSum();
+    // test_addTwoNumbers();
 }

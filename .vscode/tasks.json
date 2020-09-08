@@ -3,8 +3,8 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "C/C++: g++ build main file",
-			"command": "make",
+			"label": "C/C++: build leetcode solution",
+			"command": "make build",
 			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}"

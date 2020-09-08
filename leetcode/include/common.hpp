@@ -1,7 +1,5 @@
 #pragma once
 
-#include <iostream>
-
 #include <vector>
 #include <stack>
 #include <queue>
@@ -9,6 +7,9 @@
 #include <unordered_map>
 #include <map>
 
+#include <algorithm>
+
+#include <iostream>
 #include "typeutil.hpp"
 #include "stringifier.hpp"
 
