@@ -3,12 +3,14 @@
 #include <vector>
 
 namespace leetcode {
+    using std::string;
+    using std::vector;
+
     template<typename T>
-    std::string stringify(std::vector<T> nums) {
-        using namespace std;
+    string to_string(vector<T> nums) {
         string output = "{ ";
         for (int i = 0; i < nums.size(); i++) {
-            output += to_string(nums[i]);
+            output += std::to_string(nums[i]);
             if (i != nums.size() - 1) {
                 output += ", ";
             }
@@ -16,4 +18,6 @@ namespace leetcode {
         output += " }";
         return output;
     }
+
+    string to_string(ListNode *head);
 }

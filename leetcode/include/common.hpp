@@ -9,8 +9,8 @@
 #include <unordered_map>
 #include <map>
 
-#include "type_util.hpp"
-#include "debug_util.hpp"
+#include "typeutil.hpp"
+#include "stringifier.hpp"
 
 // #include "catch.hpp"
 #include "cassert"
