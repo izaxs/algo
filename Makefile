@@ -6,8 +6,8 @@ LEETCODE_INC_DIR:=$(LEETCODE_SRC_DIR)/include
 
 # Compiler & flags
 CC:=g++
-# CFLAGS:=-O3 -s
-CFLAGS:=-g
+# CFLAGS:=-O3 -s -std=c++17
+CFLAGS:=-g -std=c++17
 
 ALL_INCS:=$(wildcard $(LEETCODE_INC_DIR)/*.hpp) $(wildcard $(LEETCODE_INC_DIR)/**/*.hpp)
 # Get all cpp files in source
