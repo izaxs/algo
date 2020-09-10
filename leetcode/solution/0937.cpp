@@ -29,12 +29,14 @@ namespace leetcode {
     // Better solution!
     vector<string> reorderLogFiles2(vector<string>& logs) {
         auto iter = std::stable_partition(logs.begin(), logs.end(),[](const string& s) {
-            return std::isalpha(s.find_first_of(' ') + 1);
+            return std::isalpha(s[s.find_first_of(' ') + 1]);
         });
         std::stable_sort(logs.begin(), iter, [](const string &a, const string &b) {
             auto aLo = a.find_first_of(' ') + 1;
             auto bLo = b.find_first_of(' ') + 1;
-            return a.compare(aLo, a.size(), b, bLo, b.size()) < 0 ? true : false;
+            auto cmpResult = a.compare(aLo, a.size(), b, bLo, b.size());
+            if (cmpResult) return cmpResult < 0 ? true : false;
+            return a.compare(0, aLo, b, 0, bLo) ? true : false;
         });
         return logs;
     }
@@ -42,7 +44,7 @@ namespace leetcode {
     void test_reorderLogFiles() {
         vector<string> input = {"dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"};
         std::cout << "input: " << to_string(input) << std::endl;
-        auto output = reorderLogFiles(input);
+        auto output = reorderLogFiles2(input);
         std::cout << "output: " << to_string(output) << std::endl;
     }
 }
