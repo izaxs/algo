@@ -10,6 +10,7 @@
 #include <algorithm>
 
 #include <iostream>
+#include <cctype>
 #include "typeutil.hpp"
 #include "stringifier.hpp"
 

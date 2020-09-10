@@ -6,6 +6,14 @@
 namespace leetcode {
     using std::string;
 
+    string to_string(const string &s) {
+        return s;
+    }
+
+    string toString(const char* t) {
+        return t;
+    }
+
     string to_string(ListNode *head) {
         string output = "{ ";
         while (head != nullptr) {
