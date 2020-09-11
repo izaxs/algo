@@ -18,7 +18,7 @@ namespace leetcode {
     string longestPalindrome(string s) {
         int maxLo = 0, maxLen = 0, size = s.size();
         for (int i = 0; i < size; i++) {
-            if (i > size / 2 && std::min(i + 1, size - i) * 2 <= maxLen) break;
+            if (size - i <= maxLen / 2) break;
             expand(s, i, i, maxLo, maxLen);
             expand(s, i, i + 1, maxLo, maxLen);
         }
