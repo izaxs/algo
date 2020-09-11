@@ -13,6 +13,7 @@
 #include <cctype>
 #include "typeutil.hpp"
 #include "stringifier.hpp"
+#include "printhelper.hpp"
 
 // #include "catch.hpp"
 #include "cassert"

@@ -9,7 +9,7 @@ namespace leetcode {
     // declarations of stringifiers for item types
     string to_string(const string &s);
 
-    string toString(const char* t);
+    string to_string(const char* t);
 
     string to_string(ListNode *head);
 

@@ -10,7 +10,7 @@ namespace leetcode {
         return s;
     }
 
-    string toString(const char* t) {
+    string to_string(const char* t) {
         return t;
     }
 
