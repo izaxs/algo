@@ -8,6 +8,11 @@ sudo apt update
 sudo apt install build-essential gdb
 ```
 
+Mac OS:
+```bash
+xcode-select --install
+```
+
 # Build & Run
 
 ```bash
@@ -16,7 +21,12 @@ make run
 
 # Debug
 
-Use GDB in VSCode, select "g++ - Debug main" in debug options
+## Use GDB in VSCode:
+#### select "GDB: Debug leetcode" in debug options
+
+## Use LLDB in VSCode:
+#### install CodeLLDB
+#### select "LLDB: Debug leetcode" in debug options
 
 # Other Commands
 ## Call help for Makefile

@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++ - Debug leetcode solution",
+            "name": "GDB: Debug leetcode",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/leetcode",
@@ -32,6 +32,14 @@
                 "programOutput": true,
                 "traceResponse": false
             }
+        },
+        {
+            "name": "LLDB: Debug leetcode",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/leetcode",
+            "args": [],
+            "preLaunchTask": "C/C++: build leetcode solution"
         },
         {
             "name": "g++ - Build and debug active file",
