@@ -22,11 +22,12 @@ make run
 # Debug
 
 ## Use GDB in VSCode:
-#### select "GDB: Debug leetcode" in debug options
+Select "GDB: Debug leetcode" in debug options
 
 ## Use LLDB in VSCode:
-#### install CodeLLDB
-#### select "LLDB: Debug leetcode" in debug options
+Install CodeLLDB
+
+Select "LLDB: Debug leetcode" in debug options
 
 # Other Commands
 ## Call help for Makefile
