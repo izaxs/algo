@@ -2,16 +2,25 @@
 
 C++ compiler that supports C++17
 
-Linux Debian:
+## Linux Debian
 ```bash
 sudo apt update
 sudo apt install build-essential gdb
 ```
 
-Mac OS:
+## Mac OS
 ```bash
 xcode-select --install
 ```
+
+# How to Code
+## LeetCode
+
+Add solution c++ file under ```leetcode/solution/*```
+
+Declare test function in ```leetcode/list.hpp```
+
+Call test function in ```leetcode/main.cpp```
 
 # Build & Run
 
@@ -19,12 +28,12 @@ xcode-select --install
 make run
 ```
 
-# Debug
+# Debug in VSCode
 
-## Use GDB in VSCode:
+## GDB
 Select "GDB: Debug leetcode" in debug options
 
-## Use LLDB in VSCode:
+## LLDB
 Install CodeLLDB
 
 Select "LLDB: Debug leetcode" in debug options
