@@ -1,17 +1,18 @@
 # Directory alias
 OBJ_DIR:=obj
 BIN_DIR:=bin
+INC_DIR:=include
 LEETCODE_SRC_DIR:=leetcode
-LEETCODE_INC_DIR:=$(LEETCODE_SRC_DIR)/include
+UTILITIES_SRC_DIR:=utilities
 
 # Compiler & flags
 CC:=g++
 # CFLAGS:=-O3 -s -std=c++17
-CFLAGS:=-g -std=c++17
+CFLAGS:=-g -std=c++17 -I$(INC_DIR)
 
-ALL_INCS:=$(wildcard $(LEETCODE_INC_DIR)/*.hpp) $(wildcard $(LEETCODE_INC_DIR)/**/*.hpp)
+ALL_INCS:=$(wildcard $(INC_DIR)/*.hpp)
 # Get all cpp files in source
-ALL_SOURCES:=$(wildcard $(LEETCODE_SRC_DIR)/*.cpp) $(wildcard $(LEETCODE_SRC_DIR)/**/*.cpp)
+ALL_SOURCES:=$(wildcard $(UTILITIES_SRC_DIR)/*.cpp) $(wildcard $(LEETCODE_SRC_DIR)/*.cpp) $(wildcard $(LEETCODE_SRC_DIR)/**/*.cpp)
 # Get all object files to compile later based on source files automatically
 ALL_OBJS:=$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(ALL_SOURCES))
 

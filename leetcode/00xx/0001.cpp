@@ -1,4 +1,4 @@
-#include "../include/common.hpp"
+#include "common.hpp"
 
 namespace leetcode {
 
