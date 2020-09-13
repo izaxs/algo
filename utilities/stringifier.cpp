@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 
-#include "../include/typeutil.hpp"
+#include "typeutil.hpp"
 
 namespace leetcode {
     using std::string;
