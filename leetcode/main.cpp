@@ -3,5 +3,5 @@
 using namespace leetcode;
 
 int main() {
-    test_myAtoi();
+    test_longestCommonPrefix();
 }

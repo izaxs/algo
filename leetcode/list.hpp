@@ -7,5 +7,6 @@ namespace leetcode {
     extern void test_longestPalindrome();                       // 0005
     extern void test_convertZigZag();                           // 0006
     extern void test_myAtoi();                                  // 0008
+    extern void test_longestCommonPrefix();                     // 0014
     extern void test_reorderLogFiles();                         // 0937
 }
