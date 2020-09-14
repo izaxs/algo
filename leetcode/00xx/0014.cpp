@@ -1,8 +1,8 @@
 #include "common.hpp"
 
 namespace leetcode {
-    // using std::vector;
-    // using std::string;
+    using std::vector;
+    using std::string;
 
     string longestCommonPrefix(vector<string>& strs) {
         string output("");
