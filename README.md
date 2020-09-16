@@ -2,6 +2,8 @@
 
 C++ compiler that supports C++17
 
+VSCode with C/C++ extension is recommended for debugging
+
 ## Linux Debian
 ```bash
 sudo apt update
@@ -18,6 +20,7 @@ Install CodeLLDB in VSCode
 ## LeetCode
 
 Add solution c++ file as ```leetcode/[0-9]{4}.cpp```
+
 Make sure main function is created for each solution
 
 # Build & Run
