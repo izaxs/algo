@@ -21,4 +21,12 @@
         <td>Local variable not initialized</td>
         <td>1</td>
     </tr>
+    <tr>
+        <td>Items in container changed unexpectly</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Loop condition not satisfied unexpectly</td>
+        <td>1</td>
+    </tr>
 </table>
