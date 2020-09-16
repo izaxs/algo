@@ -49,8 +49,8 @@ check:
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)
 
-.PHONY : help
-help : Makefile
+.PHONY: help
+help: Makefile
 	@sed -n 's/^##//p' $<
 
 # Compile single cpp source file to object file
@@ -60,4 +60,4 @@ $(OBJ_DIR)/%.o: %.cpp $(ALL_INCS)
 
 $(LEETCODE_LINK_TARGET): $(ALL_OBJS)
 	@mkdir -p $(BIN_DIR)
-	$(CC) $(CFLAGS) -o $(LEETCODE_LINK_TARGET) $(ALL_OBJS)
+	@$(CC) $(CFLAGS) -o $(LEETCODE_LINK_TARGET) $(ALL_OBJS)
