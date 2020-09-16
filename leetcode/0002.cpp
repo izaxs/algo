@@ -1,6 +1,7 @@
 #include "common.hpp"
 
 namespace leetcode {
+    using namespace utilities;
     using std::cout;
     using std::endl;
 

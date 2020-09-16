@@ -2,6 +2,7 @@
 #include <limits>
 
 namespace leetcode {
+    using namespace utilities;
     using std::string;
     
     int myAtoi(string str) {

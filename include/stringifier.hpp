@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-namespace leetcode {
+namespace utilities {
     using std::string;
     using std::vector;
 

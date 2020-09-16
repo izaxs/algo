@@ -1,6 +1,7 @@
 #include "common.hpp"
 
 namespace leetcode {
+    using namespace utilities;
     using std::string;
 
     void expand(string &s, int lo, int hi, int &maxLo, int &maxLen) {

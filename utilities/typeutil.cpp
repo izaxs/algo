@@ -1,6 +1,6 @@
 #include <vector>
 
-namespace leetcode {
+namespace utilities {
     // Definition for singly-linked list.
     struct ListNode {
         int val;

@@ -3,7 +3,7 @@
 
 #include "typeutil.hpp"
 
-namespace leetcode {
+namespace utilities {
     using std::string;
 
     string to_string(const string &s) {

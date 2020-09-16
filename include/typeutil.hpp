@@ -3,7 +3,7 @@
 #include <vector>
 
 // Definition for singly-linked list.
-namespace leetcode {
+namespace utilities {
     struct ListNode {
         int val;
         ListNode *next;

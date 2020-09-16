@@ -1,6 +1,7 @@
 #include "common.hpp"
 
 namespace leetcode {
+    using namespace utilities;
     using std::max;
     using std::vector;
     using std::unordered_map;
