@@ -17,11 +17,8 @@ Install CodeLLDB in VSCode
 # How to Code
 ## LeetCode
 
-Add solution c++ file under ```leetcode/solution/*```
-
-Declare test function in ```leetcode/list.hpp```
-
-Call test function in ```leetcode/main.cpp```
+Add solution c++ file as ```leetcode/[0-9]{4}.cpp```
+Make sure main function is created for each solution
 
 # Build & Run
 
@@ -43,12 +40,8 @@ Select "LLDB: Debug leetcode active file" in debug options
 ```bash
 make help
 ```
-## Build project only
-```bash
-make build
-```
 
-## Check all header and source files in project
+## Check all project related files in project
 ```bash
 make check
 ```
