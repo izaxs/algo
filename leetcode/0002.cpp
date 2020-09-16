@@ -27,15 +27,9 @@ namespace leetcode {
 
 int main() {
     using namespace leetcode;
-    auto head1 = listGen({1,5,4});
-    cout << "list 1: " << to_string(head1) << endl;
-
-    auto head2 = listGen({2,7});
-    cout << "list 2: " << to_string(head2) << endl;
-
+    auto input1 = listGen({1,5,4});
+    auto input2 = listGen({2,7});
     auto expect = listGen({3,2,5});
-    auto result = addTwoNumbers(head1, head2);
-
-    cout << "predict: " << (listEqual(expect, result) ? "true" : "false") << endl;
-    assert(to_string(expect) == to_string(result));
+    auto output = addTwoNumbers(input1, input2);
+    cout << "result: " << (listEqual(expect, output) ? "true" : "false") << endl;
 }

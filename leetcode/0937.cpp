@@ -1,4 +1,5 @@
 #include "../include/common.hpp"
+#include <cctype>
 
 namespace leetcode {
     using namespace utilities;
@@ -46,7 +47,7 @@ namespace leetcode {
 int main() {
     using namespace leetcode;
     vector<string> input = {"dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"};
-    std::cout << "input: " << to_string(input) << std::endl;
+    auto inputStr = to_string(input);
     auto output = reorderLogFiles2(input);
-    std::cout << "output: " << to_string(output) << std::endl;
+    print_inputoutput(inputStr, to_string(output));
 }

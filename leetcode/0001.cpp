@@ -26,8 +26,5 @@ int main() {
     int target = 3;
     auto output = twoSum(input, target);
     vector<int> expect{3, 5};
-    cout << "expect: " << to_string(expect) << endl;
-    cout << "result: " << to_string(output) << endl;
-    assert(output == expect);
-    std::cout << "LC 1: Two Sum passed test!" << std::endl;
+    print_inputoutput(to_string(input), to_string(output));
 }
