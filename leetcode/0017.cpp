@@ -24,10 +24,11 @@ namespace leetcode {
         }
         return output;
     }
+}
 
-    void test_letterCombinations() {
-        string input = "45";
-        auto output = letterCombinations(input);
-        print_inputoutput(input, to_string(output));
-    }
+int main() {
+    using namespace leetcode;
+    string input = "45";
+    auto output = letterCombinations(input);
+    print_inputoutput(input, to_string(output));
 }

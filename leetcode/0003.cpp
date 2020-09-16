@@ -35,16 +35,17 @@ namespace leetcode {
         }
         return maxLen;
     }
+}
 
-    void test_lengthOfLongestSubstring() {
-        string input = "abcbhnmkmuy";
-        int result = lengthOfLongestSubstring2(input);
-        std::cout << "input: " << input << std::endl;
-        std::cout << "expect: 6, actual: " << result << std::endl;
+int main() {
+    using namespace leetcode;
+    string input = "abcbhnmkmuy";
+    int result = lengthOfLongestSubstring2(input);
+    std::cout << "input: " << input << std::endl;
+    std::cout << "expect: 6, actual: " << result << std::endl;
 
-        string input2 = "abbkjbbbjbbghayyi";
-        int result2 = lengthOfLongestSubstring2(input2);
-        std::cout << "input2: " << input2 << std::endl;
-        std::cout << "expect: 5, actual: " << result2 << std::endl;
-    }
+    string input2 = "abbkjbbbjbbghayyi";
+    int result2 = lengthOfLongestSubstring2(input2);
+    std::cout << "input2: " << input2 << std::endl;
+    std::cout << "expect: 5, actual: " << result2 << std::endl;
 }

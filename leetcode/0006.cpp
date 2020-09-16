@@ -17,11 +17,11 @@ namespace leetcode {
         for (auto s: zigzag) output += s;
         return output;
     }
+}
 
-    void test_convertZigZag() {
-        string input = "PAYPALISHIRING";
-        auto output = convertZigZag(input, 3);
-        print_inputoutput(input, output);
-    }
-
+int main() {
+    using namespace leetcode;
+    string input = "PAYPALISHIRING";
+    auto output = convertZigZag(input, 3);
+    print_inputoutput(input, output);
 }

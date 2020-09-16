@@ -25,16 +25,6 @@ namespace leetcode {
         return s.substr(maxLo, maxLen);
     }
 
-    void test_longestPalindrome() {
-        string input = "babad";
-        string output = longestPalindrome(input);
-        print_inputoutput(input, output);
-
-        // string input = "aabcbefebcde";
-        // string output = longestPalindrome(input);
-        // print_inputoutput(input, output);
-    }
-
     // Bad solution, time exceeded
     bool isPalindrome0(string s, int lo, int hi) {
         while (lo < hi) {
@@ -53,4 +43,15 @@ namespace leetcode {
         }
         return "";
     }
+}
+
+int main() {
+    using namespace leetcode;
+    string input = "babad";
+    string output = longestPalindrome(input);
+    print_inputoutput(input, output);
+
+    // string input = "aabcbefebcde";
+    // string output = longestPalindrome(input);
+    // print_inputoutput(input, output);
 }

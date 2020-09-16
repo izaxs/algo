@@ -36,11 +36,12 @@ namespace leetcode {
         }
         return stk.empty() ? true : false;
     }
+}
 
-    void test_hasValidParentheses() {
-        // string input = "{}({[]})";
-        string input = "([]{[]})";
-        auto output = hasValidParentheses2(input);
-        print_inputoutput(input, to_string(output));
-    }
+int main() {
+    using namespace leetcode;
+    // string input = "{}({[]})";
+    string input = "([]{[])";
+    auto output = hasValidParentheses2(input);
+    print_inputoutput(input, to_string(output));
 }

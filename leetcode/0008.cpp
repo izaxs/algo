@@ -21,11 +21,12 @@ namespace leetcode {
         }
         return num * sign;
     }
+}
 
-    void test_myAtoi() {
-        // string input = "  -1319238 kgj";
-        string input = "   -kk";
-        auto output = to_string(myAtoi(input));
-        print_inputoutput(input, output);
-    }
+int main() {
+    using namespace leetcode;
+    // string input = "  -1319238 kgj";
+    string input = "   -kk";
+    auto output = to_string(myAtoi(input));
+    print_inputoutput(input, output);
 }

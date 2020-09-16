@@ -12,6 +12,7 @@ sudo apt install build-essential gdb
 ```bash
 xcode-select --install
 ```
+Install CodeLLDB in VSCode
 
 # How to Code
 ## LeetCode
@@ -24,19 +25,18 @@ Call test function in ```leetcode/main.cpp```
 
 # Build & Run
 
+Take Leetcode #1 as example:
 ```bash
-make run
+make
+bin/0001
 ```
 
 # Debug in VSCode
-
 ## GDB
-Select "GDB: Debug leetcode" in debug options
+Select "GDB: Debug leetcode active file" in debug options
 
 ## LLDB
-Install CodeLLDB
-
-Select "LLDB: Debug leetcode" in debug options
+Select "LLDB: Debug leetcode active file" in debug options
 
 # Other Commands
 ## Call help for Makefile

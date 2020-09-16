@@ -40,11 +40,12 @@ namespace leetcode {
         });
         return logs;
     }
+}
 
-    void test_reorderLogFiles() {
-        vector<string> input = {"dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"};
-        std::cout << "input: " << to_string(input) << std::endl;
-        auto output = reorderLogFiles2(input);
-        std::cout << "output: " << to_string(output) << std::endl;
-    }
+int main() {
+    using namespace leetcode;
+    vector<string> input = {"dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"};
+    std::cout << "input: " << to_string(input) << std::endl;
+    auto output = reorderLogFiles2(input);
+    std::cout << "output: " << to_string(output) << std::endl;
 }

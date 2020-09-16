@@ -17,10 +17,11 @@ namespace leetcode {
         }
         return output;
     }
+}
 
-    void test_longestCommonPrefix() {
-        vector<string> input = {"flower","flow","flight"};
-        string output = longestCommonPrefix(input);
-        print_inputoutput(to_string(input), output);
-    }
+int main() {
+    using namespace leetcode;
+    vector<string> input = {"flower","flow","flight"};
+    string output = longestCommonPrefix(input);
+    print_inputoutput(to_string(input), output);
 }
