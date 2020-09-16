@@ -14,6 +14,10 @@ namespace leetcode {
         return t;
     }
 
+    string to_string(bool b) {
+        return b == true ? "true" : "false";
+    }
+
     string to_string(ListNode *head) {
         string output = "{ ";
         while (head != nullptr) {

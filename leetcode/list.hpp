@@ -9,5 +9,6 @@ namespace leetcode {
     extern void test_myAtoi();                                  // 0008
     extern void test_longestCommonPrefix();                     // 0014
     extern void test_letterCombinations();                      // 0017
+    extern void test_hasValidParentheses();                     // 0020
     extern void test_reorderLogFiles();                         // 0937
 }

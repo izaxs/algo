@@ -29,4 +29,8 @@
         <td>Loop condition not satisfied unexpectly</td>
         <td>1</td>
     </tr>
+    <tr>
+        <td>Incorrectly assigned local var</td>
+        <td>1</td>
+    </tr>
 </table>

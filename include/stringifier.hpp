@@ -13,6 +13,8 @@ namespace leetcode {
 
     string to_string(ListNode *head);
 
+    string to_string(bool b);
+
     // template stringifiers for item types
     template<typename T>
     string to_string(const T &item) {

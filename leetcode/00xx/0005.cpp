@@ -36,21 +36,21 @@ namespace leetcode {
     }
 
     // Bad solution, time exceeded
-    // bool isPalindrome(string s, int lo, int hi) {
-    //     while (lo < hi) {
-    //         if (s[lo++] != s[hi--]) return false;
-    //     }
-    //     return true;
-    // }
+    bool isPalindrome0(string s, int lo, int hi) {
+        while (lo < hi) {
+            if (s[lo++] != s[hi--]) return false;
+        }
+        return true;
+    }
 
-    // string longestPalindrome(string s) {
-    //     int len = s.size();
-    //     while (len > 0) {
-    //         for (int i = 0; i + len <= s.size(); i++) {
-    //             if (isPalindrome(s, i, i + len - 1)) return s.substr(i, len);
-    //         }
-    //         len--;
-    //     }
-    //     return "";
-    // }
+    string longestPalindrome0(string s) {
+        int len = s.size();
+        while (len > 0) {
+            for (int i = 0; i + len <= s.size(); i++) {
+                if (isPalindrome0(s, i, i + len - 1)) return s.substr(i, len);
+            }
+            len--;
+        }
+        return "";
+    }
 }
