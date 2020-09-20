@@ -14,6 +14,10 @@
         <td>1</td>
     </tr>
     <tr>
+        <td>Index forget to + or -</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Forget to add item to container in loop</td>
         <td>1</td>
     </tr>
@@ -31,6 +35,14 @@
     </tr>
     <tr>
         <td>Incorrectly assigned local var</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Char to Int forget to convert</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Forget empty input case</td>
         <td>1</td>
     </tr>
 </table>
