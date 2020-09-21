@@ -11,9 +11,9 @@ namespace leetcode {
         unordered_set<string> ban(banned.begin(), banned.end());
         for (char &ch : paragraph) ch = isalpha(ch) ? tolower(ch) : ' ';
         istringstream input(paragraph);
-        string token;
         unordered_map<string, int> table;
-        while (input >> token) {
+        for (string token; std::getline(input, token, ' ');) {
+            if (token == "") continue;
             if (ban.find(token) == ban.end()) table[token] += 1;
         }
         string output;
@@ -30,7 +30,9 @@ namespace leetcode {
 
 int main() {
     using namespace leetcode;
+    // string parag = "Bob. hIt, baLl";
     string parag = "Bob hit a ball, the hit BALL flew far after it was hit.";
+    // vector<string> ban{"hit", "bob"};
     vector<string> ban{"hit"};
     auto output =  mostCommonWord(parag, ban);
     string intputStr = "Paragraph:\n" + parag + "\nBan list:\n" + to_string(ban);
