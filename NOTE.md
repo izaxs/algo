@@ -45,4 +45,8 @@
         <td>Forget empty input case</td>
         <td>1</td>
     </tr>
+    <tr>
+        <td>If condition wrong</td>
+        <td>1</td>
+    </tr>
 </table>
