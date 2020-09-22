@@ -18,11 +18,21 @@ namespace leetcode {
         int i = 0, j = s.size() - 1;
         while (i < j) std::swap(s[i++], s[j--]);
     }
+
+    // Even better
+    void reverseString3(vector<char>& s) {
+        s = {s.rbegin(), s.rend()};
+    }
+
+    // Also good
+    void reverseString4(vector<char>& s) {
+        std::reverse(s.begin(), s.end());
+    }
 }
 
 int main() {
     using namespace leetcode;
     vector<char> s1 = {'a', 'b', 'c', 'd', 'e', 'f'}, s2 = s1;
-    reverseString2(s2);
+    reverseString4(s2);
     print_inputoutput(to_string(s1), to_string(s2));
 }
