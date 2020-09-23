@@ -43,11 +43,11 @@ namespace leetcode {
 
 int main() {
     using namespace leetcode;
-    vector<string> input = {"bdddddddddd", "bbbbbbbbbbc"};
+    vector<string> input = {"eat","tea","tan","ate","nat","bat"};
     auto output = groupAnagrams2(input);
     print_inputoutput(to_string(input), to_string(output));
 
-    // vector<string> input = {"eat","tea","tan","ate","nat","bat"};
-    // auto output = groupAnagrams2(input);
-    // print_inputoutput(to_string(input), to_string(output));
+    vector<string> input2 = {"bdddddddddd", "bbbbbbbbbbc"};
+    auto output2 = groupAnagrams2(input2);
+    print_inputoutput(to_string(input2), to_string(output2));
 }
