@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Index out of range</td>
@@ -47,6 +47,10 @@
     </tr>
     <tr>
         <td>If condition wrong</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Double execution</td>
         <td>1</td>
     </tr>
 </table>
