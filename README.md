@@ -21,7 +21,20 @@ Install CodeLLDB in VSCode
 
 Add solution c++ file as ```leetcode/[0-9]{4}.cpp```
 
-Make sure main function is created for each solution
+boilerplate:
+```cpp
+#include "common.hpp"
+
+namespace leetcode {
+    using namespace utilities;
+    // solution
+}
+
+int main() {
+    using namespace leetcode;
+    // test code
+}
+```
 
 # Build & Run
 

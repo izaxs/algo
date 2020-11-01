@@ -3,6 +3,7 @@
 #include <sstream>
 #include <cctype>
 
+#include <array>
 #include <vector>
 #include <stack>
 #include <queue>
