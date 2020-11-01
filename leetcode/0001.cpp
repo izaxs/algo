@@ -25,6 +25,5 @@ int main() {
     vector<int> input{5, 0, 9, 10, 1, -7};
     int target = 3;
     auto output = twoSum(input, target);
-    vector<int> expect{3, 5};
     print_inputoutput(to_string(input), to_string(output));
 }
