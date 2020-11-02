@@ -19,7 +19,7 @@ namespace leetcode {
         while (i < j) std::swap(s[i++], s[j--]);
     }
 
-    // Even better
+    // Not in place, but elegant
     void reverseString3(vector<char>& s) {
         s = {s.rbegin(), s.rend()};
     }
