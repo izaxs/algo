@@ -5,8 +5,8 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Directory alias
-OBJ_DIR:=obj
 BIN_DIR:=bin
+OBJ_DIR:=$(BIN_DIR)/.obj
 INC_DIR:=include
 LEETCODE_NAME:=leetcode
 UTIL_NAME:=utilities
@@ -53,7 +53,7 @@ check:
 ## clean: remove obj and exe dirs
 .PHONY: clean
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	rm -rf $(BIN_DIR)
 
 .PHONY: help
 help: Makefile
