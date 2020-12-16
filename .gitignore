@@ -33,4 +33,9 @@ obj
 *.out
 *.app
 
+# VSCode settings
 .vscode/settings.json
+
+# Python cache
+__pycache__
+*.pyc
