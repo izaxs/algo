@@ -24,7 +24,7 @@ Install CodeLLDB in VSCode
 ## LeetCode
 
 ### Python Solutions
-Add solution Python file as ```pyleet/[0-9]{4}.py```
+Add solution Python file as ```snakecode/[0-9]{4}.py```
 
 ### C++ Solutions
 Add solution c++ file as ```leetcode/[0-9]{4}.cpp```
@@ -47,7 +47,7 @@ int main() {
 # Build & Run
 
 ### Python
-Just run Python file in pyleet
+Just run Python file in snakecode
 
 ### C++
 Take Leetcode #1 as example:

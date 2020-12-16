@@ -32,3 +32,5 @@ obj
 *.exe
 *.out
 *.app
+
+.vscode/settings.json
