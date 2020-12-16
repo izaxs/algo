@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "GDB: Debug leetcode active file",
             "type": "cppdbg",
             "request": "launch",
@@ -24,9 +31,9 @@
             ],
             "preLaunchTask": "C/C++: build leetcode solution",
             "miDebuggerPath": "/usr/bin/gdb",
-            "logging": { 
-                "moduleLoad": false, 
-                "engineLogging": false, 
+            "logging": {
+                "moduleLoad": false,
+                "engineLogging": false,
                 "trace": false,
                 "exceptions": true,
                 "programOutput": true,
