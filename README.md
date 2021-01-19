@@ -27,7 +27,7 @@ Install CodeLLDB in VSCode
 Add solution Python file as ```snakecode/[0-9]{4}.py```
 
 ### C++ Solutions
-Add solution c++ file as ```leetcode/[0-9]{4}.cpp```
+Add solution c++ file as ```pluscode/[0-9]{4}.cpp```
 
 Boilerplate code:
 ```cpp

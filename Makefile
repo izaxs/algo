@@ -8,7 +8,7 @@ NC='\033[0m' # No Color
 BIN_DIR:=bin
 OBJ_DIR:=$(BIN_DIR)/.obj
 INC_DIR:=include
-LEETCODE_NAME:=leetcode
+LEETCODE_NAME:=pluscode
 UTIL_NAME:=utilities
 
 # Compiler & flags
