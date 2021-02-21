@@ -1,8 +1,10 @@
 # Prerequisite
 
-Python 3.7+
+Go: 1.15+
 
-C++ compiler that supports C++17
+Python: Python 3.7+
+
+C++: Compiler that supports C++17
 
 VSCode with Python & C/C++ extension is recommended for debugging
 
@@ -22,12 +24,14 @@ Install CodeLLDB in VSCode
 
 # How to Code
 ## LeetCode
+### Go Solutions
+Add Go solution file as ```gocode/[0-9]{4}.go```
 
 ### Python Solutions
-Add solution Python file as ```snakecode/[0-9]{4}.py```
+Add Python solution file as ```snakecode/[0-9]{4}.py```
 
 ### C++ Solutions
-Add solution c++ file as ```pluscode/[0-9]{4}.cpp```
+Add C++ solution file as ```pluscode/[0-9]{4}.cpp```
 
 Boilerplate code:
 ```cpp
