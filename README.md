@@ -1,6 +1,6 @@
 # Prerequisite
 
-Go: 1.15+
+Go: 1.16+
 
 Python: Python 3.7+
 
