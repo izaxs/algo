@@ -52,6 +52,12 @@ int main() {
 ```
 
 # Build & Run
+### Go
+Run the classic test command for each Go test file, eg.
+
+```go test -timeout 30s -run ^Test_twoSum$ github.com/gearbird/algo/gocode/00xx ```
+
+However, if VSCode Go extension is installed, clicking ```"run test"``` or ```"debug test'``` button above the test functions would be much easier
 
 ### Python
 Just run Python file in snakecode
