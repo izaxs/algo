@@ -25,7 +25,9 @@ Install CodeLLDB in VSCode
 # How to Code
 ## LeetCode
 ### Go Solutions
-Add Go solution file as ```gocode/0?xx/[0-9]{4}.go```
+Add Go solution file as ```gocode/??xx/[0-9]{4}.go```
+
+Note that ```??``` means grouping every 100 solutions into a diretory
 
 ### Python Solutions
 Add Python solution file as ```snakecode/[0-9]{4}.py```
