@@ -3,7 +3,7 @@ package gocode
 import (
 	"testing"
 
-	"github.com/gearbird/algo/gocode/util"
+	"github.com/gearbird/algo/goutil"
 )
 
 func Test_twoSum(t *testing.T) {
@@ -12,5 +12,5 @@ func Test_twoSum(t *testing.T) {
 	expected := []int{3, 4}
 	result := twoSum(inputNums, inputTarget)
 
-	util.AssertSameIntSlice(t, expected, result)
+	goutil.AssertSameIntSlice(t, expected, result)
 }

@@ -9,7 +9,7 @@ BIN_DIR:=bin
 OBJ_DIR:=$(BIN_DIR)/.obj
 INC_DIR:=include
 LEETCODE_NAME:=pluscode
-UTIL_NAME:=utilities
+UTIL_NAME:=plusutil
 
 # Compiler & flags
 CC:=g++

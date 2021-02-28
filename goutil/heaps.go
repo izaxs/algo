@@ -1,4 +1,4 @@
-package util
+package goutil
 
 // IntHeap that implement container/heap interface
 type IntHeap []int
