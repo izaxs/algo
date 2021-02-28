@@ -1,4 +1,4 @@
-package lib
+package util
 
 import (
 	"container/heap"
@@ -12,15 +12,13 @@ func Test_IntHeap(t *testing.T) {
 	heap.Push(h, 5)
 	heap.Push(h, 11)
 
-	expect := []int{-7, 2, 3, 5, 8, 11}
-	result := make([]int, 0, len(expect))
+	expected := []int{-7, 2, 3, 5, 8, 11}
+	result := make([]int, 0, len(expected))
 	for h.Len() > 0 {
 		result = append(result, heap.Pop(h).(int))
 	}
 
-	if !IsSameIntSlice(expect, result) {
-		t.Errorf("\nExpected: %v\nGot:      %v", expect, result)
-	}
+	AssertSameIntSlice(t, expected, result)
 }
 
 func Test_StringHeap(t *testing.T) {
@@ -30,13 +28,11 @@ func Test_StringHeap(t *testing.T) {
 	heap.Push(h, "Apple")
 	heap.Push(h, "World!")
 
-	expect := []string{"", "7", "Apple", "Hello", "World!", "apple"}
-	result := make([]string, 0, len(expect))
+	expected := []string{"", "7", "Apple", "Hello", "World!", "apple"}
+	result := make([]string, 0, len(expected))
 	for h.Len() > 0 {
 		result = append(result, heap.Pop(h).(string))
 	}
 
-	if !IsSameStringSlice(expect, result) {
-		t.Errorf("\nExpected: %v\nGot:      %v", expect, result)
-	}
+	AssertSameStringSlice(t, expected, result)
 }

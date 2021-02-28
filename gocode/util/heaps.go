@@ -1,4 +1,4 @@
-package lib
+package util
 
 // IntHeap that implement container/heap interface
 type IntHeap []int
