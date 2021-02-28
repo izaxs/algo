@@ -7,7 +7,7 @@ Python: Python 3.7+
 
 C++: Compiler that supports C++17
 
-VSCode with Python & C/C++ extension is recommended for debugging
+VSCode with ```[Go | Python | C/C++]``` extension is recommended for debugging
 
 ## Linux Debian
 ```bash
