@@ -1,4 +1,4 @@
-package gocode
+package h00
 
 func twoSum(nums []int, target int) []int {
 	wanted := make(map[int]int)

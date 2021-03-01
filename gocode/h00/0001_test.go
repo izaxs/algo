@@ -1,4 +1,4 @@
-package gocode
+package h00
 
 import (
 	"testing"
