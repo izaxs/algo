@@ -1,4 +1,4 @@
-from lib.linkedlist import ListNode, linkerize
+from util.linkedlist import ListNode, linkerize
 
 
 def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:

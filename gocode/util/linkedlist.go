@@ -1,4 +1,4 @@
-package goutil
+package util
 
 // ListNode is the node of a linkedlist
 type ListNode struct {

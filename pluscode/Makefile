@@ -7,9 +7,10 @@ NC='\033[0m' # No Color
 # Directory alias
 BIN_DIR:=bin
 OBJ_DIR:=$(BIN_DIR)/.obj
-UTIL_NAME:=plusutil
+CPP_DIR:=.
+LEETCODE_NAME:=$(CPP_DIR)/solutions
+UTIL_NAME:=$(CPP_DIR)/util
 INC_DIR:=$(UTIL_NAME)/include
-LEETCODE_NAME:=pluscode
 
 
 # Compiler & flags
