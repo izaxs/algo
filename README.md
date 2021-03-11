@@ -36,7 +36,7 @@ For example, the path of solution #1234 should be ```gocode/h12/1234.go```
 Add Python solution file as ```snakecode/[0-9]{4}.py```
 
 ### C++ Solutions
-Add C++ solution file as ```pluscode/[0-9]{4}.cpp```
+Add C++ solution file as ```pluscode/solutions/[0-9]{4}.cpp```
 
 Boilerplate code:
 ```cpp
