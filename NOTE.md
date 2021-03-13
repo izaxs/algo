@@ -22,6 +22,14 @@
         <td>1</td>
     </tr>
     <tr>
+        <td>Forget to remove item from container after processing</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Forget to check container when try to use item from it</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Local variable not initialized</td>
         <td>1</td>
     </tr>
