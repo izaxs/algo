@@ -8,6 +8,7 @@ obj
 # VSCode settings
 .vscode/settings.json
 
-# Python cache
+# Python
 __pycache__
 *.pyc
+.ropeproject
