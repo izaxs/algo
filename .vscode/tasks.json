@@ -7,7 +7,7 @@
 			"command": "make build",
 			"args": [],
 			"options": {
-				"cwd": "${workspaceFolder}"
+				"cwd": "${workspaceFolder}/pluscode"
 			},
 			"group": {
 				"kind": "build",
@@ -25,7 +25,7 @@
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],
 			"options": {
-				"cwd": "${workspaceFolder}"
+				"cwd": "${workspaceFolder}/pluscode"
 			},
 			"problemMatcher": [
 				"$gcc"

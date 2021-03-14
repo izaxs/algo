@@ -8,7 +8,7 @@ NC='\033[0m' # No Color
 BIN_DIR:=bin
 OBJ_DIR:=$(BIN_DIR)/.obj
 CPP_DIR:=.
-LEETCODE_NAME:=$(CPP_DIR)/solutions
+LEETCODE_NAME:=$(CPP_DIR)
 UTIL_NAME:=$(CPP_DIR)/util
 INC_DIR:=$(UTIL_NAME)/include
 
