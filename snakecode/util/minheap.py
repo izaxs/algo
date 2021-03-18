@@ -1,17 +1,24 @@
 class MinHeap:
+    ''' Min heap for integer elements'''
+    OutOfRangeMsg = "Out of Range"
+    EmptyHeapMsg = "Empty Heap"
 
     def __init__(self):
         self.size = 0
         self.data = []
     
     def parent(self, i: int) -> int:
-        return (i-1)//2 if i >= 0 else 0
+        if i < 0 or i >= self.size: raise IndexError(MinHeap.OutOfRangeMsg)
+        return (i-1)//2
     
     def left(self, i: int) -> int:
-        return i*2+1 if i >= 0 else 0
+        if i < 0 or i >= self.size: raise IndexError(MinHeap.OutOfRangeMsg)
+        return i*2+1
     
     def right(self, i: int) -> int:
-        return i*2+2 if i >= 0 else 0
+        if i < 0 or i >= self.size: raise IndexError(MinHeap.OutOfRangeMsg)
+        return i*2+1
+        
 
     def swap(self, i: int, j: int):
         self.data[i], self.data[j] = self.data[j], self.data[i]
@@ -35,14 +42,14 @@ class MinHeap:
             self.swap(i, left)
             self.down(left)
 
-    def push(self, item: int):
+    def push(self, val: int):
         i = self.size
-        self.data.append(item)
+        self.data.append(val)
         self.size += 1
         self.up(i)
 
     def pop(self) -> int:
-        if self.size <= 0: raise IndexError("Empty heap")
+        if self.size <= 0: raise IndexError(MinHeap.EmptyHeapMsg)
         root = self.data[0]
         self.size -= 1
         self.data[0] = self.data[self.size]
@@ -50,5 +57,5 @@ class MinHeap:
         return root
 
     def peek(self) -> int:
-        if self.size <= 0: raise IndexError("Empty heap")
+        if self.size <= 0: raise IndexError(MinHeap.EmptyHeapMsg)
         return self.data[0]
