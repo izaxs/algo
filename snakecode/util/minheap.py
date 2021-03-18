@@ -17,21 +17,19 @@ class MinHeap:
         self.data[i], self.data[j] = self.data[j], self.data[i]
 
     def up(self, i: int):
-        if i <= 0:
-            return
+        if i <= 0: return
         p = self.parent(i)
         if self.data[i] < self.data[p]:
             self.swap(i, p)
             self.up(p)
         
     def down(self, i: int):
-        if i >= self.size:
-            return
+        if i >= self.size: return
         right = self.right(i)
         if right < self.size and self.data[i] > self.data[right]:
-                self.swap(i, right)
-                self.down(right)
-                return
+            self.swap(i, right)
+            self.down(right)
+            return
         left = self.left(i)
         if left < self.size and self.data[i] > self.data[left]:
             self.swap(i, left)
@@ -44,8 +42,7 @@ class MinHeap:
         self.up(i)
 
     def pop(self) -> int:
-        if self.size <= 0:
-            raise IndexError("Empty heap")
+        if self.size <= 0: raise IndexError("Empty heap")
         root = self.data[0]
         self.size -= 1
         self.data[0] = self.data[self.size]
@@ -53,6 +50,5 @@ class MinHeap:
         return root
 
     def peek(self) -> int:
-        if self.size <= 0:
-            raise IndexError("Empty heap")
+        if self.size <= 0: raise IndexError("Empty heap")
         return self.data[0]
