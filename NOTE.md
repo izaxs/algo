@@ -69,4 +69,8 @@
         <td>Range lower bound not correct as processed</td>
         <td>1</td>
     </tr>
+    <tr>
+        <td>Python multiple assignment order</td>
+        <td>1</td>
+    </tr>
 </table>
