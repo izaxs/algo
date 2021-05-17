@@ -6,7 +6,7 @@ class Solution:
         for w1, w2 in zip(words, words[1:]):
             i, minLen, isSmaller = 0, min(len(w1), len(w2)), False
             while i < minLen:
-                cmp = orderMap[w2[i]] - orderMap[w1[i]]
+                cmp = orderMap[w1[i]] - orderMap[w2[i]]
                 if cmp == 0:
                     i += 1
                     continue
