@@ -1,3 +1,7 @@
+# Leetcode Solution & Algorithm Implementation
+
+Algorithms & data structures implemented in multiple languages, mostly for LeetCode
+
 # Prerequisite
 ## Based on the language of choice:
 
