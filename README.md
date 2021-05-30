@@ -1,4 +1,4 @@
-# Leetcode Solution & Algorithm Implementation
+# LeetCode Solution & Algorithm Implementation
 
 Algorithms & data structures implemented in multiple languages, mostly for LeetCode
 
