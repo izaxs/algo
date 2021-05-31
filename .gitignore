@@ -6,7 +6,7 @@ obj
 *.app
 
 # VSCode settings
-.vscode/settings.json
+# .vscode/settings.json
 
 # Python
 __pycache__

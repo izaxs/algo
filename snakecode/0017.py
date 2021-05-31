@@ -1,10 +1,8 @@
-from typing import List
-
 class Solution:
 
     pad = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
 
-    def letterCombinations(self, digits: str) -> List[str]:
+    def letterCombinations(self, digits: str) -> list[str]:
         res = []
         if not digits:
             return res

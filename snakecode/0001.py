@@ -1,6 +1,4 @@
-from typing import List
-
-def twoSum(nums: List[int], target: int) -> List[int]:
+def twoSum(nums: list[int], target: int) -> list[int]:
     want = {}
     for i, v in enumerate(nums):
         if v not in want:

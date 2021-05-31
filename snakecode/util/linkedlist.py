@@ -1,5 +1,3 @@
-from typing import List
-
 class ListNode:
     ''' Node for singly-linked list '''
     def __init__(self, val: int = 0, next = None):
@@ -9,7 +7,7 @@ class ListNode:
     def __str__(self):
         return str(listize(self))
         
-def linkerize(nums: List) -> ListNode:
+def linkerize(nums: list) -> ListNode:
     ''' Convert Python list to singly-linked list '''
     fake = ListNode()
     pre = fake
@@ -18,7 +16,7 @@ def linkerize(nums: List) -> ListNode:
         pre = pre.next
     return fake.next
 
-def listize(head: ListNode) -> List:
+def listize(head: ListNode) -> list:
     ''' Convert singly-linked list to Python list '''
     result = []
     while head:

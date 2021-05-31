@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    def merge(self, intervals: list[list[int]]) -> list[list[int]]:
         intervals.sort(key=lambda x: (x[0], x[1]))
         merged = []
         for i in intervals:

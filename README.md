@@ -9,7 +9,7 @@ Find them in ```/archived```
 # Prerequisite
 ## Based on the language of choice:
 
-Python: Python 3.7+
+Python: Python 3.9+
 
 Go: 1.16+
 

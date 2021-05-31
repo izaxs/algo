@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         table = {}
         for s in strs:
             ss = tuple(sorted(s))

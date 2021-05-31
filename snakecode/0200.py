@@ -1,8 +1,6 @@
-from typing import List
-
 class Solution:
     dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid: list[list[str]]) -> int:
         self.grid = grid
         self.xLen, self.yLen = len(grid), len(grid[0])
         self.marked = [[False] * len(line) for line in grid]

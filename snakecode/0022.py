@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution3:
-    def generateParenthesis(self, n: int) -> List[str]:
+    def generateParenthesis(self, n: int) -> list[str]:
         def generate(p, left, right):
             if right >= left >= 0:
                 if not right:
@@ -21,14 +19,14 @@ class Solution2:
 
 
 class Solution1:
-    def generateParenthesis(self, n: int) -> List[str]:
+    def generateParenthesis(self, n: int) -> list[str]:
         if n <= 0:
             return []
         res = ['']
         res = self.helper(res, n, 0, True)
         return res
 
-    def helper(self, res: List[str], n: int, remain: int, add: bool) -> List[str]:
+    def helper(self, res: List[str], n: int, remain: int, add: bool) -> list[str]:
         if n == 0 and remain == 0 and add: # End of recursion
             return res
         if (add and n == 0) or (not add and remain == 0): # Reject two cases
