@@ -26,7 +26,7 @@ class Solution1:
         res = self.helper(res, n, 0, True)
         return res
 
-    def helper(self, res: List[str], n: int, remain: int, add: bool) -> list[str]:
+    def helper(self, res: list[str], n: int, remain: int, add: bool) -> list[str]:
         if n == 0 and remain == 0 and add: # End of recursion
             return res
         if (add and n == 0) or (not add and remain == 0): # Reject two cases
