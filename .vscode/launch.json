@@ -15,7 +15,7 @@
             "name": "GDB: Debug leetcode active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/pluscode/bin/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/archived/pluscode/bin/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -44,7 +44,7 @@
             "name": "LLDB: Debug leetcode active file",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/pluscode/bin/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/archived/pluscode/bin/${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "C/C++: build leetcode solution"

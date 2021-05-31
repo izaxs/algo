@@ -3,7 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/pluscode/util/include"
+                "${workspaceFolder}/archived/pluscode/util/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
@@ -14,7 +14,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/pluscode/util/include"
+                "${workspaceFolder}/archived/pluscode/util/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
