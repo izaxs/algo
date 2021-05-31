@@ -1,6 +1,10 @@
-# LeetCode Solution & Algorithm Implementation
+# LeetCode Python Solutions
 
-Algorithms & data structures implemented in multiple languages, mostly for LeetCode
+Find them in ```/snakecode```
+
+# Other Language Solutions
+
+Find them in ```/archived```
 
 # Prerequisite
 ## Based on the language of choice:
