@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Index forget to + or -</td>
