@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pythonPath": "~/.local/bin/python",
     "python.formatting.provider": "black",
     "python.analysis.extraPaths": ["${workspaceFolder}/snakecode"],
     "files.associations": {
