@@ -6,12 +6,16 @@
         <td>Frequency</td>
     </tr>
     <tr>
+        <td>Wrong variable name</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Index & offset target wrong</td>
         <td>3</td>
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>3</td>
+        <td>4</td>
     </tr>
     <tr>
         <td>Index forget to + or -</td>
