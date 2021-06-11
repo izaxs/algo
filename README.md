@@ -2,19 +2,20 @@
 
 Find them in ```/snakecode```
 
-# Other Language Solutions
+# Other Archived Language Solutions
 
 Find them in ```/.archived```
 
-# Prerequisite
-## Based on the language of choice:
+# Language Prerequisite
 
 Python: Python 3.9+
 
+## Archived Solution Languages
 Go: 1.16+
 
 C++: Compiler that supports C++17
 
+## Editor
 VSCode with ```[Go | Python | C/C++]``` extension is recommended for debugging
 
 ## Linux Debian
@@ -32,10 +33,10 @@ brew install python
 Install CodeLLDB in VSCode
 
 # How to Code
-## LeetCode
-### Python Solutions
+## LeetCode Python Solutions
 Add Python solution file as ```snakecode/[0-9]{4}.py```
 
+## Archived
 ### Go Solutions
 Add Go solution file as ```.archived/gocode/h??/[0-9]{4}.go```
 
@@ -62,9 +63,10 @@ int main() {
 ```
 
 # Build & Run
-### Python
-Just run Python file in snakecode
+## Python
+Just F5 run active Python files in snakecode
 
+## Archived
 ### Go
 Run the classic test command for each Go test file, eg.
 
@@ -79,25 +81,25 @@ make
 bin/0001
 ```
 
-# Debug C++ in VSCode
-## GDB
+## Debug C++ in VSCode
+### GDB
 Select "GDB: Debug leetcode active file" in debug options
 
-## LLDB
+### LLDB
 Select "LLDB: Debug leetcode active file" in debug options
 
-# Other Commands for C++
+## Other Commands for C++
 ## Call help for Makefile
 ```bash
 make help
 ```
 
-## Check all project related files in project
+### Check all project related files in project
 ```bash
 make check
 ```
 
-## Clean up binary files
+### Clean up binary files
 ```bash
 make clean
 ```
