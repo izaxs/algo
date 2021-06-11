@@ -26,6 +26,10 @@
         <td>1</td>
     </tr>
     <tr>
+        <td>Forget to break or continue in loop</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Forget to remove item from container after processing</td>
         <td>1</td>
     </tr>
