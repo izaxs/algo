@@ -12,23 +12,23 @@ class DLList:
         self._guard = Node()
         self._guard.pre = self._guard.next = self._guard
         
-    def pushHead(self, node: Node):
-        firstNode = self._guard.next
-        firstNode.pre, self._guard.next = node, node
-        node.pre, node.next = self._guard, firstNode
+    def headify(self, node: Node):
+        node.pre = self._guard
+        node.next = self._guard.next
+        node.next.pre = node
+        self._guard.next = node
         self.size += 1
         
-    def pop(self, node: Node):
-        preNode, nextNode = node.pre, node.next
-        node.pre = node.next = None
-        preNode.next, nextNode.pre = nextNode, preNode
+    def pop(self, node: Node = None):
+        if self.size == 0:
+            return
+        if not node:
+            node = self._guard.pre
+        node.pre.next = node.next
+        node.next.pre = node.pre
+        node.pre, node.next = None, None
         self.size -= 1
-    
-    def popTail(self) -> Node:
-        tailNode = self._guard.pre
-        if tailNode is not self._guard:
-            self.pop(tailNode)
-            return tailNode
+        return node
 
 class LFUCache:
 
@@ -40,56 +40,58 @@ class LFUCache:
         self._minFreq = 1
 
     def get(self, key: int) -> int:
-        '''
-        Pop Node out, update internal min freq.\n
-        Put Node into a higher freq group
-        '''
+        '''Get Node, update Cache and Node status'''
         if key not in self._nodes:
             return -1
         node = self._nodes[key]
-        group = self._groups[node.freq]
-        group.pop(node)
-        if node.freq == self._minFreq and group.size == 0:
-            self._minFreq += 1
-        self._tapin(node)
+        self._update(node)
         return node.val
 
     def put(self, key: int, value: int):
         '''
-        If key is new and size reaches capacity, kick out a Node first.\n
-        Create or update the Node and put it into a frequency group
+        If it's a existing Node, update Cache and Node.\n
+        If it's a new Node and there're space, update Cache.\n
+        If it's a new Node but no space, kick out one Node, update Cache
         '''
         if self._cap == 0:
             return
-        if key not in self._nodes:
-            node = Node(key, value)
-            if self._size >= self._cap:
-                self._kickout()
-            else:
-                self._size += 1
-            self._tapin(node)
-            self._nodes[key] = node
-        else:
+        if key in self._nodes:
             node = self._nodes[key]
             node.val = value
-            group = self._groups[node.freq]
-            group.pop(node)
-            self._tapin(node)
-
-    def _tapin(self, node: Node): 
-        ''' Given an isolated Node, tap it into a group list '''
+        else:
+            node = Node(key, value)
+            if self._size < self._cap:
+                self._addNew(node)
+            else:
+                self._addNew(node, kick=True)
+        self._update(node)
+                
+    def _update(self, node: Node): 
+        '''Given a Node in cache, update it's freq and cache status'''
+        group = self._groups[node.freq]
+        group.pop(node)
+        groupNext = self._getGroup(node.freq+1)
+        groupNext.headify(node)
+        if node.freq == self._minFreq and group.size == 0:
+            self._minFreq = node.freq + 1
         node.freq += 1
-        self._minFreq = min(node.freq, self._minFreq)
-        groupNext = self._getGroup(node.freq)
-        groupNext.pushHead(node)
-
-    def _kickout(self, newFreq: int = 1):
-        ''' Simply kickout the least frequently used Node '''
-        group = self._getGroup(self._minFreq)
-        node = group.popTail()
-        if node:
-            self._minFreq = newFreq
-            self._nodes.pop(node.key)
+    
+    def _addNew(self, node: Node, kick: bool = False):
+        '''
+        Simply kickout the least frequently used Node from frequency group and node map\n
+        Replace it with a new Node, set cache min frequency to 1
+        '''
+        if self._cap == 0:
+            return
+        if kick:
+            group = self._getGroup(self._minFreq)
+            badNode = group.pop()
+            self._nodes.pop(badNode.key)
+            self._size -= 1
+        self._minFreq = node.freq = 0
+        self._getGroup(node.freq).headify(node)
+        self._nodes[node.key] = node
+        self._size += 1
     
     def _getGroup(self, freq: int) -> DLList:
         return self._groups.setdefault(freq, DLList())
@@ -107,9 +109,9 @@ def test(actions: list[str], val: list):
             result.append((i, v, cache.get(v[0])))
     print(result)
 
-# actions = ["LFUCache","put","put","get","put","get","get","put","get","get","get"]
-# values = [[2],[1,1],[2,2],[1],[3,3],[2],[3],[4,4],[1],[3],[4]]
-# test(actions, values)
+actions = ["LFUCache","put","put","get","put","get","get","put","get","get","get"]
+values = [[2],[1,1],[2,2],[1],[3,3],[2],[3],[4,4],[1],[3],[4]]
+test(actions, values)
 
 # actions2 = ["LFUCache","put","put","get","get","get","put","put","get","get","get","get"]
 # values2 = [[3],[2,2],[1,1],[2],[1],[2],[3,3],[4,4],[3],[2],[1],[4]]
