@@ -6,7 +6,19 @@
         <td>Frequency</td>
     </tr>
     <tr>
+        <td>Forget empty input case</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Wrong variable name</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Local variable not initialized</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Incorrectly assigned local var</td>
         <td>1</td>
     </tr>
     <tr>
@@ -22,7 +34,15 @@
         <td>4</td>
     </tr>
     <tr>
+        <td>If condition wrong</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Forget to init state before loop</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Loop condition not satisfied unexpectly</td>
         <td>1</td>
     </tr>
     <tr>
@@ -31,6 +51,10 @@
     </tr>
     <tr>
         <td>Forget to break or continue in loop</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Range lower bound not correct as processed</td>
         <td>1</td>
     </tr>
     <tr>
@@ -46,31 +70,7 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Local variable not initialized</td>
-        <td>1</td>
-    </tr>
-    <tr>
         <td>Items in container changed unexpectly</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Loop condition not satisfied unexpectly</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Incorrectly assigned local var</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Char to Int forget to convert</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Forget empty input case</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>If condition wrong</td>
         <td>1</td>
     </tr>
     <tr>
@@ -78,11 +78,11 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>[] to String wrong conversion</td>
+        <td>Char to Int forget to convert</td>
         <td>1</td>
     </tr>
     <tr>
-        <td>Range lower bound not correct as processed</td>
+        <td>[] to String wrong conversion</td>
         <td>1</td>
     </tr>
     <tr>
