@@ -34,6 +34,10 @@
         <td>1</td>
     </tr>
     <tr>
+        <td>Forget to update state machine state, for example, counter</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Forget to check container when try to use item from it</td>
         <td>1</td>
     </tr>
