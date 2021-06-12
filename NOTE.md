@@ -22,6 +22,10 @@
         <td>4</td>
     </tr>
     <tr>
+        <td>Forget to init state before loop</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Forget to add item to container in loop</td>
         <td>1</td>
     </tr>
