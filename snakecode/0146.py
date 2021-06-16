@@ -1,8 +1,9 @@
 class Node:
-    def __init__(self, key: int, val: int, preNode = None, nextNode = None):
+    def __init__(self, key: int, val: int, preNode=None, nextNode=None):
         self.key = key
         self.val = val
         self.pre, self.next = preNode, nextNode
+
 
 class LRUCache:
     def __init__(self, capacity: int):
@@ -13,7 +14,8 @@ class LRUCache:
 
     def get(self, key: int) -> int:
         curNode = self.lookup.get(key)
-        if not curNode: return -1
+        if not curNode:
+            return -1
         self._remove(curNode)
         self._add(curNode)
         return curNode.val
@@ -51,6 +53,7 @@ class LRUCache:
             res += f'{curNode.key}:{curNode.val} '
             curNode = curNode.next
         return res
+
 
 # Your LRUCache object will be instantiated and called as such:
 def test1():

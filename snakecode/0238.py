@@ -8,4 +8,4 @@ class Solution:
         for i in range(len(products)):
             products[i] *= it
             it *= nums[i]
-        return products;
+        return products

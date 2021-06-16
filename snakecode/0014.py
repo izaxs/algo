@@ -8,4 +8,3 @@ class Solution:
                 if base[i] != s[i]:
                     return base[:i]
         return base
-        

@@ -2,7 +2,7 @@ class RandomizedSet:
     def __init__(self):
         self.lookup = {}
         self.nums = []
-        
+
     def insert(self, val: int) -> bool:
         addr = len(self.nums)
         realAddr = self.lookup.setdefault(val, addr)
@@ -12,7 +12,7 @@ class RandomizedSet:
 
     def remove(self, val: int) -> bool:
         addr = self.lookup.pop(val, None)
-        if addr == None: return False
+        if addr is None: return False
         mover = self.nums.pop()
         if addr < len(self.nums):
             self.lookup[mover] = addr

@@ -12,8 +12,8 @@ class Solution:
                 res = cur
             center += 1
         return s[res[0]:res[1] + 1]
-    
-    def expand(self, s: str, lo: int, hi: int) -> tuple(int, int):
+
+    def expand(self, s: str, lo: int, hi: int) -> tuple[int, int]:
         while lo >= 0 and hi < len(s) and s[lo] == s[hi]:
             lo, hi = lo - 1, hi + 1
-        return (lo + 1, hi - 1) # return last valid indexes
+        return (lo + 1, hi - 1)  # return last valid indexes

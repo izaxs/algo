@@ -6,19 +6,18 @@ class MinHeap:
     def __init__(self):
         self.size = 0
         self.data = []
-    
+
     def parent(self, i: int) -> int:
         if i < 0 or i >= self.size: raise IndexError(MinHeap.OutOfRangeMsg)
         return (i-1)//2
-    
+
     def left(self, i: int) -> int:
         if i < 0 or i >= self.size: raise IndexError(MinHeap.OutOfRangeMsg)
         return i*2+1
-    
+
     def right(self, i: int) -> int:
         if i < 0 or i >= self.size: raise IndexError(MinHeap.OutOfRangeMsg)
         return i*2+1
-        
 
     def swap(self, i: int, j: int):
         self.data[i], self.data[j] = self.data[j], self.data[i]
@@ -29,7 +28,7 @@ class MinHeap:
         if self.data[i] < self.data[p]:
             self.swap(i, p)
             self.up(p)
-        
+
     def down(self, i: int):
         if i >= self.size: return
         right = self.right(i)

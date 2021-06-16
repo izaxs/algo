@@ -8,12 +8,16 @@ class Solution3:
                 yield from generate(p + ')', left, right-1)
         return list(generate('', n, n))
 
+
 class Solution2:
     def generateParenthesis(self, n):
         def generate(p, left, right, parens=[]):
-            if left:         generate(p + '(', left-1, right)
-            if right > left: generate(p + ')', left, right-1)
-            if not right:    parens += p,
+            if left:
+                generate(p + '(', left-1, right)
+            if right > left:
+                generate(p + ')', left, right-1)
+            if not right:
+                parens += p,
             return parens
         return generate('', n, n)
 
@@ -27,9 +31,9 @@ class Solution1:
         return res
 
     def helper(self, res: list[str], n: int, remain: int, add: bool) -> list[str]:
-        if n == 0 and remain == 0 and add: # End of recursion
+        if n == 0 and remain == 0 and add:  # End of recursion
             return res
-        if (add and n == 0) or (not add and remain == 0): # Reject two cases
+        if (add and n == 0) or (not add and remain == 0):  # Reject two cases
             return []
         curRes = []
         for s in res:

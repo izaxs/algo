@@ -6,7 +6,7 @@ class ListNode:
 
     def __str__(self):
         return str(listize(self))
-        
+
 def linkerize(nums: list) -> ListNode:
     ''' Convert Python list to singly-linked list '''
     fake = ListNode()
