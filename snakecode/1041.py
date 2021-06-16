@@ -13,6 +13,6 @@ class Solution:
             dirIndex %= 4
         return coordinate == complex(0, 0) or dirIndex != 0
 
-s = Solution()     
+s = Solution()
 dirs = "GGLLGG"
 print(s.isRobotBounded(dirs))

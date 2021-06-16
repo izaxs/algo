@@ -1,7 +1,7 @@
 class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
         openCount, closeCount = 0, 0
-        for c in s: 
+        for c in s:
             closeCount += int(c == ')')
         result = ''
         for c in s:
@@ -17,18 +17,18 @@ class Solution:
 
     def minRemoveToMakeValid2(self, s: str) -> str:
         openCount, closeCount = 0, 0
-        for c in s: 
+        for c in s:
             closeCount += int(c == ')')
         result = list(s)
         for i, c in enumerate(s):
             if c == '(':
-                if openCount == closeCount: 
+                if openCount == closeCount:
                     result[i] = ''
                     continue
                 openCount += 1
             elif c == ')':
                 closeCount -= 1
-                if openCount == 0: 
+                if openCount == 0:
                     result[i] = ''
                     continue
                 openCount -= 1

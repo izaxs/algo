@@ -1,6 +1,6 @@
 class Solution:
     def subarraySum(self, nums: list[int], k: int) -> int:
-        expects: dict[int, int] = {k: 1} # {expectedSum: countMatched}
+        expects: dict[int, int] = {k: 1}  # {expectedSum: countMatched}
         curSum: int = 0
         result: int = 0
         for v in nums:
@@ -11,7 +11,7 @@ class Solution:
         return result
 
     def subarraySum2(self, nums: list[int], k: int) -> int:
-        from collections import Counter 
+        from collections import Counter
         counter = Counter({0: 1})
         curSum = result = 0
         for v in nums:

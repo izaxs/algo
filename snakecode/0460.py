@@ -1,25 +1,27 @@
+from typing import Optional
+
 class Node:
     def __init__(self, key: int = 0, val: int = 0):
         self.key: int = key
         self.val: int = val
         self.freq: int = 0
-        self.pre: Node = None
-        self.next: Node = None
-    
+        self.pre: Optional[Node] = None
+        self.next: Optional[Node] = None
+
 class DLList:
     def __init__(self):
         self.size = 0
         self._guard = Node()
         self._guard.pre = self._guard.next = self._guard
-        
-    def headify(self, node: Node):
+
+    def headify(self, node: Optional[Node]):
         node.pre = self._guard
         node.next = self._guard.next
         node.next.pre = node
         self._guard.next = node
         self.size += 1
-        
-    def pop(self, node: Node = None):
+
+    def pop(self, node: Optional[Node] = None):
         if self.size == 0:
             return
         if not node:
@@ -65,8 +67,8 @@ class LFUCache:
             else:
                 self._addNew(node, kick=True)
         self._update(node)
-                
-    def _update(self, node: Node): 
+
+    def _update(self, node: Node):
         '''Given a Node in cache, update it's freq and cache status'''
         group = self._groups[node.freq]
         group.pop(node)
@@ -75,7 +77,7 @@ class LFUCache:
         if node.freq == self._minFreq and group.size == 0:
             self._minFreq = node.freq + 1
         node.freq += 1
-    
+
     def _addNew(self, node: Node, kick: bool = False):
         '''
         Simply kickout the least frequently used Node from frequency group and node map\n
@@ -92,12 +94,13 @@ class LFUCache:
         self._getGroup(node.freq).headify(node)
         self._nodes[node.key] = node
         self._size += 1
-    
+
     def _getGroup(self, freq: int) -> DLList:
         return self._groups.setdefault(freq, DLList())
 
 
 def test(actions: list[str], val: list):
+    cache: Optional[LFUCache] = None
     result: list = []
     for i, v in zip(actions, val):
         if i == 'LFUCache':

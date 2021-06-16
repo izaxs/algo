@@ -1,7 +1,7 @@
 class Solution2:
     def compress(self, chars: list[str]) -> int:
         # res: the current result group head; cur: the index of first char of current group
-        i, res, cur = 0, 0, 0  
+        i, res, cur = 0, 0, 0
         while i < len(chars):
             if i + 1 == len(chars) or chars[i] != chars[i + 1]:
                 chars[res] = chars[cur]
@@ -16,7 +16,7 @@ class Solution2:
 
 class Solution1:
     def compress(self, chars: list[str]) -> int:
-        i, head, curChar, curLen = 0, 0, None, 0
+        i, head, curChar, curLen = 0, 0, '', 0
         while i <= len(chars):
             if i == len(chars) or (curChar and curChar != chars[i]):
                 head += self.setLen(chars, head, curChar, curLen)
@@ -31,7 +31,7 @@ class Solution1:
             i += 1
         return head
 
-    def setLen(self, chars: list[int], head: int, curChar: str, curLen: int) -> int:
+    def setLen(self, chars: list[str], head: int, curChar: str, curLen: int) -> int:
         chars[head] = curChar
         if curLen == 1:
             return 1
