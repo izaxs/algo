@@ -65,5 +65,8 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "unordered_set": "cpp"
-    }
+    },
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
 }
