@@ -3,7 +3,7 @@ class Solution:
         # return self.helper(s, 0, len(s)-1, 1)
         return self.helper2(s, 0, len(s)-1, 1)
 
-    def helper(self, s: str, lo: int, hi: int, k: int):
+    def helper(self, s: str, lo: int, hi: int, k: int) -> bool:
         if lo >= hi:
             return True
         if s[lo] != s[hi]:
@@ -14,7 +14,7 @@ class Solution:
                 return False
         return self.helper(s, lo+1, hi-1, k)
 
-    def helper2(self, s: str, lo: int, hi: int, k: int):
+    def helper2(self, s: str, lo: int, hi: int, k: int) -> bool:
         while lo < hi:
             if s[lo] == s[hi]:
                 lo += 1
