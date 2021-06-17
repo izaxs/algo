@@ -4,8 +4,8 @@ class MinHeap:
     EmptyHeapMsg = "Empty Heap"
 
     def __init__(self):
-        self.size = 0
-        self.data = []
+        self.size: int = 0
+        self.data: list[int] = []
 
     def parent(self, i: int) -> int:
         if i < 0 or i >= self.size: raise IndexError(MinHeap.OutOfRangeMsg)

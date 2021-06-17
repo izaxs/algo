@@ -3,7 +3,8 @@ import heapq
 class Solution:
     def minMeetingRooms(self, intervals: list[list[int]]) -> int:
         intervals.sort(key=lambda x: (x[0], x[1]))
-        using, maxRooms = [], 0
+        using: list[int] = []
+        maxRooms = 0
         for i in intervals:
             while using and i[0] >= using[0]:
                 heapq.heappop(using)

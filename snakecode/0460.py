@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Any
 
 class Node:
     def __init__(self, key: int = 0, val: int = 0):
@@ -15,8 +15,10 @@ class DLList:
         self._guard.pre = self._guard.next = self._guard
 
     def headify(self, node: Optional[Node]):
+        assert node
         node.pre = self._guard
         node.next = self._guard.next
+        assert node.next is not None
         node.next.pre = node
         self._guard.next = node
         self.size += 1
@@ -26,6 +28,7 @@ class DLList:
             return
         if not node:
             node = self._guard.pre
+        assert node and node.next and node.pre
         node.pre.next = node.next
         node.next.pre = node.pre
         node.pre, node.next = None, None
@@ -88,6 +91,7 @@ class LFUCache:
         if kick:
             group = self._getGroup(self._minFreq)
             badNode = group.pop()
+            assert badNode
             self._nodes.pop(badNode.key)
             self._size -= 1
         self._minFreq = node.freq = 0
@@ -99,16 +103,18 @@ class LFUCache:
         return self._groups.setdefault(freq, DLList())
 
 
-def test(actions: list[str], val: list):
+def test(actions: list[str], val: list[list[int]]):
     cache: Optional[LFUCache] = None
-    result: list = []
+    result: list[Optional[Any]] = []
     for i, v in zip(actions, val):
         if i == 'LFUCache':
             cache = LFUCache(v[0])
             result.append(None)
         elif i == 'put':
+            assert cache
             result.append((i, v, cache.put(v[0], v[1])))
         elif i == 'get':
+            assert cache
             result.append((i, v, cache.get(v[0])))
     print(result)
 

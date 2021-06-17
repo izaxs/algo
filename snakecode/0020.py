@@ -1,6 +1,6 @@
 def isValid(s: str) -> bool:
     symbols = {'{': '}', '[': ']', '(': ')'}
-    stack = []
+    stack: list[str] = []
     for c in s:
         if c in symbols:
             stack.append(symbols[c])

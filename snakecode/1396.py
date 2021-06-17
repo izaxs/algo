@@ -1,8 +1,8 @@
 class UndergroundSystem:
 
     def __init__(self):
-        self.time = {} # {(startStation, endStation) : (averageTime, count)}
-        self.trip = {} # {id : (startStation, startTime)}
+        self.time: dict[tuple[str, str], tuple[float, int]] = {} # {(startStation, endStation) : (averageTime, count)}
+        self.trip: dict[int, tuple[str, int]] = {} # {id : (startStation, startTime)}
 
     def checkIn(self, id: int, stationName: str, t: int) -> None:
         self.trip[id] = (stationName, t)

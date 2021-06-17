@@ -1,7 +1,7 @@
+from typing import Optional
 from util.linkedlist import ListNode, linkerize
 
-
-def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
+def addTwoNumbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
     head = ListNode()
     pre = head
     carry = 0

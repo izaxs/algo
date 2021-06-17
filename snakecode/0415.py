@@ -1,7 +1,8 @@
 class Solution:
     def addStrings(self, num1: str, num2: str) -> str:
         i1, i2 = len(num1) - 1, len(num2) - 1
-        res, carry = [], 0
+        res: list[int] = []
+        carry: int = 0
         while i1 >= 0 or i2 >= 0:
             if i1 >= 0:
                 carry += int(num1[i1])

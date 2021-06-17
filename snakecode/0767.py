@@ -7,7 +7,8 @@ class Solution:
         freqs = Counter(S)
         pq = [(-count, char) for char, count in freqs.items()]
         heapq.heapify(pq)
-        preCount, preChar, seq = 0, '', []
+        preCount, preChar = 0, ''
+        seq: list[str] = []
         while pq:
             count, char = heapq.heappop(pq)
             seq.append(char)

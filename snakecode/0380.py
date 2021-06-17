@@ -1,7 +1,7 @@
 class RandomizedSet:
     def __init__(self):
-        self.lookup = {}
-        self.nums = []
+        self.lookup: dict[int, int] = {}
+        self.nums: list[int] = []
 
     def insert(self, val: int) -> bool:
         addr = len(self.nums)

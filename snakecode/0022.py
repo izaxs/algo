@@ -1,6 +1,9 @@
+from typing import Generator
+
+
 class Solution3:
     def generateParenthesis(self, n: int) -> list[str]:
-        def generate(p, left, right):
+        def generate(p: str, left: int, right: int) -> Generator[str, str, None]:
             if right >= left >= 0:
                 if not right:
                     yield p
@@ -10,8 +13,8 @@ class Solution3:
 
 
 class Solution2:
-    def generateParenthesis(self, n):
-        def generate(p, left, right, parens=[]):
+    def generateParenthesis(self, n: int):
+        def generate(p: str, left: int, right: int, parens: list[str] = []):
             if left:
                 generate(p + '(', left-1, right)
             if right > left:
@@ -35,7 +38,7 @@ class Solution1:
             return res
         if (add and n == 0) or (not add and remain == 0):  # Reject two cases
             return []
-        curRes = []
+        curRes: list[str] = []
         for s in res:
             if add:
                 curRes.append(s + '(')
@@ -44,7 +47,7 @@ class Solution1:
             else:
                 curRes.append(s + ')')
                 remain -= 1
-        nextRes = []
+        nextRes: list[str] = []
         res1 = self.helper(curRes, n, remain, True)
         res2 = self.helper(curRes, n, remain, False)
         nextRes.extend(res1)

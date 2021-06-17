@@ -1,6 +1,6 @@
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        table = {}
+        table: dict[tuple[str, ...], list[str]] = {}
         for s in strs:
             ss = tuple(sorted(s))
             table.setdefault(ss, []).append(s)
