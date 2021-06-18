@@ -1,4 +1,4 @@
-# Why use Python for practicing coding
+# Why choose Python for Coding Interview
 
 1. Python is less verbose, compared to Java
 2. Python standard library includes the necessary builtin algorithms and data structures like sort, heap... compared to JavaScript or Go (Generic is coming, may consider to use Go later!)
