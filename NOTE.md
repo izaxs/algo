@@ -23,7 +23,7 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>3</td>
+        <td>5</td>
     </tr>
     <tr>
         <td>Index out of range</td>
