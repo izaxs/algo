@@ -90,4 +90,5 @@ def test2():
     obj.put(4,1)
     print(obj)
 
-test2()
+if __name__ == '__main__':
+    test2()

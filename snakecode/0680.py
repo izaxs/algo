@@ -26,5 +26,6 @@ class Solution:
                 return False
         return True
 
-s = Solution()
-print(s.validPalindrome("abca"))
+if __name__ == '__main__':
+    s = Solution()
+    print(s.validPalindrome("abca"))

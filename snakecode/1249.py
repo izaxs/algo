@@ -34,7 +34,8 @@ class Solution:
                 openCount -= 1
         return ''.join(result)
 
-s = Solution()
-# r = s.minRemoveToMakeValid("lee(t(c)o)de)")
-r = s.minRemoveToMakeValid("a)b(c)d")
-print(r)
+if __name__ == '__main__':
+    s = Solution()
+    # r = s.minRemoveToMakeValid("lee(t(c)o)de)")
+    r = s.minRemoveToMakeValid("a)b(c)d")
+    print(r)

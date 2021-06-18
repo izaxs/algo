@@ -28,5 +28,6 @@ class Solution:
         self.limitInt32Tail: int = self.mod10(self.limitInt32)
         self.limitInt32Body: int = self.divide10(self.limitInt32)
 
-s = Solution()
-print(s.reverse(-10))
+if __name__ == '__main__':
+    s = Solution()
+    print(s.reverse(-10))

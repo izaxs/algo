@@ -17,5 +17,6 @@ class Solution:
                 return False
         return True
 
-s = Solution()
-s.isAlienSorted(["hello","leetcode"], "hlabcdefgijkmnopqrstuvwxyz")
+if __name__ == '__main__':
+    s = Solution()
+    s.isAlienSorted(["hello","leetcode"], "hlabcdefgijkmnopqrstuvwxyz")

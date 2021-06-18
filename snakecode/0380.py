@@ -23,8 +23,9 @@ class RandomizedSet:
         import random
         return random.choice(self.nums) if self.nums else 0
 
-s = RandomizedSet()
-s.insert(1)
-s.insert(2)
-s.remove(1)
-print(s.insert(2))
+if __name__ == '__main__':
+    s = RandomizedSet()
+    s.insert(1)
+    s.insert(2)
+    s.remove(1)
+    print(s.insert(2))

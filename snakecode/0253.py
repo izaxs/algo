@@ -32,8 +32,8 @@ class Solution2:
             maxRooms = max(maxRooms, using)
         return maxRooms
 
-
-s = Solution()
-intervals = [[0,30],[5,10],[15,20]]
-r = s.minMeetingRooms(intervals)
-print(r)
+if __name__ == '__main__':
+    s = Solution()
+    intervals = [[0,30],[5,10],[15,20]]
+    r = s.minMeetingRooms(intervals)
+    print(r)

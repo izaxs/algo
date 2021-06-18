@@ -21,7 +21,8 @@ class Solution:
             self.search(x + xx, y + yy)
         return 1
 
-s = Solution()
-grid = [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]
-n = s.numIslands(grid)
-print(n)
+if __name__ == '__main__':
+    s = Solution()
+    grid = [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]
+    n = s.numIslands(grid)
+    print(n)
