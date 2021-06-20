@@ -6,6 +6,10 @@
         <td>Frequency</td>
     </tr>
     <tr>
+        <td>Not fully understand the problem</td>
+        <td>1</td>
+    </tr>
+    <tr>
         <td>Forget empty input case</td>
         <td>1</td>
     </tr>
@@ -46,8 +50,8 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Forget to add item to container in loop</td>
-        <td>1</td>
+        <td>Forget to update item to container in loop</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>Forget to break or continue in loop</td>
