@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>5</td>
+        <td>6</td>
     </tr>
     <tr>
         <td>Index out of range</td>
@@ -46,8 +46,8 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Loop condition not satisfied unexpectly</td>
-        <td>1</td>
+        <td>Loop or recursion condition not satisfied unexpectly</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Forget to update variable in loop</td>
