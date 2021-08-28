@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td>Wrong variable name</td>
-        <td>1</td>
+        <td>4</td>
     </tr>
     <tr>
         <td>Local variable not initialized</td>
