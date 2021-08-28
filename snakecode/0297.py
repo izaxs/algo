@@ -1,4 +1,5 @@
 from typing import Any
+from collections import deque
 
 # Definition for a binary tree node.
 class TreeNode():
@@ -18,16 +19,16 @@ class Codec:
         return res
 
     def deserialize(self, data: str):
-        def decode(strData: str) -> Any:
-            nonlocal data
-            data = strData
-            if data[0] == '#':
-                return None
-            root = TreeNode(int(data[:data.find(',')]))
-            root.left = decode(data[data.find(',')+1:])
-            root.right = decode(data[data.find(',')+1:])
+        def decode(data: deque[str]) -> Any:
+            val = data.popleft()
+            if val == '#':
+                return
+            root = TreeNode(int(val))
+            root.left = decode(data)
+            root.right = decode(data)
             return root
-        return decode(data)
+        queue = deque(data.split(','))
+        return decode(queue)
 
 n1 = TreeNode(1)
 n2 = TreeNode(2)
