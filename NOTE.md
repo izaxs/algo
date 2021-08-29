@@ -10,12 +10,12 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Forget empty input case</td>
-        <td>1</td>
+        <td>Forget empty input case or shortcut case</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>Wrong variable name</td>
-        <td>4</td>
+        <td>6</td>
     </tr>
     <tr>
         <td>Local variable not initialized</td>
@@ -27,11 +27,11 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>6</td>
+        <td>7</td>
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>4</td>
+        <td>5</td>
     </tr>
     <tr>
         <td>Index forget to + or -</td>
@@ -47,7 +47,7 @@
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
-        <td>3</td>
+        <td>4</td>
     </tr>
     <tr>
         <td>Forget to update variable in loop</td>
