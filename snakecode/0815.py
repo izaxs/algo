@@ -1,5 +1,37 @@
+from collections import deque
+
+class BusStop:
+    def __init__(self) -> None:
+        self.neighbors: set[int] = set()
+
 class Solution:
     def numBusesToDestination(self, routes: list[list[int]], source: int, target: int) -> int:
+        graph: dict[int, BusStop] = {}
+        for busRoute in routes: # Turns out time consuming
+            for i in range(len(busRoute)):
+                for j in range(i+1, len(busRoute)):
+                    stop1 = graph.setdefault(busRoute[i], BusStop())
+                    stop2 = graph.setdefault(busRoute[j], BusStop())
+                    stop1.neighbors.add(busRoute[j])
+                    stop2.neighbors.add(busRoute[i])
+        toVisit: deque[int] = deque([source])
+        visited: set[int] = set()
+        stopCounts = 0
+        while toVisit:
+            roundLimit = len(toVisit)
+            while roundLimit:
+                curStop = toVisit.popleft()
+                if curStop == target:
+                    return stopCounts
+                visited.add(curStop)
+                for stop in graph[curStop].neighbors:
+                    if stop not in visited:
+                        toVisit.append(stop)
+                roundLimit -= 1
+            stopCounts += 1
+        return -1
+
+    def numBusesToDestination2(self, routes: list[list[int]], source: int, target: int) -> int:
         # routes: Bus# -> Stop#
         busAtStop: dict[int, list[int]] = {} # Stop# -> list[Bus#]
         for bus, stops in enumerate(routes):
@@ -12,12 +44,12 @@ class Solution:
             return 0
         busCount = 0
         visitedStop: set[int] = set()
-        curStops = [source]
-        while curStops:
+        toVisit = [source]
+        while toVisit:
             nextStops: list[int] = []
             busCount += 1
-            while curStops:
-                visitNow = curStops.pop()
+            while toVisit:
+                visitNow = toVisit.pop()
                 busses = busAtStop[visitNow]
                 for bus in busses:
                     for stop in routes[bus]:
@@ -26,8 +58,12 @@ class Solution:
                         if stop not in visitedStop:
                             visitedStop.add(stop)
                             nextStops.append(stop)
-            curStops = nextStops
+            toVisit = nextStops
         return -1
+
+routes = [[1,2,7],[3,6,7]]
+stopCount = Solution().numBusesToDestination(routes, 1, 6)
+print(stopCount)
 
 # Mistakes:
 # 1. looped in bus for stops, should use nested loop

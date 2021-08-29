@@ -22,12 +22,12 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Incorrectly assigned local var</td>
-        <td>1</td>
+        <td>Incorrectly assigned local var or mixed index with value</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>7</td>
+        <td>8</td>
     </tr>
     <tr>
         <td>Index out of range</td>
@@ -35,7 +35,7 @@
     </tr>
     <tr>
         <td>Index forget to + or -</td>
-        <td>4</td>
+        <td>6</td>
     </tr>
     <tr>
         <td>If condition wrong</td>
@@ -50,8 +50,8 @@
         <td>4</td>
     </tr>
     <tr>
-        <td>Forget to update variable in loop</td>
-        <td>4</td>
+        <td>Forget to update variable or container in loop</td>
+        <td>5</td>
     </tr>
     <tr>
         <td>Forget to break or continue in loop</td>
