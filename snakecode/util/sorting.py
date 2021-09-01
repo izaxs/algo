@@ -39,7 +39,7 @@ def quickSort(nums: list[int], lo: int = 0, hi: int = -1):
     quickSort(nums, pivot+1, hi)
 
 def mergeSort(nums: list[int]):
-    
+    pass
 
 if __name__ == '__main__':
     unsorted = [4, 13, 8, 10, 6, 0, 7, 5, 9, 4, 1, 14, 8, 2]
