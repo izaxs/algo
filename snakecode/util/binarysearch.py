@@ -24,7 +24,7 @@ def bisect_any(nums: list[int], target: int, lo: int = 0, hi: int = -1) -> int:
         if nums[mid] < target: lo = mid + 1
         elif nums[mid] > target: hi = mid
         else:
-            return lo
+            return mid
     return lo
 
 def bisect_prox(nums: list[int], target: int, lo: int = 0, hi: int = -1) -> tuple[int, int]:

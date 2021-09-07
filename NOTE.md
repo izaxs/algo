@@ -27,15 +27,15 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>9</td>
+        <td>10</td>
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>5</td>
+        <td>6</td>
     </tr>
     <tr>
         <td>Index forget to + or -</td>
-        <td>6</td>
+        <td>7</td>
     </tr>
     <tr>
         <td>If condition wrong</td>
@@ -51,7 +51,7 @@
     </tr>
     <tr>
         <td>Forget to update variable or container in loop</td>
-        <td>5</td>
+        <td>6</td>
     </tr>
     <tr>
         <td>Forget to break or continue in loop</td>
@@ -75,7 +75,7 @@
     </tr>
     <tr>
         <td>Double execution</td>
-        <td>1</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>Char to Int forget to convert</td>
@@ -87,6 +87,10 @@
     </tr>
     <tr>
         <td>Python multiple assignment order</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Forget to add inheritance</td>
         <td>1</td>
     </tr>
 </table>
