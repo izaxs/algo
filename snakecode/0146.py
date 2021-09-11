@@ -43,7 +43,6 @@ class LRUCache:
         node.pre, node.next = self.guard, self.guard.next
         assert self.guard.next
         self.guard.next.pre, self.guard.next = node, node
-        pass
 
     def _remove(self, node: Optional[Node]) -> Optional[Node]:
         if node is None:
