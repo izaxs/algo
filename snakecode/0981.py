@@ -33,6 +33,30 @@ class TimeMap:
                 hi = mid
         return lo
 
+class TimeMap2:
+
+    def __init__(self):
+        self.KV: dict[str, list[tuple[str, int]]] = {}
+
+    def set(self, key: str, value: str, timestamp: int) -> None:
+        chain = self.KV.setdefault(key, [])
+        chain.append((value, timestamp))
+
+    def get(self, key: str, timestamp: int) -> str:
+        chain = self.KV.get(key, [])
+        if not chain: return ''
+        lo = 0
+        hi = len(chain)
+        while lo < hi:
+            mid: int = (lo+hi)//2
+            if chain[mid][1] <= timestamp:
+                lo = mid+1
+            else:
+                hi = mid
+        if lo == 0:
+            return ''
+        return chain[lo-1][0]
+
 if __name__ == '__main__':
     kv = TimeMap()
     kv.set('love', 'high', 10)
