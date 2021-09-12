@@ -51,7 +51,7 @@
     </tr>
     <tr>
         <td>Forget to update variable or container in loop</td>
-        <td>6</td>
+        <td>7</td>
     </tr>
     <tr>
         <td>Forget to break or continue in loop</td>
