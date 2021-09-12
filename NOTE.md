@@ -31,7 +31,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>6</td>
+        <td>7</td>
     </tr>
     <tr>
         <td>Index forget to + or -</td>
@@ -39,10 +39,14 @@
     </tr>
     <tr>
         <td>If condition wrong</td>
-        <td>1</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>Forget to init state before loop</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Recursion termination condition wrong</td>
         <td>1</td>
     </tr>
     <tr>
