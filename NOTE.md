@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Not fully understand the problem</td>
-        <td>1</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case</td>
@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td>Wrong variable name</td>
-        <td>6</td>
+        <td>8</td>
     </tr>
     <tr>
         <td>Local variable not initialized</td>
@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>10</td>
+        <td>11</td>
     </tr>
     <tr>
         <td>Index out of range</td>
@@ -39,7 +39,7 @@
     </tr>
     <tr>
         <td>If condition wrong</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Forget to init state before loop</td>
