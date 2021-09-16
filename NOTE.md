@@ -54,8 +54,8 @@
         <td>4</td>
     </tr>
     <tr>
-        <td>Forget or mistakenly to update variable or container in loop</td>
-        <td>9</td>
+        <td>Forget or mistakenly to update variable (like reused) or container in loop</td>
+        <td>13</td>
     </tr>
     <tr>
         <td>Forget to break or continue in loop</td>
