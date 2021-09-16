@@ -31,7 +31,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>8</td>
+        <td>11</td>
     </tr>
     <tr>
         <td>Index forget to + or -</td>
@@ -55,7 +55,7 @@
     </tr>
     <tr>
         <td>Forget or mistakenly to update variable (like reused) or container in loop</td>
-        <td>13</td>
+        <td>18</td>
     </tr>
     <tr>
         <td>Forget to break or continue in loop</td>
