@@ -6,6 +6,38 @@
         <td>Frequency</td>
     </tr>
     <tr>
+        <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td>Index out of range</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>Index & offset target wrong</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>Wrong variable name</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Index forget to + or -</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Loop or recursion condition not satisfied unexpectly</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Incorrectly assigned local var or mixed index with value</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>If condition wrong</td>
+        <td>3</td>
+    </tr>
+    <tr>
         <td>Not fully understand the problem</td>
         <td>2</td>
     </tr>
@@ -14,32 +46,16 @@
         <td>2</td>
     </tr>
     <tr>
-        <td>Wrong variable name</td>
-        <td>8</td>
+        <td>Double execution</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Forget to update state machine state, for example, counter</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>Local variable not initialized</td>
         <td>1</td>
-    </tr>
-    <tr>
-        <td>Incorrectly assigned local var or mixed index with value</td>
-        <td>3</td>
-    </tr>
-    <tr>
-        <td>Index & offset target wrong</td>
-        <td>11</td>
-    </tr>
-    <tr>
-        <td>Index out of range</td>
-        <td>11</td>
-    </tr>
-    <tr>
-        <td>Index forget to + or -</td>
-        <td>7</td>
-    </tr>
-    <tr>
-        <td>If condition wrong</td>
-        <td>3</td>
     </tr>
     <tr>
         <td>Forget to init state before loop</td>
@@ -50,14 +66,6 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Loop or recursion condition not satisfied unexpectly</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>Forget or mistakenly to update variable (like reused) or container in loop</td>
-        <td>18</td>
-    </tr>
-    <tr>
         <td>Forget to break or continue in loop</td>
         <td>1</td>
     </tr>
@@ -66,20 +74,12 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Forget to update state machine state, for example, counter</td>
-        <td>2</td>
-    </tr>
-    <tr>
         <td>Forget to check container when try to use item from it</td>
         <td>1</td>
     </tr>
     <tr>
         <td>Items in container changed unexpectly</td>
         <td>1</td>
-    </tr>
-    <tr>
-        <td>Double execution</td>
-        <td>2</td>
     </tr>
     <tr>
         <td>Char to Int forget to convert</td>
