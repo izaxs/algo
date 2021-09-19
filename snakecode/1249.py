@@ -34,6 +34,21 @@ class Solution:
                 openCount -= 1
         return ''.join(result)
 
+    def minRemoveToMakeValid3(self, s: str) -> str:
+        stk: list[str] = []
+        cur = ''
+        for c in s:
+            if c == '(':
+                stk.append(cur)
+                cur = ''
+            elif c == ')':
+                if stk: cur = f'{stk.pop()}({cur})'
+            else:
+                cur += c
+        cur = ''.join(stk) + cur
+        return cur
+            
+
 if __name__ == '__main__':
     s = Solution()
     # r = s.minRemoveToMakeValid("lee(t(c)o)de)")
