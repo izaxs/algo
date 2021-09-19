@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>18</td>
+        <td>19</td>
     </tr>
     <tr>
         <td>Index out of range</td>
@@ -59,7 +59,7 @@
     </tr>
     <tr>
         <td>Forget to init state before loop</td>
-        <td>1</td>
+        <td>2</td>
     </tr>
     <tr>
         <td>Recursion termination condition wrong</td>

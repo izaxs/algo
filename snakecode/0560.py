@@ -11,11 +11,11 @@ class Solution:
         return result
 
     def subarraySum2(self, nums: list[int], k: int) -> int:
-        from collections import Counter
-        counter = Counter({0: 1})
-        curSum = result = 0
-        for v in nums:
-            curSum += v
-            result += counter[curSum - k]
-            counter[curSum] += 1
+        curSum, result = 0, 0
+        preSum: dict[int, int] = {0: 1}
+        for n in nums:
+            curSum += n
+            # preSum is used for later iterations, can not affect this round
+            preSum[curSum] = preSum.get(curSum, 0)+1
+            result += preSum.get(curSum-k, 0)
         return result
