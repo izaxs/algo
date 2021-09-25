@@ -38,6 +38,10 @@
         <td>3</td>
     </tr>
     <tr>
+        <td>Input corner case not considered, eg. zero or one</td>
+        <td>3</td>
+    </tr>
+    <tr>
         <td>Not fully understand the problem</td>
         <td>2</td>
     </tr>
@@ -54,12 +58,12 @@
         <td>2</td>
     </tr>
     <tr>
-        <td>Local variable not initialized</td>
-        <td>1</td>
-    </tr>
-    <tr>
         <td>Forget to init state before loop</td>
         <td>2</td>
+    </tr>
+    <tr>
+        <td>Local variable not initialized</td>
+        <td>1</td>
     </tr>
     <tr>
         <td>Recursion termination condition wrong</td>
