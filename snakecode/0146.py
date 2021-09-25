@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Optional
+from collections import OrderedDict
 
 class Node:
     def __init__(self, key: int, val: int, preNode: Optional[Node] = None, nextNode: Optional[Node] = None):
@@ -62,6 +63,22 @@ class LRUCache:
             curNode = curNode.next
         return res
 
+class LRUCache2:
+    def __init__(self, cap: int) -> None:
+        self.data: OrderedDict[int, int] = OrderedDict()
+        self.cap = cap
+
+    def get(self, key: int) -> int:
+        val = self.data.get(key, -1)
+        if val == -1: return val
+        self.data.move_to_end(key, last=False)
+        return val
+
+    def put(self, key: int, value: int):
+        self.data[key] = value
+        self.data.move_to_end(key, last=False)
+        if len(self.data) > self.cap:
+            self.data.popitem()
 
 # Your LRUCache object will be instantiated and called as such:
 def test1():
