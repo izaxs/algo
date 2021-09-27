@@ -1,7 +1,5 @@
 from collections import OrderedDict
-from typing import Optional
-
-shouldPrint = True
+from typing import Optional, Any
 
 class Document:
     def __init__(self, name: str) -> None:
@@ -53,7 +51,7 @@ class Document:
         return self.content
 
     def delete(self) -> str:
-        if self.hi == len(self.content):
+        if self.lo == len(self.content):
             return self.content
         if self.lo == self.hi:
             self.hi += 1
@@ -172,3 +170,134 @@ def test4():
 
 if __name__ == '__main__':
     test4()
+
+class Document2:
+    def __init__(self, name: str) -> None:
+        self.name: str = name
+        self.content: str = ''
+        self.lo: int = 0
+        self.hi: int = 0
+        self.history: list[tuple[str, int, int]] = []
+        self.undoHistory: list[tuple[str, int, int]] = []
+
+    def select(self, lo: int, hi: int) -> str:
+        if lo < 0: lo = 0
+        if hi > len(self.content): hi = len(self.content)
+        if lo > hi: hi = lo
+        self.lo, self.hi = lo, hi
+        return self.content
+
+    def append(self, text: str) -> str:
+        if not text and self.lo == self.hi:
+            return self.content
+        self.history.append((self.content, self.lo, self.hi))
+        self.undoHistory.clear()
+        pre = self.content[:self.lo]
+        after = self.content[self.hi:]
+        self.content = pre+text+after
+        self.lo = self.lo+len(text)
+        self.hi = self.lo
+        return self.content
+
+    def move(self, position: int) -> str:
+        if position > len(self.content):
+            position = len(self.content)
+        elif position < 0:
+            position = 0
+        self.lo = position
+        self.hi = position
+        return self.content
+
+    def delete(self) -> str:
+        if self.lo == len(self.content):
+            return self.content
+        if self.lo == self.hi:
+            self.hi += 1
+        return self.append('')
+
+    def undo(self) -> str:
+        if not self.history: return self.content
+        self.undoHistory.append((self.content, self.lo, self.hi))
+        self.content, self.lo, self.hi = self.history.pop()
+        return self.content
+
+    def redo(self) -> str:
+        if not self.undoHistory: return self.content
+        self.history.append((self.content, self.lo, self.hi))
+        self.content, self.lo, self.hi = self.undoHistory.pop()
+        return self.content
+
+class Editor2:
+    def __init__(self) -> None:
+        self.defaultName = '####'
+        self.clipboard = ''
+        self.doc = Document2(self.defaultName)
+        self.files: dict[str, Document2] = {}
+        self.files[self.defaultName] = self.doc
+
+    def create(self, name: str) -> Optional[str]:
+        if name in self.files: return None
+        self.files[name] = Document2(name)
+        return self.doc.content
+
+    def switch(self, name: str) -> Optional[str]:
+        if name not in self.files: return None
+        self.doc = self.files[name]
+        return self.doc.content
+
+    def select(self, lo: int, hi: int) -> str:
+        return self.doc.select(lo, hi)
+
+    def move(self, position: int) -> str:
+        return self.doc.move(position)
+
+    def append(self, text: str) -> str:
+        return self.doc.append(text)
+
+    def cut(self) -> str:
+        doc = self.doc
+        if doc.lo >= doc.hi: return doc.content
+        self.clipboard = doc.content[doc.lo:doc.hi]
+        doc.delete()
+        return doc.content
+
+    def paste(self) -> str:
+        if not self.clipboard: return self.doc.content
+        return self.doc.append(self.clipboard)
+
+    def delete(self) -> str:
+        return self.doc.delete()
+
+    def undo(self) -> str:
+        return self.doc.undo()
+
+    def redo(self) -> str:
+        return self.doc.redo()
+
+def textEditor2_2(queries: list[Any]) -> list[Optional[str]]:
+    e = Editor2()
+    result: list[Optional[str]] = []
+    for q in queries:
+        if q[0] == 'APPEND':
+            result.append(e.append(q[1]))
+        elif q[0] == 'MOVE':
+            result.append(e.move(int(q[1])))
+        elif q[0] == 'DELETE':
+            result.append(e.delete())
+        elif q[0] == 'SELECT':
+            result.append(e.select(int(q[1]), int(q[2])))
+        elif q[0] == 'CUT':
+            result.append(e.cut())
+        elif q[0] == 'PASTE':
+            result.append(e.paste())
+        elif q[0] == 'UNDO':
+            result.append(e.undo())
+        elif q[0] == 'REDO':
+            result.append(e.redo())
+        elif q[0] == 'CREATE':
+            result.append(e.create(q[1]))
+        elif q[0] == 'SWITCH':
+            result.append(e.switch(q[1]))
+        else:
+            raise ValueError(f'Unknown action: {q[0]}')
+    return result
