@@ -43,7 +43,7 @@
     </tr>
     <tr>
         <td>Not fully understand the problem</td>
-        <td>2</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case</td>
