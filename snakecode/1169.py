@@ -28,4 +28,3 @@ class Solution:
                     continue
             watcher[t.name] = (t.city, t.time+wait)
         return [str(t) for t in invalid]
-        
