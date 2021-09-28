@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>11</td>
+        <td>12</td>
     </tr>
     <tr>
         <td>Wrong variable name</td>
@@ -26,7 +26,15 @@
         <td>7</td>
     </tr>
     <tr>
+        <td>Not fully understand the problem</td>
+        <td>4</td>
+    </tr>
+    <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Forget empty input case or shortcut case or out of range case</td>
         <td>4</td>
     </tr>
     <tr>
@@ -40,14 +48,6 @@
     <tr>
         <td>Input corner case not considered, eg. zero or one</td>
         <td>3</td>
-    </tr>
-    <tr>
-        <td>Not fully understand the problem</td>
-        <td>3</td>
-    </tr>
-    <tr>
-        <td>Forget empty input case or shortcut case</td>
-        <td>2</td>
     </tr>
     <tr>
         <td>Double execution</td>
