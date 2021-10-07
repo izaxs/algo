@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <td>Not fully understand the problem</td>
-        <td>4</td>
+        <td>5</td>
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
