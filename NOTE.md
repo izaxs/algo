@@ -7,11 +7,11 @@
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>19</td>
+        <td>21</td>
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>13</td>
+        <td>14</td>
     </tr>
     <tr>
         <td>Index out of range</td>
@@ -39,6 +39,10 @@
     </tr>
     <tr>
         <td>If condition wrong</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Python indentation wrong!</td>
         <td>4</td>
     </tr>
     <tr>
