@@ -31,18 +31,18 @@
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
-        <td>4</td>
+        <td>5</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
         <td>4</td>
     </tr>
     <tr>
-        <td>Incorrectly assigned local var or mixed index with value</td>
-        <td>3</td>
+        <td>If condition wrong</td>
+        <td>4</td>
     </tr>
     <tr>
-        <td>If condition wrong</td>
+        <td>Incorrectly assigned local var or mixed index with value</td>
         <td>3</td>
     </tr>
     <tr>
