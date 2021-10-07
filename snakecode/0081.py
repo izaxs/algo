@@ -23,4 +23,3 @@ class Solution:
         if pivot == -1: return nums[0] == target
         if nums[0] <= target: return self.bi_search(nums, target, 0, pivot)
         return self.bi_search(nums, target, pivot, len(nums))
-        
