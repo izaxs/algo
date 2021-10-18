@@ -1,5 +1,6 @@
 class Solution:
     def nextPermutation(self, nums: list[int]) -> None:
+        # No need to sort, just reverse()
         def quickSort(lo: int, hi: int):
             if lo >= hi: return
             pivot, mid = nums[hi], lo
@@ -10,6 +11,12 @@ class Solution:
             nums[mid], nums[hi] = nums[hi], nums[mid]
             quickSort(lo, mid-1)
             quickSort(mid+1, hi)
+
+        def reverse(lo: int, hi: int):
+            while lo < hi:
+                nums[lo], nums[hi] = nums[hi], nums[lo]
+                lo += 1
+                hi -= 1
 
         def search(lo: int, hi: int, largerThan: int):
             while lo < hi:
@@ -24,7 +31,7 @@ class Solution:
             swap1 = target-1
             swap2 = search(target, len(nums)-1, nums[swap1])
             nums[swap1], nums[swap2] = nums[swap2], nums[swap1]
-        quickSort(target, len(nums)-1)
+        reverse(target, len(nums)-1)
 
 s = Solution()
 nums = [1,3,2]
