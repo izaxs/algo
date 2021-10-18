@@ -22,5 +22,3 @@ print(IPs)
 
 IPs2 = parse_ip("500012", 5)
 print(IPs2)
-
-    

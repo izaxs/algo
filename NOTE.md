@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>14</td>
+        <td>15</td>
     </tr>
     <tr>
         <td>Index out of range</td>
