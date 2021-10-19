@@ -26,5 +26,3 @@ class BSTIterator:
             self.cur = self.cur.left
         if self.stack: return True
         return False
-                
-        
