@@ -1,3 +1,7 @@
+from typing import Callable
+import time
+import random
+
 def bubbleSort(nums: list[int]):
     swapped = True
     while swapped:
@@ -41,8 +45,73 @@ def quickSort(nums: list[int], lo: int = 0, hi: int = -1):
 def mergeSort(nums: list[int]):
     pass
 
+class SortingTemplate:
+    def sort(self, nums: list[int]) -> list[int]:
+        if not nums: return []
+        self._quickSort(nums, 0, len(nums)-1)
+        return nums
+
+    def _quickSort(self, nums: list[int], lo: int, hi: int):
+        if lo >= hi: return
+        pivot = self._partition(nums, lo, hi)
+        self._quickSort(nums, lo, pivot-1)
+        self._quickSort(nums, pivot+1, hi)
+
+    def _partition(self, nums: list[int], lo: int, hi: int) -> int:
+        pivot = nums[lo]
+        while lo < hi:
+            while lo < hi and pivot <= nums[hi]:
+                hi -= 1
+            nums[lo] = nums[hi]
+            while lo < hi and nums[lo] <= pivot:
+                lo += 1
+            nums[hi] = nums[lo]
+            nums[lo], nums[hi] = nums[hi], nums[lo]
+        nums[lo] = pivot
+        return lo
+
+def quickSortWrapper1(nums: list[int]) -> list[int]:
+    _ = SortingTemplate()
+    quickSort(nums, 0, len(nums)-1)
+    return nums
+
+def quickSortWrapper2(nums: list[int]) -> list[int]:
+    s = SortingTemplate()
+    s.sort(nums)
+    return nums
+
+def measure_execution(func: Callable[[list[int]], list[int]], cases: list[list[int]], msg: str):
+    tik = time.perf_counter()
+    for case in cases:
+        func(case)
+    tok = time.perf_counter()
+    print(f'{msg}: function elapsed in {tok-tik}')
+
+def gen_cases(lo: int, hi: int, listLen: int, casesLen: int) -> list[list[int]]:
+    res: list[list[int]] = []
+    for _ in range(casesLen):
+        res.append(random.sample(range(lo, hi), listLen))
+    return res
+
+def casesAreSorted(cases: list[list[int]]) -> bool:
+    for nums in cases:
+        minNum = float('-inf')
+        for n in nums:
+            if n < minNum: return False
+            minNum = n
+    return True
+
+def benchMark():
+    # caseSet1 = gen_cases(lo=0, hi=1000, listLen=200, casesLen=500)
+    caseSet2 = gen_cases(lo=0, hi=100_000_000, listLen=1_000_000, casesLen=1)
+    # measure_execution(quickSortWrapper1, caseSet1, 'cases1')
+    measure_execution(quickSortWrapper2, caseSet2, 'cases2')
+    # assert(casesAreSorted(caseSet1))
+    assert(casesAreSorted(caseSet2))
+
 if __name__ == '__main__':
-    unsorted = [4, 13, 8, 10, 6, 0, 7, 5, 9, 4, 1, 14, 8, 2]
+    inputs = [4, 13, 8, 10, 6, 0, 7, 5, 9, 4, 1, 14, 8, 2]
+
     # bubbleSortCase = unsorted[:]
     # bubbleSort(bubbleSortCase)
     # print(bubbleSortCase)
@@ -55,6 +124,11 @@ if __name__ == '__main__':
     # insertionSort(insertionSortCase)
     # print(insertionSortCase)
 
-    quickSortCase = unsorted[:]
-    quickSort(quickSortCase)
-    print(quickSortCase)
+    # quickSortCase = unsorted[:]
+    # quickSort(quickSortCase)
+    # print(quickSortCase)
+    # s = SortingTemplate()
+    # s.sort(inputs)
+    # print(inputs)
+
+    benchMark()
