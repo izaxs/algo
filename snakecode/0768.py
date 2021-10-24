@@ -11,6 +11,3 @@ class Solution:
             if curMax <= suffixMin[i]: result += 1
             curMax = max(curMax, arr[i])
         return result
-        
-
-        
