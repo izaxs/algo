@@ -22,15 +22,15 @@
         <td>12</td>
     </tr>
     <tr>
+        <td>Forget empty input case or shortcut case or out of range case</td>
+        <td>9</td>
+    </tr>
+    <tr>
         <td>If condition wrong or forgotten</td>
-        <td>8</td>
+        <td>9</td>
     </tr>
     <tr>
         <td>Index forget to + or -</td>
-        <td>7</td>
-    </tr>
-    <tr>
-        <td>Forget empty input case or shortcut case or out of range case</td>
         <td>7</td>
     </tr>
     <tr>
@@ -42,15 +42,15 @@
         <td>5</td>
     </tr>
     <tr>
+        <td>Input corner case not considered, eg. zero or one</td>
+        <td>4</td>
+    </tr>
+    <tr>
         <td>Python indentation wrong!</td>
         <td>4</td>
     </tr>
     <tr>
         <td>Incorrectly assigned local var or mixed index with value</td>
-        <td>3</td>
-    </tr>
-    <tr>
-        <td>Input corner case not considered, eg. zero or one</td>
         <td>3</td>
     </tr>
     <tr>
