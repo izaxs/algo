@@ -60,13 +60,10 @@ class SortingTemplate:
     def _partition(self, nums: list[int], lo: int, hi: int) -> int:
         pivot = nums[lo]
         while lo < hi:
-            while lo < hi and pivot <= nums[hi]:
-                hi -= 1
+            while lo < hi and pivot <= nums[hi]: hi -= 1
             nums[lo] = nums[hi]
-            while lo < hi and nums[lo] <= pivot:
-                lo += 1
+            while lo < hi and nums[lo] <= pivot: lo += 1
             nums[hi] = nums[lo]
-            nums[lo], nums[hi] = nums[hi], nums[lo]
         nums[lo] = pivot
         return lo
 
@@ -90,7 +87,7 @@ def measure_execution(func: Callable[[list[int]], list[int]], cases: list[list[i
 def gen_cases(lo: int, hi: int, listLen: int, casesLen: int) -> list[list[int]]:
     res: list[list[int]] = []
     for _ in range(casesLen):
-        res.append(random.sample(range(lo, hi), listLen))
+        res.append([random.randrange(lo, hi) for _ in range(listLen)])
     return res
 
 def casesAreSorted(cases: list[list[int]]) -> bool:
@@ -103,7 +100,7 @@ def casesAreSorted(cases: list[list[int]]) -> bool:
 
 def benchMark():
     # caseSet1 = gen_cases(lo=0, hi=1000, listLen=200, casesLen=500)
-    caseSet2 = gen_cases(lo=0, hi=100_000_000, listLen=1_000_000, casesLen=1)
+    caseSet2 = gen_cases(lo=0, hi=10_000_000, listLen=1_000_000, casesLen=1)
     # measure_execution(quickSortWrapper1, caseSet1, 'cases1')
     measure_execution(quickSortWrapper2, caseSet2, 'cases2')
     # assert(casesAreSorted(caseSet1))
@@ -127,8 +124,10 @@ if __name__ == '__main__':
     # quickSortCase = unsorted[:]
     # quickSort(quickSortCase)
     # print(quickSortCase)
-    # s = SortingTemplate()
-    # s.sort(inputs)
-    # print(inputs)
 
-    benchMark()
+    inputs = [4,3,6,5,2,1,0]
+    s = SortingTemplate()
+    s.sort(inputs)
+    print(inputs)
+
+    # benchMark()
