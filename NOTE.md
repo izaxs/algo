@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>21</td>
+        <td>22</td>
     </tr>
     <tr>
         <td>Index & offset target wrong</td>

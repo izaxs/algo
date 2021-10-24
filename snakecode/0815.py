@@ -61,6 +61,33 @@ class Solution:
             toVisit = nextStops
         return -1
 
+    def numBusesToDestination3(self, routes: list[list[int]], source: int, target: int) -> int:
+        busses: dict[int, list[int]] = {} # stop -> [bus]
+        for bus, stops in enumerate(routes):
+            for stop in stops:
+                busAtStop = busses.setdefault(stop, [])
+                busAtStop.append(bus)
+        toVisitStops: deque[int] = deque((source,))
+        visitedStops: set[int] = set()
+        takenBusses: set[int] = set()
+        took = -1
+        while toVisitStops:
+            took += 1
+            remain = len(toVisitStops)
+            while remain:
+                curStop = toVisitStops.popleft()
+                if curStop == target: return took
+                if curStop not in visitedStops:
+                    visitedStops.add(curStop)
+                    for bus in busses[curStop]:
+                        if bus in takenBusses: continue
+                        takenBusses.add(bus)
+                        for stop in routes[bus]:
+                            toVisitStops.append(stop)
+                remain -= 1
+        return -1
+
+
 routes = [[1,2,7],[3,6,7]]
 stopCount = Solution().numBusesToDestination(routes, 1, 6)
 print(stopCount)
