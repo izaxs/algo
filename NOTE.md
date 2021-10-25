@@ -14,6 +14,10 @@
         <td>15</td>
     </tr>
     <tr>
+        <td>If condition wrong or forgotten</td>
+        <td>13</td>
+    </tr>
+    <tr>
         <td>Index out of range</td>
         <td>12</td>
     </tr>
@@ -23,10 +27,6 @@
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
-        <td>9</td>
-    </tr>
-    <tr>
-        <td>If condition wrong or forgotten</td>
         <td>9</td>
     </tr>
     <tr>
