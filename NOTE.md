@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>15</td>
+        <td>16</td>
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>12</td>
+        <td>13</td>
     </tr>
     <tr>
         <td>Wrong variable name</td>
@@ -42,6 +42,10 @@
         <td>5</td>
     </tr>
     <tr>
+        <td>Forget to init state before loop</td>
+        <td>4</td>
+    </tr>
+    <tr>
         <td>Input corner case not considered, eg. zero or one</td>
         <td>4</td>
     </tr>
@@ -59,10 +63,6 @@
     </tr>
     <tr>
         <td>Forget to update state machine state, for example, counter</td>
-        <td>2</td>
-    </tr>
-    <tr>
-        <td>Forget to init state before loop</td>
         <td>2</td>
     </tr>
     <tr>
