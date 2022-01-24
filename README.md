@@ -30,4 +30,4 @@ Add Python solution file as ```snakecode/[0-9]{4}.py```
 Just F5 run active Python files in snakecode
 
 ## TODO
-Add Kotlin support
+Add Kotlin support: kotlinit
