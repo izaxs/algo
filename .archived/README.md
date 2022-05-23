@@ -3,26 +3,51 @@
 Find them in ```/.archived```
 
 ### Choose Language
+
+Python: Python 3.9+
+
 Go: 1.16+
 
 C++: Compiler that supports C++17
 
 ### Editor
-VSCode with ```[Go | C/C++]``` extension is recommended for debugging
+VSCode with ```[Python | Go | C/C++]``` extension is recommended for debugging
 
 ### Linux Debian
+Python:
+
+```bash
+sudo apt update
+sudo apt install python
+```
+
+C++:
+
 ```bash
 sudo apt update
 sudo apt install build-essential gdb
 ```
 
 ### Mac OS
+
+Python:
+
+```bash
+xcode-select --install
+brew install python
+```
+
+C++:
+
 ```bash
 xcode-select --install
 ```
 Install CodeLLDB in VSCode
 
 ## How to Code
+### Archived Python Solutions
+Add Python solution file as ```.archived/snakecode/[0-9]{4}.py```
+
 ### Archived Go Solutions
 Add Go solution file as ```.archived/gocode/h??/[0-9]{4}.go```
 
@@ -49,6 +74,9 @@ int main() {
 ```
 
 ## Build & Run
+### Python
+Just F5 run active Python files in snakecode
+
 ### Go
 Run the classic test command for each Go test file, eg.
 
