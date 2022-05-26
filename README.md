@@ -32,7 +32,7 @@ brew install deno
 ```
 
 ## How to Code
-TODO
+Should I use TS really?
 
 ## Build & Run
 TODO
