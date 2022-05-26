@@ -1,38 +1,30 @@
 # Algorithm Code
 Current programming language: TypeScript with Deno runtime
 
-Archived solutions: Python, Go, C++
+Archived solutions: TypeScript, Python, Go, C++
 
-## LeetCode TypeScript Solutions
-Find them in ```./denocode```
+## LeetCode Kotlin Solutions
+
 
 ## Other Language Solutions
 
-Find them in ```./.archived```
+Find them in ```.archived/```
 
 ## Language Prerequisite
 
-TypeScript: 4.6+
+
 
 ### Editor
-VSCode with ```[Deno]``` extension is recommended
+TODO
 
-### Linux Debian
-Deno:
-
-```
-cargo install deno --locked
-```
+### WSL Debian
+TODO
 
 ### Mac OS
-Deno:
-
-```
-brew install deno
-```
+TODO
 
 ## How to Code
-Should I use TS really?
+TODO
 
 ## Build & Run
 TODO

@@ -4,6 +4,8 @@ Find them in ```/.archived```
 
 ### Choose Language
 
+TypeScript: 4.6+
+
 Python: Python 3.9+
 
 Go: 1.16+
@@ -11,9 +13,15 @@ Go: 1.16+
 C++: Compiler that supports C++17
 
 ### Editor
-VSCode with ```[Python | Go | C/C++]``` extension is recommended for debugging
+VSCode with ```[Deno | Python | Go | C/C++]``` extension is recommended for debugging
 
 ### Linux Debian
+Deno:
+
+```
+cargo install deno --locked
+```
+
 Python:
 
 ```bash
@@ -29,6 +37,11 @@ sudo apt install build-essential gdb
 ```
 
 ### Mac OS
+Deno:
+
+```
+brew install deno
+```
 
 Python:
 
@@ -45,6 +58,9 @@ xcode-select --install
 Install CodeLLDB in VSCode
 
 ## How to Code
+### Archived TypeScript Solutions
+TODO
+
 ### Archived Python Solutions
 Add Python solution file as ```.archived/snakecode/[0-9]{4}.py```
 
