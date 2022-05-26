@@ -12,3 +12,6 @@ obj
 __pycache__
 *.pyc
 .ropeproject
+
+# Intellij Idea
+.idea/
