@@ -1,4 +1,4 @@
-package h01
+package h00
 
 class Solution {
     fun twoSum(nums: IntArray, target: Int): IntArray {
