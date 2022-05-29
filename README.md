@@ -1,4 +1,4 @@
-# Algorithm Code
+# Algorithms
 Current programming language: C#
 
 Archived solutions: TypeScript, Python, Go, C++
