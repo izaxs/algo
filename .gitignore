@@ -15,3 +15,6 @@ __pycache__
 
 # Intellij Idea
 .idea/
+
+# Visual Studio
+.vs/
