@@ -1,6 +1,6 @@
 package h00
 
-class Solution {
+class S0001 {
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val map = mutableMapOf<Int, Int>()
         for ((i, v) in nums.withIndex()) {

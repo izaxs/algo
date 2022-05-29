@@ -3,8 +3,8 @@ package h00
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
 
-internal class Solution0001Test {
-    private val sln = Solution()
+internal class S0001Test {
+    private val sln = S0001()
 
     @Test
     fun twoSum() {
