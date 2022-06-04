@@ -1,7 +1,6 @@
-namespace SharpCode.Tests;
+namespace SharpCode.Tests.H00;
 
-public class H00
-{
+public class T0001 {
     [Fact]
     public void TestS0001() {
         var sln = new S0001();
