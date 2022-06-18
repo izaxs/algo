@@ -1,6 +1,6 @@
 ﻿namespace SharpCode;
 
-// Definition for singly-linked list.
+// Definition for singly-linked list node.
 public class ListNode
 {
     public int val;
