@@ -4,6 +4,7 @@ obj
 *.exe
 *.out
 *.app
+build
 
 # VSCode settings
 # .vscode/settings.json

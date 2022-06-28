@@ -1,0 +1,9 @@
+<Project>
+
+  <PropertyGroup>
+	  <MSBuildProjectExtensionsPath>build/ext</MSBuildProjectExtensionsPath>
+    <BaseOutputPath>build</BaseOutputPath>
+    <BaseIntermediateOutputPath>build/obj</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+</Project>
