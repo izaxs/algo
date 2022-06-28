@@ -12,5 +12,5 @@ Solutions are located in the buckets with prefix ```Hxx```, x is the prefix by e
 
 ## Other Language Solutions
 
-Find them in ```.archived/```
+Find them in ```Archived/```
 
