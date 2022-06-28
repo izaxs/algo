@@ -5,8 +5,6 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BaseOutputPath>build</BaseOutputPath>
-    <BaseIntermediateOutputPath>build/obj</BaseIntermediateOutputPath>
   </PropertyGroup>
 
 </Project>
