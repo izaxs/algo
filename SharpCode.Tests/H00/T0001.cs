@@ -1,4 +1,4 @@
-namespace SharpCode.Tests.H00;
+namespace SharpCode;
 
 public class T0001
 {
