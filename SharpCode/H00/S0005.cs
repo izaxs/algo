@@ -13,7 +13,9 @@ class S0005 {
             Update(s, mid-offset-1, mid-offset);
             Update(s, mid+offset, mid+offset);
             Update(s, mid+offset-1, mid+offset);
+            offset++;
         }
+        return s.Substring(maxLo, maxHi-maxLo+1);
     }
 
     private void Update(string s, int loMid, int hiMid) 
