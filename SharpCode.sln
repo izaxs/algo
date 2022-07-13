@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpCode", "SharpCode\SharpCode.csproj", "{68F16E7E-F832-4C61-A8C4-1ED9A785C063}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpCode.Tests", "SharpCode.Tests\SharpCode.Tests.csproj", "{3B7750FD-52AB-4007-92BF-9848251C4AEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpCode.Test", "SharpCode.Test\SharpCode.Test.csproj", "{3B7750FD-52AB-4007-92BF-9848251C4AEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algo", "Algo", "{72F98BD5-E857-4606-B02F-32AB0B35AB0D}"
 	ProjectSection(SolutionItems) = preProject

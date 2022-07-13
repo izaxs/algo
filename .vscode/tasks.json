@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/SharpCode.Tests/SharpCode.Tests.csproj",
+                "${workspaceFolder}/SharpCode.Test/SharpCode.Test.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -23,7 +23,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/SharpCode.Tests/SharpCode.Tests.csproj",
+                "${workspaceFolder}/SharpCode.Test/SharpCode.Test.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -37,7 +37,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/SharpCode.Tests/SharpCode.Tests.csproj"
+                "${workspaceFolder}/SharpCode.Test/SharpCode.Test.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
