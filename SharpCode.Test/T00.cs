@@ -17,6 +17,9 @@ public class T00
     public void TestS0009()
     {
         var sln = new S0009();
+        Assert.False(sln.IsPalindrome(-1));
+        Assert.True(sln.IsPalindrome(0));
+        Assert.True(sln.IsPalindrome(9));
         Assert.True(sln.IsPalindrome(121));
         Assert.False(sln.IsPalindrome(-121));
         Assert.False(sln.IsPalindrome(1210));
