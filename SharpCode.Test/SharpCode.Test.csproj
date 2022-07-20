@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SharpCode\SharpCode.csproj" />
+    <ProjectReference Include="..\sharpcode\SharpCode.csproj" />
   </ItemGroup>
 
 </Project>

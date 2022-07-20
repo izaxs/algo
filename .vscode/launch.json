@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/SharpCode.Test/bin/Debug/net6.0/SharpCode.Test.dll",
+            "program": "${workspaceFolder}/sharpcode.test/bin/Debug/net6.0/SharpCode.Test.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/SharpCode.Test",
+            "cwd": "${workspaceFolder}/sharpcode.test",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
