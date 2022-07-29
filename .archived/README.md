@@ -3,6 +3,7 @@
 Find them in ```/.archived```
 
 ### Choose Language
+C#: .NET 6
 
 TypeScript: 4.6+
 
@@ -58,6 +59,11 @@ xcode-select --install
 Install CodeLLDB in VSCode
 
 ## How to Code
+### Archived C# Solutions
+Find the solutions and tests in ```.archived/sharpcode```
+
+Solutions are located in the buckets with prefix ```Hxx```, x is the prefix for every 100 solutions, for example, solution 1999 is located at bucket H19
+
 ### Archived TypeScript Solutions
 TODO
 
