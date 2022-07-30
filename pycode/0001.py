@@ -3,9 +3,17 @@ class Solution:
         want = {}
         for i, v in enumerate(nums):
             if v not in want:
-                want[target - v] = i
+                want[target-v] = i
             else:
                 return [want[v], i]
+        return []
+
+    def twoSum2(self, nums: list[int], target: int) -> list[int]:
+        want: dict[int, int] = {}
+        for i, v in enumerate(nums):
+            if (lastI := want.get(v)) is not None:
+                return [lastI, i]
+            want[target-v] = i
         return []
 
 if __name__ == '__main__':
