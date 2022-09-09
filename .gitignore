@@ -19,3 +19,6 @@ __pycache__
 
 # Visual Studio
 .vs/
+
+# TypeScript
+node_modules

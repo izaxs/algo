@@ -1,5 +1,8 @@
 # Algorithms
-Programming language currently used: Python
+Programming language currently used: TypeScript, Python
+
+## LeetCode TypeScript Solutions
+In ```tscode/```, grouped by every 100 solution
 
 ## LeetCode Python Solutions
 Add Python solution file as ```pycode/[0-9]{4}.py```

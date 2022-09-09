@@ -64,9 +64,6 @@ Find the solutions and tests in ```.archived/sharpcode```
 
 Solutions are located in the buckets with prefix ```Hxx```, x is the prefix for every 100 solutions, for example, solution 1999 is located at bucket H19
 
-### Archived TypeScript Solutions
-TODO
-
 ### Archived Python Solutions
 Add Python solution file as ```.archived/snakecode/[0-9]{4}.py```
 
