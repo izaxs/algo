@@ -1,5 +1,5 @@
 from __future__ import annotations
-import heapq
+from heapq import heappush, heappop
 
 class Task:
     def __init__(self, index: int, start: int, lasts: int) -> None:
@@ -19,10 +19,10 @@ class Solution:
         todos: list[Task] = []
         while todos or i < len(taskList):
             while i < len(taskList) and taskList[i].start <= curTime:
-                heapq.heappush(todos, taskList[i])
+                heappush(todos, taskList[i])
                 i += 1
             if todos:
-                nextTask = heapq.heappop(todos)
+                nextTask = heappop(todos)
                 res.append(nextTask.index)
                 curTime = curTime+nextTask.lasts
             elif i < len(taskList):
