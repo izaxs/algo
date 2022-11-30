@@ -24,6 +24,18 @@ class Solution2:
             return parens
         return generate('', n, n)
 
+    def generateParenthesis2(self, n: int) -> list[str]:
+        res: list[str] = []
+        def gen(ps, left, right):
+            if left > 0:
+                gen(ps+'(', left-1, right)
+            if right > left:
+                gen(ps+')', left, right-1)
+            if right == 0:
+                res.append(ps)
+        gen('', n, n)
+        return res
+
 
 class Solution1:
     def generateParenthesis(self, n: int) -> list[str]:
