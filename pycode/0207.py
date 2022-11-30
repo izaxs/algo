@@ -27,5 +27,19 @@ class Solution:
         bfs()
         return len(courseTaken) == numCourses
 
+    def canFinish2(self, numCourses: int, prerequisites: list[list[int]]) -> bool:
+        G = [[] for _ in range(numCourses)]
+        degree = [0] * numCourses
+        for j, i in prerequisites:
+            G[i].append(j)
+            degree[j] += 1
+        bfs = [i for i in range(numCourses) if degree[i] == 0]
+        for i in bfs:
+            for j in G[i]:
+                degree[j] -= 1
+                if degree[j] == 0:
+                    bfs.append(j)
+        return len(bfs) == numCourses
+
 
         
