@@ -5,6 +5,7 @@
       "module": "CommonJS",
       "outDir": "out",
       "sourceMap": true,
+      "noEmitOnError": true,
       "noImplicitAny": true,
       "strictNullChecks": true,
     },
