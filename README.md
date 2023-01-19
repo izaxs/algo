@@ -1,15 +1,15 @@
 # Algorithms
-Programming language currently used: TypeScript, Python
-
-## LeetCode TypeScript Solutions
-In ```tscode/```, grouped by every 100 solution, like ```tscode/[0-9]{2}/[0-9]{2}.ts```
+Programming language: Python & TypeScript
 
 ## LeetCode Python Solutions
-Add Python solution file as ```pycode/[0-9]{4}.py```
+Add Python solution file as ```pycode/[0-9]{2}/{4}.py```, grouped by every 100 solutions
+
+## LeetCode TypeScript Solutions
+Add TypeScript files as ```tscode/[0-9]{2}/[0-9]{2}.ts```, grouped by every 100 solutions
 
 ## Other Language Solutions
 
-Archived solutions: C#, Go, TypeScript, C++
+Archived solutions: C#, Go, C++
 
 Find them in ```.archived/```
 
