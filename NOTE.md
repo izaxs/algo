@@ -22,16 +22,16 @@
         <td>13</td>
     </tr>
     <tr>
-        <td>Wrong variable name</td>
-        <td>12</td>
+        <td>Wrong variable name or messed up with local variables</td>
+        <td>13</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
         <td>9</td>
     </tr>
     <tr>
-        <td>Index forget to + or -</td>
-        <td>7</td>
+        <td>Forget +/- to index or advance the pointer</td>
+        <td>9</td>
     </tr>
     <tr>
         <td>Not fully understand the problem</td>
