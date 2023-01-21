@@ -58,6 +58,10 @@
         <td>3</td>
     </tr>
     <tr>
+        <td>Recursion termination condition wrong or forgotten</td>
+        <td>2</td>
+    </tr>
+    <tr>
         <td>Double execution</td>
         <td>2</td>
     </tr>
@@ -67,10 +71,6 @@
     </tr>
     <tr>
         <td>Local variable not initialized</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Recursion termination condition wrong</td>
         <td>1</td>
     </tr>
     <tr>
