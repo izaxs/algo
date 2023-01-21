@@ -1,11 +1,5 @@
-from __future__ import annotations
-from typing import Optional
-
-class TreeNode:
-    def __init__(self, val: int, left: Optional[TreeNode] = None, right: Optional[TreeNode] = None) -> None:
-        self.val = val
-        self.left = left
-        self.right = right
+import include
+from util.binarytree import Optional, TreeNode
 
 def preorder(root: TreeNode) -> list[int]:
     stack: list[TreeNode] = []

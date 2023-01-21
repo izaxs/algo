@@ -1,4 +1,4 @@
-from __future__ import annotations, division
+from __future__ import annotations
 from typing import Optional
 import heapq
 
@@ -18,7 +18,7 @@ class Path:
 
     def __lt__(self, other: Path) -> bool:
         if self.dist != other.dist: return self.dist < other.dist
-        if len(self.path) != len(other.path): len(self.path) < len(other.path)
+        if len(self.path) != len(other.path): return len(self.path) < len(other.path)
         return self.path[-1] < other.path[-1]
 
     def __repr__(self) -> str:

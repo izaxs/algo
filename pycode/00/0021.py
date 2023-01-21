@@ -1,6 +1,5 @@
 import include
-from typing import Optional
-from util.linkedlist import ListNode, linkerize, listize
+from util.linkedlist import Optional, ListNode, linkerize, listize
 
 
 # Definition for singly-linked list.
@@ -48,6 +47,6 @@ if __name__ == "__main__":
     s = Solution()
     l1 = linkerize([2, 6, 8, 9, 20])
     l2 = linkerize([0, 3, 5, 6, 7, 11, 15])
-    m = s.mergeTwoLists(l1, l2)
+    m = s.mergeTwoLists2(l1, l2)
     print(listize(m))
 

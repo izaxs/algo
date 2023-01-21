@@ -1,11 +1,5 @@
-from __future__ import annotations
-from typing import Optional
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val: int = 0, next: Optional[ListNode] = None):
-        self.val = val
-        self.next = next
+import include
+from util.linkedlist import Optional, ListNode
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:

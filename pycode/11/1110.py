@@ -1,5 +1,5 @@
-from typing import Optional
-from util.binarytree import TreeNode
+import include
+from util.binarytree import Optional, TreeNode
 
 class Solution:
     def delNodes(self, root: TreeNode, to_delete: list[int]) -> list[TreeNode]:

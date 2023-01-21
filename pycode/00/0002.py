@@ -1,6 +1,5 @@
 import include
-from typing import Optional
-from util.linkedlist import ListNode, linkerize
+from util.linkedlist import Optional, ListNode, linkerize
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:

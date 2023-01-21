@@ -1,15 +1,11 @@
-# Definition for singly-linked list.
-from typing import Optional
-
-class ListNode:
-    def __init__(self, x: int):
-        self.val = x
-        self.next: Optional[ListNode] = None
+import include
+from util.linkedlist import Optional, ListNode
 
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
         slow = fast = head
         while fast and fast.next:
+            assert slow
             slow = slow.next
             fast = fast.next.next
             if slow == fast:
