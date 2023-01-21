@@ -1,5 +1,5 @@
 import include
-from util.linkedlist import Optional, ListNode
+from linkedlist import Optional, ListNode
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:

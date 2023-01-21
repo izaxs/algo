@@ -1,5 +1,5 @@
 import include
-from util.linkedlist import Optional, ListNode, linkerize, listize
+from linkedlist import Optional, ListNode, linkerize, listize
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:

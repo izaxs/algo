@@ -1,5 +1,5 @@
 import include
-from util.binarytree import Optional, TreeNode
+from binarytree import Optional, TreeNode
 
 # Definition for a binary tree node.
 # class TreeNode:

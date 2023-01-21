@@ -1,6 +1,6 @@
 import include
 from collections import deque
-from util.binarytree import Optional, TreeNode
+from binarytree import Optional, TreeNode
 
 class CBTInserter:
 

@@ -1,5 +1,5 @@
 import include
-from util.linkedlist import Optional, ListNode, linkerize, listize
+from linkedlist import Optional, ListNode, linkerize, listize
 
 
 # Definition for singly-linked list.

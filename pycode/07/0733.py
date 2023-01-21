@@ -20,7 +20,7 @@ class Solution:
 
 if __name__ == "__main__":
     import include
-    from util.printer import print2D
+    from printer import print2D
     s = Solution()
     image = [
         [1, 1, 1],

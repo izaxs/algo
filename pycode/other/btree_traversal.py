@@ -1,5 +1,5 @@
 import include
-from util.binarytree import Optional, TreeNode
+from binarytree import Optional, TreeNode
 
 def preorder(root: TreeNode) -> list[int]:
     stack: list[TreeNode] = []
@@ -119,6 +119,6 @@ def _gen_tree() -> TreeNode:
 
 if __name__ == '__main__':
     root = _gen_tree()
-    # print(preorder2(root))
-    # print(inorder3(root))
-    # print(postorder2(root))
+    print(preorder2(root))
+    print(inorder3(root))
+    print(postorder2(root))
