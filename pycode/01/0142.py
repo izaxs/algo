@@ -17,3 +17,17 @@ class Solution:
             head = head.next
             fast = fast.next
         return head
+
+    def detectCycle2(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # Utilize fake head
+        if not head:
+            return None
+        fake = ListNode()
+        fake.next = head
+        slow, fast = head, head.next
+        while slow != fast:
+            if not fast or not fast.next:
+                return None
+            slow = slow.next
+            fast = fast.next.next
+        slow = 
