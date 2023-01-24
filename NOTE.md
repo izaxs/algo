@@ -58,6 +58,10 @@
         <td>3</td>
     </tr>
     <tr>
+        <td>Bit operator wrongful usage</td>
+        <td>3</td>
+    </tr>
+    <tr>
         <td>Recursion termination condition wrong or forgotten</td>
         <td>2</td>
     </tr>
