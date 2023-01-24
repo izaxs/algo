@@ -10,7 +10,6 @@
 import include
 from narytree import Optional, NTreeNode as Node
 
-
 class Solution:
     def preorder(self, root: Optional[Node]) -> list[int]:
         if not root:
@@ -28,8 +27,20 @@ class Solution:
         while stack:
             cur = stack.pop()
             res.append(cur.val)
-            if cur.children:
-                stack += cur.children[::-1]
+            stack += reversed(cur.children) if cur.children else []
         return res
+
+    # The Pythonic Way
+    def preorder3(self, root: Optional[Node]) -> list[int]:
+        def traversal(stack: list[Node]):
+            while stack:
+                cur = stack.pop()
+                yield cur.val
+                if cur.children:
+                    stack += reversed(cur.children)
+        return list(traversal([root])) if root else []
+
+
+
 
 
