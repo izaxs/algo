@@ -8,7 +8,7 @@ Add Python solution file as ```pycode/[0-9]{2}/{4}.py```, grouped by every 100 s
 
 ## Other Language Solutions
 
-Archived solutions: C#, Go, C++
+Archived solutions: TypeScript, C#, Go, C++
 
 Find them in ```.archived/```
 
