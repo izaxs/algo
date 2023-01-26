@@ -14,15 +14,15 @@
         <td>18</td>
     </tr>
     <tr>
+        <td>Wrong variable name or messed up with local variables</td>
+        <td>15</td>
+    </tr>
+    <tr>
         <td>If condition wrong or forgotten</td>
         <td>13</td>
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>13</td>
-    </tr>
-    <tr>
-        <td>Wrong variable name or messed up with local variables</td>
         <td>13</td>
     </tr>
     <tr>
@@ -34,8 +34,8 @@
         <td>9</td>
     </tr>
     <tr>
-        <td>Not fully understand the problem</td>
-        <td>7</td>
+        <td>Not fully read or understand the problem</td>
+        <td>8</td>
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
