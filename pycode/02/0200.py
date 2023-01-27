@@ -38,7 +38,14 @@ class Solution:
                 return
             grid[x][y] = '0'
             for dx, dy in self.DIRS:
-
+                dfs(x+dx, y+dy)
+        count = 0
+        for x, row in enumerate(grid):
+            for y, v in enumerate(row):
+                if v == '1':
+                    count += 1
+                    dfs(x, y)
+        return count
 
 if __name__ == '__main__':
     s = Solution()
