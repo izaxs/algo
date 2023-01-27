@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables</td>
-        <td>15</td>
+        <td>16</td>
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
