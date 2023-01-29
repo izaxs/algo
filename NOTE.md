@@ -6,12 +6,12 @@
         <td>Frequency</td>
     </tr>
     <tr>
-        <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
+        <td>Index & offset target wrong</td>
         <td>22</td>
     </tr>
     <tr>
-        <td>Index & offset target wrong</td>
-        <td>21</td>
+        <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
+        <td>22</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables</td>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>15</td>
+        <td>16</td>
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
