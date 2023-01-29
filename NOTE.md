@@ -35,7 +35,7 @@
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
-        <td>8</td>
+        <td>9</td>
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
