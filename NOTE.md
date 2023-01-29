@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>18</td>
+        <td>20</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables</td>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>13</td>
+        <td>14</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
