@@ -11,19 +11,19 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>20</td>
+        <td>21</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables</td>
         <td>16</td>
     </tr>
     <tr>
-        <td>If condition wrong or forgotten</td>
-        <td>13</td>
+        <td>Index out of range</td>
+        <td>15</td>
     </tr>
     <tr>
-        <td>Index out of range</td>
-        <td>14</td>
+        <td>If condition wrong or forgotten</td>
+        <td>13</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
