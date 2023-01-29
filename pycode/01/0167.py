@@ -22,5 +22,5 @@ class Solution:
         while True:
             s = numbers[lo]+numbers[hi]
             if s == target:
-                return [lo, hi]
+                return [lo+1, hi+1]
             lo, hi = (lo+1, hi) if s < target else (lo, hi-1)
