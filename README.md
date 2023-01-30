@@ -2,9 +2,9 @@
 Programming language: Python
 
 ## LeetCode Python Solutions
-Prerequisite: ```pip install sortedcontainers```
+Python files are grouped by every 100 solutions: ```pycode/[0-9]{2}/{4}.py```
 
-Add Python solution file as ```pycode/[0-9]{2}/{4}.py```, grouped by every 100 solutions
+Nice to have LeetCode prerequisite: ```pip install sortedcontainers```
 
 ## Other Language Solutions
 
