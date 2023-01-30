@@ -23,7 +23,11 @@
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
-        <td>13</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Not fully read or understand the problem</td>
+        <td>10</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
@@ -34,8 +38,8 @@
         <td>9</td>
     </tr>
     <tr>
-        <td>Not fully read or understand the problem</td>
-        <td>9</td>
+        <td>Python indentation or syntax wrong!</td>
+        <td>7</td>
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
@@ -47,10 +51,6 @@
     </tr>
     <tr>
         <td>Input corner case not considered, eg. zero or one</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>Python indentation wrong!</td>
         <td>4</td>
     </tr>
     <tr>
