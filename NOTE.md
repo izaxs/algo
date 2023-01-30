@@ -11,11 +11,11 @@
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>22</td>
+        <td>24</td>
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>17</td>
+        <td>19</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables</td>
@@ -23,11 +23,11 @@
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
-        <td>15</td>
+        <td>16</td>
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
-        <td>10</td>
+        <td>11</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
@@ -90,7 +90,7 @@
         <td>1</td>
     </tr>
     <tr>
-        <td>Items in container changed unexpectly</td>
+        <td>Items in collection changed unexpectly</td>
         <td>1</td>
     </tr>
     <tr>
