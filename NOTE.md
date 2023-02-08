@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>25</td>
+        <td>26</td>
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
-        <td>11</td>
+        <td>12</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
