@@ -1,5 +1,7 @@
 # Leetcode Programming Mistake Statistics
 
+Be aware of online editor might not display syntax error!
+
 <table>
     <tr>
         <td>Error Type</td>
