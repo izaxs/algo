@@ -15,4 +15,16 @@
 
 class Solution:
     def allPathsSourceTarget(self, graph: list[list[int]]) -> list[list[int]]:
+        res: list[list[int]] = []
+        path: list[int] = [0]
+        def dfs():
+            if path[-1] == len(graph)-1:
+                res.append(path[:])
+            for n in graph[path[-1]]:
+                path.append(n)
+                dfs()
+                path.pop()            
+        dfs()
+        return res
+
         
