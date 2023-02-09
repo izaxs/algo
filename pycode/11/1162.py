@@ -51,7 +51,7 @@ class Solution:
 
     # BFS, start from islands
     def maxDistance2(self, grid: list[list[int]]) -> int:
-        visitOrder = [(x, y) for x, row in enumerate(grid) for y, _ in enumerate(row) if grid[x][y] == 1]
+        visitOrder = [(x, y) for x, row in enumerate(grid) for y, cell in enumerate(row) if cell == 1]
         if len(visitOrder) == len(grid)*len(grid[0]): return -1
         dryLevel, visited = -1, 0
         while visited < len(visitOrder):
