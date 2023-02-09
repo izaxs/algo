@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>26</td>
+        <td>28</td>
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>19</td>
+        <td>21</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables</td>
@@ -43,7 +43,7 @@
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
-        <td>5</td>
+        <td>6</td>
     </tr>
     <tr>
         <td>Forget to init state before loop</td>
