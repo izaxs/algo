@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>21</td>
+        <td>22</td>
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
