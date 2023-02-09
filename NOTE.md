@@ -18,11 +18,11 @@
         <td>21</td>
     </tr>
     <tr>
-        <td>Wrong variable name or messed up with local variables</td>
-        <td>16</td>
+        <td>If condition wrong or forgotten</td>
+        <td>17</td>
     </tr>
     <tr>
-        <td>If condition wrong or forgotten</td>
+        <td>Wrong variable name or messed up with local variables</td>
         <td>16</td>
     </tr>
     <tr>
