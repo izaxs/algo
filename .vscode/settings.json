@@ -1,6 +1,7 @@
 {
     "python.analysis.typeCheckingMode": "basic",
     "python.analysis.extraPaths": [
-        "./pycode/util"
+        "./pycode/util",
+        "./pycode"
     ]
 }
