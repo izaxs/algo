@@ -14,7 +14,6 @@
 # 1 <= sum(rooms[i].length) <= 3000
 # 0 <= rooms[i][j] < n
 # All the values of rooms[i] are unique.
-from collections import deque
 
 class Solution:
     def canVisitAllRooms(self, rooms: list[list[int]]) -> bool:
