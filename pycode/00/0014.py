@@ -29,3 +29,17 @@ class Solution:
                 if s[i] != effectiveBase[i]:
                     return effectiveBase[:i]
         return effectiveBase
+
+    def longestCommonPrefix3(self, strs: list[str]) -> str:
+        baseStr = min(strs, key=len)
+        for i, ch in enumerate(baseStr):
+            for s in strs:
+                if s[i] != ch:
+                    return baseStr[:i]
+        return baseStr
+
+    def longestCommonPrefix4(self, strs: list[str]) -> str:
+        s1, s2 = min(strs), max(strs)
+        for i, ch in enumerate(s1):
+            if ch != s2[i]: return s1[:i] # i is guaranteed to be in s2's range because of min(strs)
+        return s1
