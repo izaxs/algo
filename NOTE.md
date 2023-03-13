@@ -45,7 +45,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Loop or recursion condition not satisfied unexpectly</td>
-        <td>6</td>
+        <td>7</td>
     </tr>
     <tr>
         <td>Forget to init state before loop</td>
@@ -109,6 +109,10 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget to add inheritance</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Should use object's field but used object itself</td>
         <td>1</td>
     </tr>
 </table>
