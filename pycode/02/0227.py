@@ -24,7 +24,37 @@ class Solution:
                 sign = c
                 num = 0
         return sum(stack)
+    
+    def calculate2(self, s: str) -> int:
+        def parseNumber(s: str, i: int) -> tuple[int, int]:
+            num = 0
+            while i < len(s) and s[i].isspace():
+                i += 1
+            while i < len(s) and s[i].isdecimal(): 
+                num = num*10+int(s[i])
+                i += 1
+            return (num, i)
+        
+        s, i = '+' + s + '+', 0
+        res, cur, op = 0, 0, 1
+        while i < len(s):
+            if s[i] == '+' or s[i] == '-':
+                res = res+op*cur
+                op = 1 if s[i] == '+' else -1
+                cur, i = parseNumber(s, i+1)
+            elif s[i] == '*':
+                num, i = parseNumber(s, i+1)
+                cur *= num
+            elif s[i] == '/':
+                num, i = parseNumber(s, i+1)
+                cur //= num
+            else: i += 1
+        return res
 
 
-s = Solution()
-print(s.calculate('3+5 *2-4 '))
+if __name__ == '__main__':
+    s = Solution()
+    s.calculate2('3/2')
+    s.calculate2('3+ 5/2')
+    # s.calculate2("3+2*2")
+    # s.calculate2('3+5 *2-4 ')
