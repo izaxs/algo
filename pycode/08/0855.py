@@ -97,15 +97,91 @@ class ExamRoom_Normal:
     def leave(self, p):
         self.seats.remove(p)
 
+# Fast solution
+import heapq
+
+class ExamRoom:
+    def __init__(self, n: int):
+        self.N = n
+        self.seats: list[Slot] = []
+        self.slotsRightSide: dict[int, Slot] = {}
+        self.slotsLeftSide: dict[int, Slot] = {}
+        self.seats.append(Slot(None, None, n))
+    
+    @monitor
+    def seat(self):
+        while True:
+            slot = heapq.heappop(self.seats)
+            if slot.isValid:
+                break
+        if slot.lo == None:
+            slot.lo = 0
+            self.slotsLeftSide[0] = slot
+            heapq.heappush(self.seats, slot)
+            return 0
+        if slot.hi == None:
+            slot.hi = slot.N - 1
+            self.slotsRightSide[slot.N - 1] = slot
+            heapq.heappush(self.seats, slot)
+            return slot.N - 1
+        mid = (slot.lo + slot.hi) >> 1
+        leftSlot = Slot(slot.lo, mid, slot.N)
+        rightSlot = Slot(mid, slot.hi, slot.N)
+        self.slotsLeftSide[slot.lo], self.slotsLeftSide[mid] = leftSlot, rightSlot
+        self.slotsRightSide[mid], self.slotsRightSide[slot.hi] = leftSlot, rightSlot
+        heapq.heappush(self.seats, leftSlot)
+        heapq.heappush(self.seats, rightSlot)
+        return mid
+
+    def leave(self, p):
+        slot = Slot(None, None, self.N)
+        leftSlot = self.slotsRightSide.pop(p, None)
+        rightSlot = self.slotsLeftSide.pop(p, None)
+        if leftSlot:
+            slot.lo = leftSlot.lo # type: ignore
+            leftSlot.isValid = False
+        if rightSlot:
+            slot.hi = rightSlot.hi # type: ignore
+            rightSlot.isValid = False
+        if slot.lo:
+            self.slotsLeftSide[slot.lo] = slot
+        if slot.hi:
+            self.slotsRightSide[slot.hi] = slot
+        heapq.heappush(self.seats, slot)
+
+class Slot:
+    def __init__(self, lo, hi, N):
+        self.lo = lo # lo seat index
+        self.hi = hi # hi seat index
+        self.N = N
+        self.isValid = True
+
+    def nextDist(self) -> int:
+        if self.lo == None and self.hi == None:
+            return self.N
+        if self.lo == None:
+            return self.hi
+        if self.hi == None:
+            return self.N - 1 - self.lo
+        return (self.hi - self.lo) >> 1
+
+    # To be sorted in min heap, the larger the nextDist, the smaller the slot
+    def __lt__(self, other) -> bool:
+        cmp = self.nextDist() - other.nextDist()
+        if cmp != 0: return cmp > 0
+        if self.lo == None: return True
+        if other.lo == None: return False
+        return self.lo < other.lo
+
+    def __repr__(self):
+        return f"Slot({self.lo}, {self.hi})"
+
 
 if __name__ == "__main__":
-    import sys
-    print(sys.path)
-    r = ExamRoom_Normal(4)  
+    r = ExamRoom(10)  
     r.seat()
     r.seat()
     r.seat()
     r.seat()
-    r.leave(1)
-    r.leave(3)
+    r.leave(4)
     r.seat()
