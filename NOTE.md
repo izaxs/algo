@@ -21,7 +21,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
-        <td>18</td>
+        <td>19</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables</td>
@@ -40,6 +40,10 @@ Be aware of online editor might not display syntax error!
         <td>9</td>
     </tr>
     <tr>
+        <td>Incorrectly assigned local var or mixed index with value</td>
+        <td>7</td>
+    </tr>
+    <tr>
         <td>Python indentation or syntax wrong!</td>
         <td>7</td>
     </tr>
@@ -48,16 +52,12 @@ Be aware of online editor might not display syntax error!
         <td>7</td>
     </tr>
     <tr>
+        <td>Input corner case not considered, eg. zero or one</td>
+        <td>6</td>
+    </tr>
+    <tr>
         <td>Forget to init state before loop</td>
         <td>4</td>
-    </tr>
-    <tr>
-        <td>Input corner case not considered, eg. zero or one</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>Incorrectly assigned local var or mixed index with value</td>
-        <td>3</td>
     </tr>
     <tr>
         <td>Bit operator wrongful usage</td>
