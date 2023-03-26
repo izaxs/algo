@@ -60,20 +60,52 @@ class ExamRoom_Slow:
         self.count -= 1
 
 # Normal solution
-# class ExamRoom_Normal:
-#     def __init__(self, n: int):
-#         self.seats = []
-#         self.N = n
+import include
+from bisect import insort
+from printer import monitor
+
+class ExamRoom_Normal:
+    def __init__(self, n: int):
+        self.seats: list[int] = []
+        self.HI = n - 1
+
+    @monitor
+    def seat(self) -> int:
+        if not self.seats:
+            self.seats.append(0)
+            return 0
+        leftOpenDist, rightOpenDist = self.seats[0], self.HI - self.seats[-1]
+        maxLo = maxHi = lastIdx = self.seats[0]
+        for i in self.seats:
+            if ((maxHi - maxLo) >> 1) < ((i - lastIdx) >> 1):
+                maxLo, maxHi = lastIdx, i
+            lastIdx = i
+        closedDist = (maxHi - maxLo) >> 1
+        maxDist = max(closedDist, leftOpenDist, rightOpenDist)
+        if maxDist == leftOpenDist:
+            self.seats.insert(0, 0)
+            return 0
+        elif maxDist == closedDist:
+            mid = (maxLo + maxHi) >> 1
+            insort(self.seats, mid)
+            return mid
+        else:
+            self.seats.append(self.HI)
+            return self.HI
+
+    @monitor
+    def leave(self, p):
+        self.seats.remove(p)
 
 
-
-
-
-
-# if __name__ == "__main__":
-#     r = ExamRoom(10)
-#     r.seats = [1]*10   
-#     # print(r.seat())
-   
-#     print(r.leave(9))
-#     print(r.seat())
+if __name__ == "__main__":
+    import sys
+    print(sys.path)
+    r = ExamRoom_Normal(4)  
+    r.seat()
+    r.seat()
+    r.seat()
+    r.seat()
+    r.leave(1)
+    r.leave(3)
+    r.seat()

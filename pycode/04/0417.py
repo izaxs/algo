@@ -16,7 +16,7 @@
 #     0 <= heights[r][c] <= 105
 import include
 from collections import deque
-from printer import print2D
+from printer import print2d
 
 class Solution:
     # BFS from sea

@@ -56,7 +56,7 @@ class Solution:
 
 if __name__ == "__main__":
     import include
-    from printer import print2D
+    from printer import print2d
     s = Solution()
     image = [
         [1, 1, 1],
@@ -64,4 +64,4 @@ if __name__ == "__main__":
         [1, 0, 1],
     ]
     s.floodFill(image, 1, 1, 2)
-    print2D(image)
+    print2d(image)
