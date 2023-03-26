@@ -43,6 +43,7 @@ def encode(o):
     for key in o.__slots__: d[key] = getattr(o, key)
     return d
 
+# If __slots__ is not defined, we have to hardcode the all class attributes for the decode mapping
 def decode(d: dict) -> object:
     classes = [Team, Employee, Address, City]
     keys = d.keys()
