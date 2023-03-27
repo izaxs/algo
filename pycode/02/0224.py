@@ -65,7 +65,7 @@ class Solution:
 
     def calculate_recur(self, s: str) -> int:
         ADD, SUB, LP, RP = '+', '-', '(', ')'
-        def calculate_block(s: str, i: int) -> tuple[int, int]: # (value, i)
+        def calculate_block(i: int) -> tuple[int, int]: # (value, i)
             total, op, val = 0, 1, 0
             while i < len(s):
                 if s[i].isdecimal():
@@ -77,12 +77,12 @@ class Solution:
                     total += op*val
                     op, val = -1, 0
                 elif s[i] == LP:
-                    val, i = calculate_block(s, i+1)
+                    val, i = calculate_block(i+1)
                 elif s[i] == RP:
                     return total+op*val, i
                 i += 1
             return total+op*val, i
-        return calculate_block(s, 0)[0]
+        return calculate_block(0)[0]
                 
 
 
