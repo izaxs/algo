@@ -65,24 +65,24 @@ class Solution:
 
     def calculate_recur(self, s: str) -> int:
         ADD, SUB, LP, RP = '+', '-', '(', ')'
-        def helper(s: str, i: int) -> tuple[int, int]: # (value, i)
-            preVal, curOp, curVal = 0, 1, 0
+        def calculate_block(s: str, i: int) -> tuple[int, int]: # (value, i)
+            total, op, val = 0, 1, 0
             while i < len(s):
                 if s[i].isdecimal():
-                    curVal = curVal*10+int(s[i])
+                    val = val*10+int(s[i])
                 elif s[i] == ADD:
-                    preVal += curOp*curVal
-                    curOp, curVal = 1, 0
+                    total += op*val
+                    op, val = 1, 0
                 elif s[i] == SUB:
-                    preVal += curOp*curVal
-                    curOp, curVal = -1, 0
+                    total += op*val
+                    op, val = -1, 0
                 elif s[i] == LP:
-                    curVal, i = helper(s, i+1)
+                    val, i = calculate_block(s, i+1)
                 elif s[i] == RP:
-                    return preVal+curOp*curVal, i
+                    return total+op*val, i
                 i += 1
-            return preVal+curOp*curVal, i
-        return helper(s, 0)[0]
+            return total+op*val, i
+        return calculate_block(s, 0)[0]
                 
 
 
