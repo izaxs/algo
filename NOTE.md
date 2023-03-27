@@ -9,14 +9,14 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>28</td>
+        <td>29</td>
+    </tr>
+        <tr>
+        <td>Index & offset target wrong</td>
+        <td>25</td>
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
-        <td>24</td>
-    </tr>
-    <tr>
-        <td>Index & offset target wrong</td>
         <td>24</td>
     </tr>
     <tr>
@@ -24,8 +24,8 @@ Be aware of online editor might not display syntax error!
         <td>22</td>
     </tr>
     <tr>
-        <td>Wrong variable name or messed up with local variables</td>
-        <td>16</td>
+        <td>Wrong variable name or messed up with local variables or operators</td>
+        <td>19</td>
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
