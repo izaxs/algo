@@ -63,11 +63,33 @@ class Solution:
             i += 1
         return preVal+curOp*curVal
 
+    def calculate_recur(self, s: str) -> int:
+        ADD, SUB, LP, RP = '+', '-', '(', ')'
+        def helper(s: str, i: int) -> tuple[int, int]: # (value, i)
+            preVal, curOp, curVal = 0, 1, 0
+            while i < len(s):
+                if s[i].isdecimal():
+                    curVal = curVal*10+int(s[i])
+                elif s[i] == ADD:
+                    preVal += curOp*curVal
+                    curOp, curVal = 1, 0
+                elif s[i] == SUB:
+                    preVal += curOp*curVal
+                    curOp, curVal = -1, 0
+                elif s[i] == LP:
+                    curVal, i = helper(s, i+1)
+                elif s[i] == RP:
+                    return preVal+curOp*curVal, i
+                i += 1
+            return preVal+curOp*curVal, i
+        return helper(s, 0)[0]
+                
+
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.calculate_fast(" 2-1 + 2 "))
-    # print(s.calculate_fast('(1 + 1)-3'))
-    # print(s.calculate_fast(' (1+(4+5+2)-3)+(6+9)'))
+    print(s.calculate_recur(" 2-1 + 2 "))
+    print(s.calculate_fast('(1 + 1)-3'))
+    print(s.calculate_fast(' (1+(4+5+2)-3)+(6+9)'))
     
     
