@@ -73,6 +73,9 @@ def inorder3(root: TreeNode) -> list[int]:
                 cur = cur.left
     return result
 
+# def inorder4(root: TreeNode) -> list[int]:
+
+
 def postorder(root: TreeNode) -> list[int]:
     stack: list[tuple[TreeNode, bool]] = []
     result: list[int] = []
@@ -108,13 +111,15 @@ def postorder2(root: TreeNode) -> list[int]:
 
 def _gen_tree() -> TreeNode:
     nodes: list[TreeNode] = []
-    for i in range(6):
+    for i in range(8):
         nodes.append(TreeNode(i))
     nodes[0].left = nodes[1]
-    nodes[1].right = nodes[2]
-    nodes[2].left = nodes[3]
-    nodes[0].right = nodes[4]
-    nodes[4].right = nodes[5]
+    nodes[1].left = nodes[2]
+    nodes[1].right = nodes[3]
+    nodes[3].left = nodes[4]
+    nodes[0].right = nodes[5]
+    nodes[5].left = nodes[6]
+    nodes[5].right = nodes[7]
     return nodes[0]
 
 if __name__ == '__main__':
