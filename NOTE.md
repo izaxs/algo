@@ -25,7 +25,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables or operators</td>
-        <td>19</td>
+        <td>20</td>
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
