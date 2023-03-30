@@ -87,10 +87,33 @@ class Solution:
                 remain -= 1
         return -1
 
+    def numBusesToDestination4(self, routes: list[list[int]], source: int, target: int) -> int:
+        bussesAtStop: dict[int, list[int]] = {}
+        for busId, stops in enumerate(routes):
+            for stop in stops:
+                bussesAtStop.setdefault(stop, []).append(busId)
+        busCount = 0
+        curStops: deque[int] = deque([source])
+        visited: set[int] = set([source])
+        while curStops:
+            size = len(curStops)
+            for _ in range(size):
+                stop = curStops.popleft()
+                if stop == target: return busCount
+                for bus in bussesAtStop[stop]:
+                    for nextStop in routes[bus]:
+                        if nextStop in visited: continue
+                        curStops.append(nextStop)
+                        visited.add(nextStop)
+                    routes[bus] = []
+            busCount += 1
+        return -1
+                        
 
-routes = [[1,2,7],[3,6,7]]
-stopCount = Solution().numBusesToDestination(routes, 1, 6)
-print(stopCount)
+if __name__ == '__main__':
+    routes = [[1,2,7],[3,6,7]]
+    stopCount = Solution().numBusesToDestination(routes, 1, 6)
+    print(stopCount)
 
 # Mistakes:
 # 1. looped in bus for stops, should use nested loop
