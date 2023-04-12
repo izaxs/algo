@@ -85,11 +85,69 @@ class Solution:
         return calculate_block(0)[0]
                 
 
+def calculator(expression):
+    def add(a, b):
+        return a + b
+
+    def sub(a, b):
+        return a - b
+
+    def mul(a, b):
+        return a * b
+
+    def div(a, b):
+        return a / b
+
+    operators = {
+        'add': add,
+        'sub': sub,
+        'mul': mul,
+        'div': div
+    }
+
+    def get_args(expression):
+        open_parentheses = 0
+        start = 0
+        args = []
+
+        for i, char in enumerate(expression):
+            if char == '(':
+                if open_parentheses == 0:
+                    start = i + 1
+                open_parentheses += 1
+            elif char == ')':
+                open_parentheses -= 1
+                if open_parentheses == 0:
+                    args.append(expression[start:i])
+            elif char == ',' and open_parentheses == 1:
+                args.append(expression[start:i])
+                start = i + 1
+
+        return args
+
+    def parse_expression(expression):
+        if '(' not in expression:
+            return float(expression)
+
+        for operator, func in operators.items():
+            if operator in expression:
+                start = expression.index(operator) + len(operator)
+                args = get_args(expression[start:])
+                a = parse_expression(args[0])
+                b = parse_expression(args[1])
+                return func(a, b)
+
+    return parse_expression(expression)
+
 
 if __name__ == '__main__':
-    s = Solution()
-    print(s.calculate_recur(" 2-1 + 2 "))
-    print(s.calculate_fast('(1 + 1)-3'))
-    print(s.calculate_fast(' (1+(4+5+2)-3)+(6+9)'))
-    
+    # s = Solution()
+    # print(s.calculate_recur(" 2-1 + 2 "))
+    # print(s.calculate_fast('(1 + 1)-3'))
+    # print(s.calculate_fast(' (1+(4+5+2)-3)+(6+9)'))
+
+    expression = "sub(add(1,2),div(1,sub(3,4)))"
+    result = calculator(expression)
+    print(f"Result of the expression '{expression}' is: {result}")
+        
     
