@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug TS",
+            "name": "TypeScript Current File",
             "skipFiles": [
                 "<node_internals>/**",
                 "**/node_modules/**",
