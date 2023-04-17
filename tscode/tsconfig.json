@@ -1,15 +1,14 @@
 {
+  "ts-node": {
+    "swc": true,
+  },
   "compilerOptions": {
-    "esModuleInterop": true,
     "target": "ES2018",
     "module": "CommonJS",
-    "outDir": "out",
+    "esModuleInterop": true,
     "sourceMap": true,
     "noEmitOnError": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
   },
-  "ts-node": {
-    "swc": true,
-  }
 }
