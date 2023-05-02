@@ -1,4 +1,4 @@
-{ 
+{
   "license": "MIT",
   "devDependencies": {
     "@swc/core": "^1.2.249",
