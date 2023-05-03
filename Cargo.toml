@@ -1,16 +1,16 @@
 [package]
-name = "rustly"
+name = "rusty"
 version = "0.1.0"
-edition = "2021"  
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-name = "rustly"
-path = "rustly/lib.rs"
+name = "rusty"
+path = "rusty/lib.rs"
 
 [[bin]]
-name = "rustly"
-path = "rustly/main.rs"
+name = "rusty"
+path = "rusty/main.rs"
 
 [dependencies]
