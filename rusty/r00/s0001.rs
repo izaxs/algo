@@ -8,9 +8,8 @@ impl Solution {
         for (i, num) in nums.iter().enumerate() {
             if let Some(&expect_index) = seen.get(num) {
                 return vec![expect_index as i32, i as i32];
-            } else {
-                seen.insert(target-num, i);
             }
+            seen.insert(target-num, i);
         }
         vec![]
     }
@@ -32,6 +31,6 @@ impl Solution {
 fn two_sum_work() {
     let nums = vec![2, 6, 4, 9, 1];
     let e = vec![2, 3];
-    let r = Solution::two_sum2(nums, 13);
+    let r = Solution::two_sum(nums, 13);
     assert_eq!(r, e);
 }
