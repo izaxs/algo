@@ -33,7 +33,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget +/- to index or advance the pointer</td>
-        <td>11</td>
+        <td>13</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
