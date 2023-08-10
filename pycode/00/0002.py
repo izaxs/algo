@@ -30,6 +30,22 @@ class Solution:
             pre.next = ListNode(val)
             pre = pre.next
         return head.next
+    
+    def addTwoNumbers2(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        fake, carry = ListNode(), 0
+        cur = fake
+        while l1 or l2 or carry:
+            if l1: 
+                carry += l1.val
+                l1 = l1.next
+            if l2: 
+                carry += l2.val
+                l2 = l2.next
+            cur.next = ListNode(carry % 10)
+            carry //= 10
+            cur = cur.next
+        return fake.next
+
 
 if __name__ == '__main__':
     s = Solution()
