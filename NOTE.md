@@ -36,12 +36,12 @@ Be aware of online editor might not display syntax error!
         <td>13</td>
     </tr>
     <tr>
-        <td>Forget empty input case or shortcut case or out of range case</td>
-        <td>9</td>
+        <td>Mistakenly treat index with value or incorrectly assigned local var</td>
+        <td>11</td>
     </tr>
     <tr>
-        <td>Incorrectly assigned local var or mixed index with value</td>
-        <td>7</td>
+        <td>Forget empty input case or shortcut case or out of range case</td>
+        <td>9</td>
     </tr>
     <tr>
         <td>Python indentation or syntax wrong!</td>
