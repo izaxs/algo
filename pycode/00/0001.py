@@ -23,6 +23,17 @@ class Solution:
                 return [lastI, i]
             want[target-v] = i
         return []
+    
+    def twoSum3(self, nums: list[int], target: int) -> list[int]:
+        seen: dict[int, int] = {}
+        for i, v in enumerate(nums):
+            expect = target-v
+            if expect in seen:
+                return [seen[expect], i]
+            seen[v] = i
+        return []
+
+
 
 if __name__ == '__main__':
     s = Solution()
