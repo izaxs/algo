@@ -17,7 +17,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
-        <td>24</td>
+        <td>25</td>
     </tr>
     <tr>
         <td>Index out of range</td>
@@ -58,6 +58,10 @@ Be aware of online editor might not display syntax error!
     <tr>
         <td>Forget to init state before loop</td>
         <td>4</td>
+    </tr>
+    <tr>
+        <td>Should use object's field or method but used object itself</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Bit operator wrongful usage</td>
@@ -109,10 +113,6 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget to add inheritance</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Should use object's field but used object itself</td>
         <td>1</td>
     </tr>
 </table>
