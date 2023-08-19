@@ -46,6 +46,23 @@ class Solution:
                     count += 1
                     dfs(x, y)
         return count
+    
+    def numIslands3(self, grid: list[list[str]]) -> int:
+        DIRS = ((0, 1), (0, -1), (1, 0), (-1, 0))
+        m, n = len(grid), len(grid[0])
+        def search(x: int, y: int):
+            if not (0 <= x < m and 0 <= y < n and grid[x][y] == '1'): return
+            grid[x][y] = ''
+            for dx, dy in DIRS:
+                search(x+dx, y+dy)
+        counter = 0
+        for x, row in enumerate(grid):
+            for y, v in enumerate(row):
+                if v == '1':
+                    counter += 1
+                    search(x, y)
+        return counter
+            
 
 if __name__ == '__main__':
     s = Solution()
