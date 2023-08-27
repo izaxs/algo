@@ -41,7 +41,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
-        <td>9</td>
+        <td>10</td>
     </tr>
     <tr>
         <td>Python indentation or syntax wrong!</td>
