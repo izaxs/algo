@@ -9,7 +9,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>31</td>
+        <td>32</td>
     </tr>
         <tr>
         <td>Index & offset target wrong</td>
@@ -44,11 +44,11 @@ Be aware of online editor might not display syntax error!
         <td>10</td>
     </tr>
     <tr>
-        <td>Python indentation or syntax wrong!</td>
-        <td>7</td>
+        <td>Loop or recursion condition not satisfied unexpectly</td>
+        <td>8</td>
     </tr>
     <tr>
-        <td>Loop or recursion condition not satisfied unexpectly</td>
+        <td>Python indentation or syntax wrong!</td>
         <td>7</td>
     </tr>
     <tr>
