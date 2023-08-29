@@ -11,12 +11,12 @@ Be aware of online editor might not display syntax error!
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
         <td>32</td>
     </tr>
-        <tr>
-        <td>Index & offset target wrong</td>
-        <td>25</td>
-    </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
+        <td>27</td>
+    </tr>
+    <tr>
+        <td>Index & offset target wrong</td>
         <td>25</td>
     </tr>
     <tr>
