@@ -36,7 +36,7 @@ class Solution:
         result.extend(intervals[i:])
         return result
     
-    # Awesome solution
+    # Beautiful way
     def insert2(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         start, end = newInterval
         left, right = [], []
@@ -47,6 +47,23 @@ class Solution:
                 start = min(start, i[0])
                 end = max(end, i[1])
         return left + [[start, end]] + right
+    
+    # Frugal & Performant way
+    def insert3(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
+        start, end = newInterval
+        result, rightStart = [], len(intervals)
+        for i, v in enumerate(intervals):
+            if v[1] < start: 
+                result.append(v)
+            elif v[0] > end:
+                rightStart = i
+                break
+            else:
+                start = min(start, v[0])
+                end = max(end, v[1])
+        result.append([start, end])
+        for i in range(rightStart, len(intervals)): result.append(intervals[i])
+        return result
         
 
 if __name__ == '__main__':
