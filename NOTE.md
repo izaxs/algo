@@ -13,15 +13,15 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
-        <td>27</td>
+        <td>29</td>
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>25</td>
+        <td>26</td>
     </tr>
     <tr>
         <td>Index out of range</td>
-        <td>22</td>
+        <td>24</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables or operators</td>
