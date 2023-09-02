@@ -5,6 +5,8 @@ Find them in ```/.archived```
 ### Choose Language
 C#: .NET 6
 
+Rust: 1.71
+
 TypeScript: 4.6+
 
 Python: Python 3.9+
@@ -98,6 +100,9 @@ int main() {
 ## Build & Run
 ### Python
 Just F5 run active Python files in snakecode
+
+### LeetCode Rust Solutions
+Rust files are grouped by every 100 solutions: ```cargode/rusty/r[0-9]{2}/s{4}.rs```
 
 ### Go
 Run the classic test command for each Go test file, eg.
