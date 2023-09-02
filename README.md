@@ -10,7 +10,7 @@ Nice to have package for LeetCode: ```pip install sortedcontainers```
 
 ## Other Language Solutions
 
-Archived solutions: C#, Go, C++, TypeScript
+Archived solutions: C#, Rust, Go, C++, TypeScript
 
 Find them in ```.archived/```
 
