@@ -141,7 +141,6 @@ class SimpleKVStore:
     def __init__(self):
         self.data = {}
         self.transactions = []
-        self.current = 0
 
     def begin(self):
         self.transactions.append({})
