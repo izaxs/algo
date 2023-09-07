@@ -1,11 +1,25 @@
 from dataclasses import dataclass
+from typing import Generic, TypeVar, TypeVarTuple
+from uuid import UUID
+
+TKey = TypeVar('TKey', UUID, int, str)
+TVal = TypeVar('TVal')
+TValues = TypeVarTuple('TValues')
 
 @dataclass
-class Record:
-    name: str
-    phone: str
+class DataClassRecord(Generic[TKey, TVal]):
+    key: TKey
+    value: TVal
+
+class Record(Generic[TKey, *TValues]):
+    key: TKey
+    values: tuple[*TValues]
+
+    def __init__(self, key: TKey, *values: *TValues):
+        self.key = key
+        self.values = values
 
 
-r = Record('John', '1234567890')
-r2 = Record('John', '1234567890')
+r = DataClassRecord('a', 1)
+r2 = DataClassRecord('b', 2)
 assert r == r2
