@@ -33,12 +33,26 @@ class Solution:
                 if node.right: dq.append((order + 1, node.right))
         return cols
     
+    def verticalOrder2(self, root: Optional[TreeNode]) -> list[list[int]]:
+        if not root: return []
+        seen: dict[int, list[int]] = {}
+        queue: deque[tuple[int, TreeNode]] = deque([(0, root)])
+        lo, hi = 0, 0
+        while queue:
+            order, node = queue.popleft()
+            lo, hi = min(lo, order), max(hi, order)
+            seen.setdefault(order, []).append(node.val)
+            if node.left: queue.append((order - 1, node.left))
+            if node.right: queue.append((order + 1, node.right))
+        return [seen[i] for i in range(lo, hi + 1)]
+            
+    
 if __name__ == '__main__':
     null = None
 
     values = [3,9,8,4,0,1,7,null,null,null,2,5]
     root = makeTree(values)
-    result = Solution().verticalOrder(root)
+    result = Solution().verticalOrder2(root)
     print(result)
         
         
