@@ -29,7 +29,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
-        <td>16</td>
+        <td>20</td>
     </tr>
     <tr>
         <td>Forget +/- to index or advance the pointer</td>
@@ -49,7 +49,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Python indentation or syntax wrong!</td>
-        <td>7</td>
+        <td>8</td>
     </tr>
     <tr>
         <td>Input corner case not considered, eg. zero or one</td>
