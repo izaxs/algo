@@ -45,6 +45,17 @@ class Solution:
             if node.left: queue.append((order - 1, node.left))
             if node.right: queue.append((order + 1, node.right))
         return [seen[i] for i in range(lo, hi + 1)]
+    
+    def verticalOrder3(self, root: Optional[TreeNode]) -> list[list[int]]:
+        seen: dict[int, list[int]] = {}
+        queue: list[tuple[int, TreeNode | None]] = [(0, root)]
+        lo, hi = 0, -1
+        for order, node in queue: # Trick: can append while loop list, and no need to popleft item out
+            if not node: continue
+            lo, hi = min(lo, order), max(hi, order)
+            seen.setdefault(order, []).append(node.val)
+            queue += [(order - 1, node.left), (order + 1, node.right)]
+        return [seen[i] for i in range(lo, hi + 1)]
             
     
 if __name__ == '__main__':
@@ -52,7 +63,7 @@ if __name__ == '__main__':
 
     values = [3,9,8,4,0,1,7,null,null,null,2,5]
     root = makeTree(values)
-    result = Solution().verticalOrder2(root)
+    result = Solution().verticalOrder3(root)
     print(result)
         
         
