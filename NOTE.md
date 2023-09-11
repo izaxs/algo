@@ -17,19 +17,19 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
-        <td>26</td>
+        <td>28</td>
     </tr>
     <tr>
         <td>Index out of range</td>
         <td>24</td>
     </tr>
     <tr>
-        <td>Wrong variable name or messed up with local variables or operators</td>
-        <td>21</td>
+        <td>Not fully read or understand the problem</td>
+        <td>22</td>
     </tr>
     <tr>
-        <td>Not fully read or understand the problem</td>
-        <td>20</td>
+        <td>Wrong variable name or messed up with local variables or operators</td>
+        <td>21</td>
     </tr>
     <tr>
         <td>Forget +/- to index or advance the pointer</td>
