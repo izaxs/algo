@@ -25,7 +25,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables or operators</td>
-        <td>20</td>
+        <td>21</td>
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
@@ -52,8 +52,8 @@ Be aware of online editor might not display syntax error!
         <td>8</td>
     </tr>
     <tr>
-        <td>Input corner case not considered, eg. zero or one</td>
-        <td>6</td>
+        <td>Edge case not considered</td>
+        <td>7</td>
     </tr>
     <tr>
         <td>Forget to init state before loop</td>
