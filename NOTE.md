@@ -32,11 +32,11 @@ Be aware of online editor might not display syntax error!
         <td>21</td>
     </tr>
     <tr>
-        <td>Forget +/- to index or advance the pointer</td>
-        <td>13</td>
+        <td>Mistakenly treat index with value or incorrectly assigned local var</td>
+        <td>14</td>
     </tr>
     <tr>
-        <td>Mistakenly treat index with value or incorrectly assigned local var</td>
+        <td>Forget +/- to index or advance the pointer</td>
         <td>13</td>
     </tr>
     <tr>
