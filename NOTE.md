@@ -13,7 +13,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
-        <td>30</td>
+        <td>31</td>
     </tr>
     <tr>
         <td>Index & offset target wrong</td>
@@ -56,6 +56,10 @@ Be aware of online editor might not display syntax error!
         <td>7</td>
     </tr>
     <tr>
+        <td>Recursion termination condition wrong or forgotten</td>
+        <td>4</td>
+    </tr>
+    <tr>
         <td>Forget to init state before loop</td>
         <td>4</td>
     </tr>
@@ -66,10 +70,6 @@ Be aware of online editor might not display syntax error!
     <tr>
         <td>Bit operator wrongful usage</td>
         <td>3</td>
-    </tr>
-    <tr>
-        <td>Recursion termination condition wrong or forgotten</td>
-        <td>2</td>
     </tr>
     <tr>
         <td>Double execution</td>
