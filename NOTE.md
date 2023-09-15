@@ -9,7 +9,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>32</td>
+        <td>33</td>
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
@@ -25,7 +25,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
-        <td>22</td>
+        <td>23</td>
     </tr>
     <tr>
         <td>Wrong variable name or messed up with local variables or operators</td>
@@ -33,11 +33,11 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Mistakenly treat index with value or incorrectly assigned local var</td>
-        <td>14</td>
+        <td>15</td>
     </tr>
     <tr>
         <td>Forget +/- to index or advance the pointer</td>
-        <td>13</td>
+        <td>14</td>
     </tr>
     <tr>
         <td>Forget empty input case or shortcut case or out of range case</td>
