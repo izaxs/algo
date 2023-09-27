@@ -20,16 +20,16 @@ Be aware of online editor might not display syntax error!
         <td>28</td>
     </tr>
     <tr>
+        <td>Wrong variable name or messed up with local variables or operators</td>
+        <td>24</td>
+    </tr>
+    <tr>
         <td>Index out of range</td>
         <td>24</td>
     </tr>
     <tr>
         <td>Not fully read or understand the problem</td>
         <td>23</td>
-    </tr>
-    <tr>
-        <td>Wrong variable name or messed up with local variables or operators</td>
-        <td>21</td>
     </tr>
     <tr>
         <td>Mistakenly treat index with value or incorrectly assigned local var</td>
