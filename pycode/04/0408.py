@@ -46,6 +46,21 @@ class Solution:
                 skip = skip * 10 + int(c)
         return iWord + skip == len(word) - 1
     
+    def validWordAbbreviation3(self, word: str, abbr: str) -> bool:
+        number, wordIndex = 0, 0
+        for c in abbr:
+            if c.isalpha():
+                wordIndex += number
+                number = 0
+                if wordIndex >= len(word) or word[wordIndex] != c:
+                    return False
+                wordIndex += 1
+            else:
+                curNum = int(c)
+                if not curNum and not number: return False
+                number = number * 10 + curNum
+        return wordIndex + number == len(word)
+    
 if __name__ == '__main__':
     r = Solution().validWordAbbreviation2("internationalization", "i18n")
     assert r

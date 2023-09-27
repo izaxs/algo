@@ -9,7 +9,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Forget updating or mistakenly changed variable (like reused) in loop</td>
-        <td>33</td>
+        <td>34</td>
     </tr>
     <tr>
         <td>If condition wrong or forgotten</td>
