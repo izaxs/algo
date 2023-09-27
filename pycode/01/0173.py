@@ -19,3 +19,24 @@ class BSTIterator:
             self.cur = self.cur.left
         if self.stack: return True
         return False
+    
+class BSTIterator2:
+
+    def __init__(self, root: Optional[TreeNode]):
+        self.stk: list[TreeNode] = []
+        self._push(root)
+
+    def _push(self, root):
+        while root:
+            self.stk.append(root)
+            root = root.left
+
+    def next(self) -> int:
+        nextNode = self.stk.pop()
+        result = nextNode.val
+        self._push(nextNode.right)
+        return result
+        
+
+    def hasNext(self) -> bool:
+        return len(self.stk) > 0
