@@ -3,5 +3,9 @@
     "python.analysis.extraPaths": [
         "./pycode/util",
         "./pycode"
-    ]
+    ],
+    "files.associations": {
+        "*.spec": "python",
+        "iostream": "cpp"
+    }
 }
