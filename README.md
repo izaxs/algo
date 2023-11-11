@@ -1,7 +1,7 @@
 # Algorithms
 Main programming language: Python
 
-Rust is included for fun
+C++ is included for ~~fun~~
 
 ## LeetCode Python Solutions
 Python files are grouped by every 100 solutions: ```pycode/[0-9]{2}/{4}.py```
