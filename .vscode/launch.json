@@ -5,10 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            // This will be used by C++ Extension for the play button
+            "name": "C/C++: g++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/cxxcode/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/cxxcode/bin/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb", // Only GDB works for VSCode C++ Extension
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "C/C++: g++ build active file"
+        },
+        {
+            "name": "(gdb) Launch C++",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/cxxcode/bin/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -26,7 +41,7 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ]
+            ],
         },
         {
             "type": "node",
