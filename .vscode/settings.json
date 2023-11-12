@@ -6,6 +6,8 @@
     ],
     "files.associations": {
         "*.spec": "python",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string_view": "cpp",
+        "type_traits": "cpp"
     }
 }
