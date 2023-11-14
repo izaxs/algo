@@ -33,7 +33,7 @@ Be aware of online editor might not display syntax error!
     </tr>
     <tr>
         <td>Mistakenly treat index with value or incorrectly assigned local var</td>
-        <td>15</td>
+        <td>17</td>
     </tr>
     <tr>
         <td>Forget +/- to index or advance the pointer</td>
