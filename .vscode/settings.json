@@ -9,5 +9,6 @@
         "iostream": "cpp",
         "string_view": "cpp",
         "type_traits": "cpp"
-    }
+    },
+    "makefile.makefilePath": "cxxcode/Makefile"
 }
