@@ -9,7 +9,7 @@ Python files are grouped by every 100 solutions: ```pycode/[0-9]{2}/{4}.py```
 Nice to have package for LeetCode: ```pip install sortedcontainers```
 
 ## C++ Solutions
-If VSCode C++ Extension is installed, files wth cpp suffix under ```cxxcode``` can be run directly through the editor play button
+If VSCode C++ Extension is installed, files with cpp suffix under ```cxxcode``` can be run directly through the editor play button
 
 To manually build, simply run ```make``` command under ```cxxcode``` directory in terminal
 
