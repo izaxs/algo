@@ -9,16 +9,18 @@ BIN_DIR:=bin
 OBJ_DIR:=$(BIN_DIR)/.obj
 CPP_DIR:=.
 LEETCODE_NAME:=$(CPP_DIR)
-UTIL_NAME:=$(CPP_DIR)/util
-INC_DIR:=$(UTIL_NAME)/include
-
+UTIL_NAME:=$(CPP_DIR)/utils
+INC_DIR:=$(CPP_DIR)/include
+UTILS_INC_DIR=$(INC_DIR)/utils
 
 # Compiler & flags
 CC:=g++
-# CFLAGS:=-O3 -s -std=c++17
-CFLAGS:=-g -std=c++17
+# CFLAGS:=-O3 -s -std=c++20
+CFLAGS:=-g -std=c++20
 
-ALL_INCS:=$(wildcard $(INC_DIR)/*.hpp)
+INCFLAGS:=-I$(INC_DIR) -I$(UTILS_INC_DIR)
+
+UTIL_INCS:=$(wildcard $(UTILS_INC_DIR)/*.hpp)
 # Get all cpp files in source
 UTIL_SOURCES:=$(wildcard $(UTIL_NAME)/*.cpp)
 LEETCODE_SOURCES:=$(wildcard $(LEETCODE_NAME)/*.cpp)
@@ -45,11 +47,11 @@ link: $(LEETCODE_BINS)
 .PHONY: check
 check:
 	@echo "detecting c++ files ..."
-	@echo "all header files:\n" ${GREEN}$(ALL_INCS)${NC}
-	@echo "util source files:\n" ${GREEN}$(UTIL_SOURCES)${NC}
-	@echo "leetcode source files:\n" ${GREEN}$(LEETCODE_SOURCES)${NC}
+	@echo "utils header files:\n" ${GREEN}$(UTIL_INCS)${NC}
+	@echo "utils source files:\n" ${GREEN}$(UTIL_SOURCES)${NC}
+	@echo "main source files:\n" ${GREEN}$(LEETCODE_SOURCES)${NC}
 	@echo "util obj files to produce:\n" ${BLUE}$(UTIL_OBJS)${NC}
-	@echo "leetcode obj files to produce:\n" ${BLUE}$(LEETCODE_OBJS)${NC}
+	@echo "main obj files to produce:\n" ${BLUE}$(LEETCODE_OBJS)${NC}
 	@echo "binary files to produce:\n" ${BLUE}$(LEETCODE_BINS)${NC}
 
 ## clean: remove obj and exe dirs
@@ -62,9 +64,9 @@ help: Makefile
 	@sed -n 's/^##//p' $<
 
 # Compile single cpp source file to object file
-$(OBJ_DIR)/%.o: %.cpp $(ALL_INCS)
+$(OBJ_DIR)/%.o: %.cpp $(UTIL_INCS)
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -I$(INC_DIR) -o $@ -c $<
+	$(CC) $(CFLAGS) $(INCFLAGS) -o $@ -c $<
 
 $(BIN_DIR)/%: $(UTIL_OBJS) $(OBJ_DIR)/$(LEETCODE_NAME)/%.o
 	@mkdir -p $(@D)

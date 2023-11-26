@@ -45,4 +45,4 @@ Cargo.lock
 *.pdb
 
 /test_data
-/cxxcode/debug.cpp
+/cxxcode/debug*.cpp
