@@ -5,25 +5,26 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Directory alias
-BIN_DIR:=bin
+PROJ_DIR:=$(dir ($(abspath $(lastword $(MAKEFILE_LIST)))))
+BIN_DIR:=$(PROJ_DIR)/bin
 OBJ_DIR:=$(BIN_DIR)/.obj
-CPP_DIR:=.
-LEETCODE_NAME:=$(CPP_DIR)
-UTIL_NAME:=$(CPP_DIR)/utils
-INC_DIR:=$(CPP_DIR)/include
-UTILS_INC_DIR=$(INC_DIR)/utils
+SRC_DIR:=$(PROJ_DIR)
+UTIL_NAME:=$(SRC_DIR)/utils
+INC_BASE_DIR:=$(INC_BASE_DIR)/include
+INC_FMT_DIR:=$(INC_BASE_DIR)/fmt
+INC_UTILS_DIR=$(INC_BASE_DIR)/utils
 
 # Compiler & flags
 CC:=g++
 # CFLAGS:=-O3 -s -std=c++20
 CFLAGS:=-g -std=c++20
 
-INCFLAGS:=-I$(INC_DIR) -I$(UTILS_INC_DIR)
+INCFLAGS:=-I$(INC_FMT_DIR) -I$(UTILS_DIR)
 
-UTIL_INCS:=$(wildcard $(UTILS_INC_DIR)/*.hpp)
+UTIL_INCS:=$(wildcard $(UTILS_DIR)/*.hpp)
 # Get all cpp files in source
 UTIL_SOURCES:=$(wildcard $(UTIL_NAME)/*.cpp)
-LEETCODE_SOURCES:=$(wildcard $(LEETCODE_NAME)/*.cpp)
+LEETCODE_SOURCES:=$(wildcard $(LEETCODE_NAME)/**/*.cpp)
 # Get all object files to compile later based on source files automatically
 UTIL_OBJS:=$(patsubst $(UTIL_NAME)/%.cpp, $(OBJ_DIR)/$(UTIL_NAME)/%.o, $(UTIL_SOURCES))
 LEETCODE_OBJS:=$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(LEETCODE_SOURCES))
