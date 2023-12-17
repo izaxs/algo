@@ -46,3 +46,4 @@ Cargo.lock
 
 /test_data
 /cxxcode/debug*.cpp
+/cxxcode/_debug*.cpp
