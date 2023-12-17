@@ -3,8 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/cxxcode/include",
-                "${workspaceFolder}/cxxcode/include/utils",
+                "${workspaceFolder}/cxxcode/inc",
+                "${workspaceFolder}/cxxcode/inc/utils",
             ],
             "defines": [],
             "cStandard": "c23",

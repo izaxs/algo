@@ -5,32 +5,32 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Directory alias
-PROJ_DIR:=$(dir ($(abspath $(lastword $(MAKEFILE_LIST)))))
+PROJ_DIR:=$(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
+INC_DIR:=$(PROJ_DIR)/inc
+SRC_DIR:=$(PROJ_DIR)/src
 BIN_DIR:=$(PROJ_DIR)/bin
 OBJ_DIR:=$(BIN_DIR)/.obj
-SRC_DIR:=$(PROJ_DIR)
-UTIL_NAME:=$(SRC_DIR)/utils
-INC_BASE_DIR:=$(INC_BASE_DIR)/include
-INC_FMT_DIR:=$(INC_BASE_DIR)/fmt
-INC_UTILS_DIR=$(INC_BASE_DIR)/utils
+
+UTILS_NAME:=utils
+INC_UTILS_DIR=$(INC_DIR)/$(UTILS_NAME)
+SRC_UTILS_DIR:=$(SRC_DIR)/$(UTILS_NAME)
+OBJ_UTILS_DIR:=$(OBJ_DIR)/$(UTILS_NAME)
 
 # Compiler & flags
 CC:=g++
-# CFLAGS:=-O3 -s -std=c++20
-CFLAGS:=-g -std=c++20
-
-INCFLAGS:=-I$(INC_FMT_DIR) -I$(UTILS_DIR)
-
-UTIL_INCS:=$(wildcard $(UTILS_DIR)/*.hpp)
-# Get all cpp files in source
-UTIL_SOURCES:=$(wildcard $(UTIL_NAME)/*.cpp)
-LEETCODE_SOURCES:=$(wildcard $(LEETCODE_NAME)/**/*.cpp)
-# Get all object files to compile later based on source files automatically
-UTIL_OBJS:=$(patsubst $(UTIL_NAME)/%.cpp, $(OBJ_DIR)/$(UTIL_NAME)/%.o, $(UTIL_SOURCES))
-LEETCODE_OBJS:=$(patsubst %.cpp, $(OBJ_DIR)/%.o, $(LEETCODE_SOURCES))
-# Get all exe file names
-LEETCODE_BINS:=$(patsubst $(OBJ_DIR)/$(LEETCODE_NAME)/%.o, $(BIN_DIR)/%, $(LEETCODE_OBJS))
-
+# CC_FLAGS:=-O3 -s -std=c++20
+CC_FLAGS:=-g -std=c++20
+INC_FLAGS:=-I$(INC_DIR) -I$(INC_UTILS_DIR)
+# Names for all utils header files
+INC_UTILS_HPP:=$(wildcard $(INC_UTILS_DIR)/*.hpp)
+# Names for all source files
+SRC_MAIN_CPP:=$(wildcard $(SRC_DIR)/*.cpp)
+SRC_UTILS_CPP:=$(wildcard $(SRC_UTILS_DIR)/*.cpp)
+# Names for all object files
+OBJ_MAIN:=$(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC_MAIN_CPP))
+OBJ_UTILS:=$(patsubst $(SRC_UTILS_DIR)/%.cpp, $(OBJ_UTILS_DIR)/%.o, $(SRC_UTILS_CPP))
+# Names for all main exe files
+BIN_MAIN:=$(patsubst $(OBJ_DIR)/%.o, $(BIN_DIR)/%, $(OBJ_MAIN))
 
 ## build: produce executable from source files
 .PHONY: build
@@ -38,22 +38,22 @@ build: compile link
 
 ## compile: compile all source files to object files
 .PHONY: compile
-compile: $(UTIL_OBJS) $(LEETCODE_OBJS)
+compile: $(OBJ_MAIN) $(OBJ_UTILS)
 	
 ## link: link object files to executable
 .PHONY: link
-link: $(LEETCODE_BINS)
+link: $(BIN_MAIN)
 
 ## check: detect source files
 .PHONY: check
 check:
 	@echo "detecting c++ files ..."
-	@echo "utils header files:\n" ${GREEN}$(UTIL_INCS)${NC}
-	@echo "utils source files:\n" ${GREEN}$(UTIL_SOURCES)${NC}
-	@echo "main source files:\n" ${GREEN}$(LEETCODE_SOURCES)${NC}
-	@echo "util obj files to produce:\n" ${BLUE}$(UTIL_OBJS)${NC}
-	@echo "main obj files to produce:\n" ${BLUE}$(LEETCODE_OBJS)${NC}
-	@echo "binary files to produce:\n" ${BLUE}$(LEETCODE_BINS)${NC}
+	@echo "utils header files:\n" ${GREEN}$(INC_UTILS_HPP)${NC}
+	@echo "utils source files:\n" ${GREEN}$(SRC_UTILS_CPP)${NC}
+	@echo "main source files:\n" ${GREEN}$(SRC_MAIN_CPP)${NC}
+	@echo "util obj files to produce:\n" ${BLUE}$(OBJ_UTILS)${NC}
+	@echo "main obj files to produce:\n" ${BLUE}$(OBJ_MAIN)${NC}
+	@echo "binary files to produce:\n" ${BLUE}$(BIN_MAIN)${NC}
 
 ## clean: remove obj and exe dirs
 .PHONY: clean
@@ -65,10 +65,10 @@ help: Makefile
 	@sed -n 's/^##//p' $<
 
 # Compile single cpp source file to object file
-$(OBJ_DIR)/%.o: %.cpp $(UTIL_INCS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(INCFLAGS) -o $@ -c $<
+	$(CC) $(CC_FLAGS) $(INC_FLAGS) -o $@ -c $<
 
-$(BIN_DIR)/%: $(UTIL_OBJS) $(OBJ_DIR)/$(LEETCODE_NAME)/%.o
+$(BIN_DIR)/%: $(OBJ_DIR)/%.o $(OBJ_UTILS) 
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -o $@ $(OBJ_DIR)/$(LEETCODE_NAME)/$(@F).o $(UTIL_OBJS)
+	$(CC) $(CC_FLAGS) -o $@ $(OBJ_DIR)/$(@F).o $(OBJ_UTILS)
