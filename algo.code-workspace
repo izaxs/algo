@@ -9,5 +9,11 @@
         {
             "path": "pycode"
         }
-    ]
+    ],
+    "settings": {
+        "files.associations": {
+            "*.spec": "python",
+            "cstdio": "cpp"
+        }
+    }
   }

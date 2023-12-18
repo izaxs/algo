@@ -4,6 +4,9 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# CPP_VERSION:=c++17
+CPP_VERSION:=c++20
+
 # Directory alias
 PROJ_DIR:=$(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 INC_DIR:=$(PROJ_DIR)/inc
@@ -18,8 +21,9 @@ OBJ_UTILS_DIR:=$(OBJ_DIR)/$(UTILS_NAME)
 
 # Compiler & flags
 CC:=g++
-# CC_FLAGS:=-O3 -s -std=c++20
-CC_FLAGS:=-g -std=c++20
+# CC_FLAGS:=-O3 -s -std=$(CPP_VERSION)
+CC_FLAGS:=-g -std=$(CPP_VERSION)
+
 INC_FLAGS:=-I$(INC_DIR) -I$(INC_UTILS_DIR)
 # Names for all utils header files
 INC_UTILS_HPP:=$(wildcard $(INC_UTILS_DIR)/*.hpp)
