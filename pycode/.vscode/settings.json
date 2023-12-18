@@ -1,0 +1,10 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.extraPaths": [
+        "./util",
+        "."
+    ],
+    "files.associations": {
+        "*.spec": "python",
+    },
+}
