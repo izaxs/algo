@@ -3,17 +3,18 @@
 
 #pragma once
 
+#include <spdlog/details/file_helper.h>
+#include <spdlog/details/null_mutex.h>
+#include <spdlog/details/synchronous_factory.h>
+#include <spdlog/sinks/base_sink.h>
+
 #include <chrono>
 #include <mutex>
 #include <string>
 
-#include "../details/file_helper.h"
-#include "../details/null_mutex.h"
-#include "../details/synchronous_factory.h"
-#include "base_sink.h"
-
 namespace spdlog {
 namespace sinks {
+
 //
 // Rotating file sink based on size
 //
@@ -25,7 +26,6 @@ public:
                        std::size_t max_files,
                        bool rotate_on_open = false,
                        const file_event_handlers &event_handlers = {});
-
     static filename_t calc_filename(const filename_t &filename, std::size_t index);
     filename_t filename();
 
@@ -83,3 +83,7 @@ inline std::shared_ptr<logger> rotating_logger_st(const std::string &logger_name
         logger_name, filename, max_file_size, max_files, rotate_on_open, event_handlers);
 }
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "rotating_file_sink-inl.h"
+#endif

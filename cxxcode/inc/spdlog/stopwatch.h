@@ -4,8 +4,7 @@
 #pragma once
 
 #include <chrono>
-
-#include "fmt/fmt.h"
+#include <spdlog/fmt/fmt.h>
 
 // Stopwatch support for spdlog  (using std::chrono::steady_clock).
 // Displays elapsed seconds since construction as double.
@@ -21,7 +20,7 @@
 // If other units are needed (e.g. millis instead of double), include "fmt/chrono.h" and use
 // "duration_cast<..>(sw.elapsed())":
 //
-// #include "spdlog/fmt/chrono.h"
+// #include <spdlog/fmt/chrono.h>
 //..
 // using std::chrono::duration_cast;
 // using std::chrono::milliseconds;

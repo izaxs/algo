@@ -3,17 +3,18 @@
 
 #pragma once
 
+#include <spdlog/common.h>
+#include <spdlog/details/log_msg.h>
+#include <spdlog/details/os.h>
+#include <spdlog/formatter.h>
+
 #include <chrono>
 #include <ctime>
 #include <memory>
+
 #include <string>
 #include <unordered_map>
 #include <vector>
-
-#include "common.h"
-#include "details/log_msg.h"
-#include "details/os.h"
-#include "formatter.h"
 
 namespace spdlog {
 namespace details {
@@ -82,7 +83,7 @@ public:
 
     template <typename T, typename... Args>
     pattern_formatter &add_flag(char flag, Args &&...args) {
-        custom_handlers_[flag] = std::make_unique<T>(std::forward<Args>(args)...);
+        custom_handlers_[flag] = details::make_unique<T>(std::forward<Args>(args)...);
         return *this;
     }
     void set_pattern(std::string pattern);
@@ -111,3 +112,7 @@ private:
     void compile_pattern_(const std::string &pattern);
 };
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "pattern_formatter-inl.h"
+#endif

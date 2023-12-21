@@ -6,12 +6,12 @@
 // base sink templated over a mutex (either dummy or real)
 // concrete implementation should override the sink_it_() and flush_()  methods.
 // locking is taken care of in this class - no locking needed by the
-// implementers
+// implementers..
 //
 
-#include "../common.h"
-#include "../details/log_msg.h"
-#include "sink.h"
+#include <spdlog/common.h>
+#include <spdlog/details/log_msg.h>
+#include <spdlog/sinks/sink.h>
 
 namespace spdlog {
 namespace sinks {
@@ -45,3 +45,7 @@ protected:
 };
 }  // namespace sinks
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "base_sink-inl.h"
+#endif

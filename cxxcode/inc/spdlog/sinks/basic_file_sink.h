@@ -3,13 +3,13 @@
 
 #pragma once
 
+#include <spdlog/details/file_helper.h>
+#include <spdlog/details/null_mutex.h>
+#include <spdlog/details/synchronous_factory.h>
+#include <spdlog/sinks/base_sink.h>
+
 #include <mutex>
 #include <string>
-
-#include "../details/file_helper.h"
-#include "../details/null_mutex.h"
-#include "../details/synchronous_factory.h"
-#include "base_sink.h"
 
 namespace spdlog {
 namespace sinks {
@@ -59,3 +59,7 @@ inline std::shared_ptr<logger> basic_logger_st(const std::string &logger_name,
 }
 
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "basic_file_sink-inl.h"
+#endif

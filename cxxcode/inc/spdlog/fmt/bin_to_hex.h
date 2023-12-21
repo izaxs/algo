@@ -6,8 +6,7 @@
 #pragma once
 
 #include <cctype>
-
-#include "../common.h"
+#include <spdlog/common.h>
 
 #if defined(__has_include)
     #if __has_include(<version>)
@@ -112,7 +111,7 @@ struct formatter<spdlog::details::dump_info<T>, char> {
 
     // parse the format string flags
     template <typename ParseContext>
-    constexpr auto parse(ParseContext &ctx) -> decltype(ctx.begin()) {
+    SPDLOG_CONSTEXPR_FUNC auto parse(ParseContext &ctx) -> decltype(ctx.begin()) {
         auto it = ctx.begin();
         while (it != ctx.end() && *it != '}') {
             switch (*it) {
@@ -145,8 +144,8 @@ struct formatter<spdlog::details::dump_info<T>, char> {
     template <typename FormatContext, typename Container>
     auto format(const spdlog::details::dump_info<Container> &the_range, FormatContext &ctx) const
         -> decltype(ctx.out()) {
-        constexpr const char *hex_upper = "0123456789ABCDEF";
-        constexpr const char *hex_lower = "0123456789abcdef";
+        SPDLOG_CONSTEXPR const char *hex_upper = "0123456789ABCDEF";
+        SPDLOG_CONSTEXPR const char *hex_lower = "0123456789abcdef";
         const char *hex_chars = use_uppercase ? hex_upper : hex_lower;
 
 #if !defined(SPDLOG_USE_STD_FORMAT) && FMT_VERSION < 60000
@@ -218,7 +217,7 @@ struct formatter<spdlog::details::dump_info<T>, char> {
         *inserter++ = '\n';
 
         if (put_positions) {
-            spdlog::fmt_lib::format_to(inserter, "{:04X}: ", pos);
+            spdlog::fmt_lib::format_to(inserter, SPDLOG_FMT_STRING("{:04X}: "), pos);
         }
     }
 };

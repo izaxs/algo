@@ -11,14 +11,15 @@
 // If the widget's lifetime can be shorter than the logger's one, you should provide some permanent
 // QObject, and then use a standard signal/slot.
 //
+
+#include "spdlog/common.h"
+#include "spdlog/details/log_msg.h"
+#include "spdlog/details/synchronous_factory.h"
+#include "spdlog/sinks/base_sink.h"
 #include <array>
+
 #include <QPlainTextEdit>
 #include <QTextEdit>
-
-#include "../common.h"
-#include "../details/log_msg.h"
-#include "../details/synchronous_factory.h"
-#include "base_sink.h"
 
 //
 // qt_sink class
@@ -89,7 +90,7 @@ public:
         colors_.at(level::info) = format;
         // warn
         format.setForeground(dark_colors ? Qt::darkYellow : Qt::yellow);
-        colors_.at(spdlog::level::warn) = format;
+        colors_.at(level::warn) = format;
         // err
         format.setForeground(Qt::red);
         colors_.at(level::err) = format;
@@ -106,12 +107,12 @@ public:
         default_color_ = format;
     }
 
-    void set_level_color(level color_level, QTextCharFormat format) {
+    void set_level_color(level::level_enum color_level, QTextCharFormat format) {
         // std::lock_guard<Mutex> lock(base_sink<Mutex>::mutex_);
         colors_.at(static_cast<size_t>(color_level)) = format;
     }
 
-    QTextCharFormat &get_level_color(level color_level) {
+    QTextCharFormat &get_level_color(level::level_enum color_level) {
         std::lock_guard<Mutex> lock(base_sink<Mutex>::mutex_);
         return colors_.at(static_cast<size_t>(color_level));
     }
@@ -166,13 +167,13 @@ protected:
             payload = QString::fromLatin1(str.data(), static_cast<int>(str.size()));
         }
 
-        invoke_params params{max_lines_,                 // max lines
-                             qt_text_edit_,              // text edit to append to
-                             std::move(payload),         // text to append
-                             default_color_,             // default color
-                             colors_.at(msg.log_level),  // color to apply
-                             color_range_start,          // color range start
-                             color_range_end};           // color range end
+        invoke_params params{max_lines_,             // max lines
+                             qt_text_edit_,          // text edit to append to
+                             std::move(payload),     // text to append
+                             default_color_,         // default color
+                             colors_.at(msg.level),  // color to apply
+                             color_range_start,      // color range start
+                             color_range_end};       // color range end
 
         QMetaObject::invokeMethod(
             qt_text_edit_, [params]() { invoke_method_(params); }, Qt::AutoConnection);
@@ -224,9 +225,8 @@ protected:
     std::array<QTextCharFormat, level::n_levels> colors_;
 };
 
+#include "spdlog/details/null_mutex.h"
 #include <mutex>
-
-#include "../details/null_mutex.h"
 
 using qt_sink_mt = qt_sink<std::mutex>;
 using qt_sink_st = qt_sink<details::null_mutex>;

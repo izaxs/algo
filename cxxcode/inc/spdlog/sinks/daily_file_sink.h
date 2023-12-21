@@ -3,22 +3,22 @@
 
 #pragma once
 
+#include <spdlog/common.h>
+#include <spdlog/details/circular_q.h>
+#include <spdlog/details/file_helper.h>
+#include <spdlog/details/null_mutex.h>
+#include <spdlog/details/os.h>
+#include <spdlog/details/synchronous_factory.h>
+#include <spdlog/fmt/chrono.h>
+#include <spdlog/fmt/fmt.h>
+#include <spdlog/sinks/base_sink.h>
+
 #include <chrono>
 #include <cstdio>
 #include <iomanip>
 #include <mutex>
 #include <sstream>
 #include <string>
-
-#include "../common.h"
-#include "../details/circular_q.h"
-#include "../details/file_helper.h"
-#include "../details/null_mutex.h"
-#include "../details/os.h"
-#include "../details/synchronous_factory.h"
-#include "../fmt/chrono.h"
-#include "../fmt/fmt.h"
-#include "base_sink.h"
 
 namespace spdlog {
 namespace sinks {
@@ -31,8 +31,9 @@ struct daily_filename_calculator {
     static filename_t calc_filename(const filename_t &filename, const tm &now_tm) {
         filename_t basename, ext;
         std::tie(basename, ext) = details::file_helper::split_by_extension(filename);
-        return fmt_lib::format(SPDLOG_FILENAME_T("{}_{:04d}-{:02d}-{:02d}{}"), basename,
-                               now_tm.tm_year + 1900, now_tm.tm_mon + 1, now_tm.tm_mday, ext);
+        return fmt_lib::format(SPDLOG_FMT_STRING(SPDLOG_FILENAME_T("{}_{:04d}-{:02d}-{:02d}{}")),
+                               basename, now_tm.tm_year + 1900, now_tm.tm_mon + 1, now_tm.tm_mday,
+                               ext);
     }
 };
 

@@ -33,16 +33,15 @@ Windows Registry Editor Version 5.00
 
 #pragma once
 
-// clang-format off
-#include "base_sink.h"
-#include "../details/null_mutex.h"
-#include "../details/windows_include.h"
+#include <spdlog/details/null_mutex.h>
+#include <spdlog/sinks/base_sink.h>
 
+#include <spdlog/details/windows_include.h>
 #include <winbase.h>
+
 #include <mutex>
 #include <string>
 #include <vector>
-// clang-format on
 
 namespace spdlog {
 namespace sinks {
@@ -54,13 +53,12 @@ namespace internal {
 struct local_alloc_t {
     HLOCAL hlocal_;
 
-    constexpr local_alloc_t() noexcept
-        : hlocal_(nullptr) {}
+    SPDLOG_CONSTEXPR local_alloc_t() SPDLOG_NOEXCEPT : hlocal_(nullptr) {}
 
     local_alloc_t(local_alloc_t const &) = delete;
     local_alloc_t &operator=(local_alloc_t const &) = delete;
 
-    ~local_alloc_t() noexcept {
+    ~local_alloc_t() SPDLOG_NOEXCEPT {
         if (hlocal_) {
             LocalFree(hlocal_);
         }
@@ -156,7 +154,7 @@ public:
 
 struct eventlog {
     static WORD get_event_type(details::log_msg const &msg) {
-        switch (msg.log_level) {
+        switch (msg.level) {
             case level::trace:
             case level::debug:
                 return EVENTLOG_SUCCESS;
@@ -164,7 +162,7 @@ struct eventlog {
             case level::info:
                 return EVENTLOG_INFORMATION_TYPE;
 
-            case spdlog::level::warn:
+            case level::warn:
                 return EVENTLOG_WARNING_TYPE;
 
             case level::err:
@@ -177,7 +175,7 @@ struct eventlog {
         }
     }
 
-    static WORD get_event_category(details::log_msg const &msg) { return (WORD)msg.log_level; }
+    static WORD get_event_category(details::log_msg const &msg) { return (WORD)msg.level; }
 };
 
 }  // namespace internal
@@ -213,10 +211,20 @@ protected:
         base_sink<Mutex>::formatter_->format(msg, formatted);
         formatted.push_back('\0');
 
+#ifdef SPDLOG_WCHAR_TO_UTF8_SUPPORT
+        wmemory_buf_t buf;
+        details::os::utf8_to_wstrbuf(string_view_t(formatted.data(), formatted.size()), buf);
+
+        LPCWSTR lp_wstr = buf.data();
+        succeeded = static_cast<bool>(::ReportEventW(
+            event_log_handle(), eventlog::get_event_type(msg), eventlog::get_event_category(msg),
+            event_id_, current_user_sid_.as_sid(), 1, 0, &lp_wstr, nullptr));
+#else
         LPCSTR lp_str = formatted.data();
         succeeded = static_cast<bool>(::ReportEventA(
             event_log_handle(), eventlog::get_event_type(msg), eventlog::get_event_category(msg),
             event_id_, current_user_sid_.as_sid(), 1, 0, &lp_str, nullptr));
+#endif
 
         if (!succeeded) {
             SPDLOG_THROW(win32_error("ReportEvent"));

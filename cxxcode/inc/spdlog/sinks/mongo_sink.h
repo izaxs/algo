@@ -10,17 +10,18 @@
 // http://mongocxx.org/mongocxx-v3/installation/
 //
 
+#include "spdlog/common.h"
+#include "spdlog/details/log_msg.h"
+#include "spdlog/sinks/base_sink.h"
+#include <spdlog/details/synchronous_factory.h>
+
 #include <bsoncxx/builder/stream/document.hpp>
 #include <bsoncxx/types.hpp>
 #include <bsoncxx/view_or_value.hpp>
+
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
 #include <mongocxx/uri.hpp>
-
-#include "../common.h"
-#include "../details/log_msg.h"
-#include "../details/synchronous_factory.h"
-#include "base_sink.h"
 
 namespace spdlog {
 namespace sinks {
@@ -43,7 +44,7 @@ public:
           db_name_(db_name),
           coll_name_(collection_name) {
         try {
-            client_ = spdlog::std::make_unique<mongocxx::client>(mongocxx::uri{uri});
+            client_ = spdlog::details::make_unique<mongocxx::client>(mongocxx::uri{uri});
         } catch (const std::exception &e) {
             throw_spdlog_ex(fmt_lib::format("Error opening database: {}", e.what()));
         }
@@ -58,8 +59,8 @@ protected:
 
         if (client_ != nullptr) {
             auto doc = document{} << "timestamp" << bsoncxx::types::b_date(msg.time) << "level"
-                                  << level::to_string_view(msg.log_level).data() << "level_num"
-                                  << msg.log_level << "message"
+                                  << level::to_string_view(msg.level).data() << "level_num"
+                                  << msg.level << "message"
                                   << std::string(msg.payload.begin(), msg.payload.end())
                                   << "logger_name"
                                   << std::string(msg.logger_name.begin(), msg.logger_name.end())
@@ -77,9 +78,8 @@ private:
     std::unique_ptr<mongocxx::client> client_ = nullptr;
 };
 
+#include "spdlog/details/null_mutex.h"
 #include <mutex>
-
-#include "../details/null_mutex.h"
 using mongo_sink_mt = mongo_sink<std::mutex>;
 using mongo_sink_st = mongo_sink<spdlog::details::null_mutex>;
 

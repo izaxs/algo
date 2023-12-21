@@ -8,18 +8,17 @@
 #endif
 
 // tcp client helper
+#include <spdlog/common.h>
+#include <spdlog/details/os.h>
+
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
-#include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
 
 #include <string>
-
-#include "../common.h"
-#include "os.h"
 
 namespace spdlog {
 namespace details {

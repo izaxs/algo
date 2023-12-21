@@ -33,9 +33,9 @@ public:
 
     // move cannot be default,
     // since we need to reset head_, tail_, etc to zero in the moved object
-    circular_q(circular_q &&other) noexcept { copy_moveable(std::move(other)); }
+    circular_q(circular_q &&other) SPDLOG_NOEXCEPT { copy_moveable(std::move(other)); }
 
-    circular_q &operator=(circular_q &&other) noexcept {
+    circular_q &operator=(circular_q &&other) SPDLOG_NOEXCEPT {
         copy_moveable(std::move(other));
         return *this;
     }
@@ -54,16 +54,14 @@ public:
         }
     }
 
-    // Return const reference to the front item.
-    // If there are no elements in the container, the behavior is undefined.
-    [[nodiscard]] const T &front() const { return v_[head_]; }
-
     // Return reference to the front item.
     // If there are no elements in the container, the behavior is undefined.
-    [[nodiscard]] T &front() { return v_[head_]; }
+    const T &front() const { return v_[head_]; }
+
+    T &front() { return v_[head_]; }
 
     // Return number of elements actually stored
-    [[nodiscard]] size_t size() const {
+    size_t size() const {
         if (tail_ >= head_) {
             return tail_ - head_;
         } else {
@@ -73,36 +71,32 @@ public:
 
     // Return const reference to item by index.
     // If index is out of range 0…size()-1, the behavior is undefined.
-    const T &operator[](size_t idx) const {
-        assert(idx < size());
-        assert(max_items_ > 0);
-        return v_[(head_ + idx) % max_items_];
+    const T &at(size_t i) const {
+        assert(i < size());
+        return v_[(head_ + i) % max_items_];
     }
 
-    // Pop item from front if not empty.
-    void pop_front() {
-        if (!empty()) {
-            head_ = (head_ + 1) % max_items_;
-        }
-    }
+    // Pop item from front.
+    // If there are no elements in the container, the behavior is undefined.
+    void pop_front() { head_ = (head_ + 1) % max_items_; }
 
-    [[nodiscard]] bool empty() const { return tail_ == head_; }
+    bool empty() const { return tail_ == head_; }
 
-    [[nodiscard]] bool full() const {
+    bool full() const {
         // head is ahead of the tail by 1
         if (max_items_ > 0) {
             return ((tail_ + 1) % max_items_) == head_;
         }
-        return true;
+        return false;
     }
 
-    [[nodiscard]] size_t overrun_counter() const { return overrun_counter_; }
+    size_t overrun_counter() const { return overrun_counter_; }
 
     void reset_overrun_counter() { overrun_counter_ = 0; }
 
 private:
     // copy from other&& and reset it to disabled state
-    void copy_moveable(circular_q &&other) noexcept {
+    void copy_moveable(circular_q &&other) SPDLOG_NOEXCEPT {
         max_items_ = other.max_items_;
         head_ = other.head_;
         tail_ = other.tail_;

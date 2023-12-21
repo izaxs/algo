@@ -5,19 +5,18 @@
 
 #ifdef __ANDROID__
 
-    #include <android/log.h>
+    #include <spdlog/details/fmt_helper.h>
+    #include <spdlog/details/null_mutex.h>
+    #include <spdlog/details/os.h>
+    #include <spdlog/details/synchronous_factory.h>
+    #include <spdlog/sinks/base_sink.h>
 
+    #include <android/log.h>
     #include <chrono>
     #include <mutex>
     #include <string>
     #include <thread>
     #include <type_traits>
-
-    #include "../details/fmt_helper.h"
-    #include "../details/null_mutex.h"
-    #include "../details/synchronous_factory.h"
-    #include "base_sink.h"
-    #include "os.h"
 
     #if !defined(SPDLOG_ANDROID_RETRIES)
         #define SPDLOG_ANDROID_RETRIES 2
@@ -40,7 +39,7 @@ public:
 
 protected:
     void sink_it_(const details::log_msg &msg) override {
-        const android_LogPriority priority = convert_to_android_(msg.log_level);
+        const android_LogPriority priority = convert_to_android_(msg.level);
         memory_buf_t formatted;
         if (use_raw_msg_) {
             details::fmt_helper::append_string_view(msg.payload, formatted);
@@ -86,7 +85,7 @@ private:
         return __android_log_buf_write(ID, prio, tag, text);
     }
 
-    static android_LogPriority convert_to_android_(spdlog::level level) {
+    static android_LogPriority convert_to_android_(spdlog::level::level_enum level) {
         switch (level) {
             case spdlog::level::trace:
                 return ANDROID_LOG_VERBOSE;

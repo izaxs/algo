@@ -3,9 +3,8 @@
 
 #pragma once
 
+#include <spdlog/common.h>
 #include <unordered_map>
-
-#include "../common.h"
 
 namespace spdlog {
 namespace cfg {
@@ -21,5 +20,10 @@ namespace helpers {
 //
 SPDLOG_API void load_levels(const std::string &txt);
 }  // namespace helpers
+
 }  // namespace cfg
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "helpers-inl.h"
+#endif  // SPDLOG_HEADER_ONLY

@@ -12,9 +12,9 @@
 //    2. Push a new copy of the message to a queue (or block the caller until
 //    space is available in the queue)
 // Upon destruction, logs all remaining messages in the queue before
-// destructing
+// destructing..
 
-#include "logger.h"
+#include <spdlog/logger.h>
 
 namespace spdlog {
 
@@ -68,3 +68,7 @@ private:
     async_overflow_policy overflow_policy_;
 };
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "async_logger-inl.h"
+#endif

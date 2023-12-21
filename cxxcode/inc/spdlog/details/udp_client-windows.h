@@ -6,16 +6,14 @@
 // Helper RAII over winsock udp client socket.
 // Will throw on construction if socket creation failed.
 
+#include <spdlog/common.h>
+#include <spdlog/details/os.h>
+#include <spdlog/details/windows_include.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
 #include <winsock2.h>
 #include <ws2tcpip.h>
-
-#include <string>
-
-#include "../common.h"
-#include "os.h"
-#include "windows_include.h"
 
 #if defined(_MSC_VER)
     #pragma comment(lib, "Ws2_32.lib")

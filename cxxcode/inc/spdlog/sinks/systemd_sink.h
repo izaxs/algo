@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include <array>
+#include <spdlog/details/null_mutex.h>
+#include <spdlog/details/os.h>
+#include <spdlog/details/synchronous_factory.h>
+#include <spdlog/sinks/base_sink.h>
 
-#include "../details/null_mutex.h"
-#include "../details/os.h"
-#include "../details/synchronous_factory.h"
-#include "base_sink.h"
+#include <array>
 #ifndef SD_JOURNAL_SUPPRESS_LOCATION
     #define SD_JOURNAL_SUPPRESS_LOCATION
 #endif
@@ -68,7 +68,7 @@ protected:
         if (msg.source.empty()) {
             // Note: function call inside '()' to avoid macro expansion
             err = (sd_journal_send)("MESSAGE=%.*s", static_cast<int>(length), payload.data(),
-                                    "PRIORITY=%d", syslog_level(msg.log_level),
+                                    "PRIORITY=%d", syslog_level(msg.level),
 #ifndef SPDLOG_NO_THREAD_ID
                                     "TID=%zu", msg.thread_id,
 #endif
@@ -77,7 +77,7 @@ protected:
                                     syslog_identifier.data(), nullptr);
         } else {
             err = (sd_journal_send)("MESSAGE=%.*s", static_cast<int>(length), payload.data(),
-                                    "PRIORITY=%d", syslog_level(msg.log_level),
+                                    "PRIORITY=%d", syslog_level(msg.level),
 #ifndef SPDLOG_NO_THREAD_ID
                                     "TID=%zu", msg.thread_id,
 #endif
@@ -93,7 +93,9 @@ protected:
         }
     }
 
-    int syslog_level(level l) { return syslog_levels_.at(static_cast<levels_array::size_type>(l)); }
+    int syslog_level(level::level_enum l) {
+        return syslog_levels_.at(static_cast<levels_array::size_type>(l));
+    }
 
     void flush_() override {}
 };

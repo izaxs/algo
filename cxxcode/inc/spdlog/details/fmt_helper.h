@@ -4,10 +4,9 @@
 
 #include <chrono>
 #include <iterator>
+#include <spdlog/common.h>
+#include <spdlog/fmt/fmt.h>
 #include <type_traits>
-
-#include "../common.h"
-#include "../fmt/fmt.h"
 
 #ifdef SPDLOG_USE_STD_FORMAT
     #include <charconv>
@@ -28,7 +27,7 @@ inline void append_string_view(spdlog::string_view_t view, memory_buf_t &dest) {
 template <typename T>
 inline void append_int(T n, memory_buf_t &dest) {
     // Buffer should be large enough to hold all digits (digits10 + 1) and a sign
-    constexpr const auto BUF_SIZE = std::numeric_limits<T>::digits10 + 2;
+    SPDLOG_CONSTEXPR const auto BUF_SIZE = std::numeric_limits<T>::digits10 + 2;
     char buf[BUF_SIZE];
 
     auto [ptr, ec] = std::to_chars(buf, buf + BUF_SIZE, n, 10);
@@ -47,7 +46,7 @@ inline void append_int(T n, memory_buf_t &dest) {
 #endif
 
 template <typename T>
-constexpr unsigned int count_digits_fallback(T n) {
+SPDLOG_CONSTEXPR_FUNC unsigned int count_digits_fallback(T n) {
     // taken from fmt: https://github.com/fmtlib/fmt/blob/8.0.1/include/fmt/format.h#L899-L912
     unsigned int count = 1;
     for (;;) {
@@ -89,7 +88,7 @@ inline void pad2(int n, memory_buf_t &dest) {
         dest.push_back(static_cast<char>('0' + n % 10));
     } else  // unlikely, but just in case, let fmt deal with it
     {
-        fmt_lib::format_to(std::back_inserter(dest), "{:02}", n);
+        fmt_lib::format_to(std::back_inserter(dest), SPDLOG_FMT_STRING("{:02}"), n);
     }
 }
 

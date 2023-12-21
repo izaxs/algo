@@ -3,9 +3,8 @@
 
 #pragma once
 
+#include <spdlog/common.h>
 #include <tuple>
-
-#include "../common.h"
 
 namespace spdlog {
 namespace details {
@@ -56,3 +55,7 @@ private:
 };
 }  // namespace details
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "file_helper-inl.h"
+#endif

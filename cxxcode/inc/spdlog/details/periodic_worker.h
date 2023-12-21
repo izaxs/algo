@@ -15,9 +15,6 @@
 #include <functional>
 #include <mutex>
 #include <thread>
-
-#include "../common.h"
-
 namespace spdlog {
 namespace details {
 
@@ -52,6 +49,9 @@ private:
     std::mutex mutex_;
     std::condition_variable cv_;
 };
-
 }  // namespace details
 }  // namespace spdlog
+
+#ifdef SPDLOG_HEADER_ONLY
+    #include "periodic_worker-inl.h"
+#endif
