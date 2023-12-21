@@ -21,8 +21,9 @@ OBJ_UTILS_DIR:=$(OBJ_DIR)/$(UTILS_NAME)
 
 # Compiler & flags
 CC:=g++
+# CC_WARNS:=-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion
 # CC_FLAGS:=-O3 -s -std=$(CPP_VERSION)
-CC_FLAGS:=-g -std=$(CPP_VERSION)
+CC_FLAGS:=-g -std=$(CPP_VERSION) $(CC_WARNS)
 
 INC_FLAGS:=-I$(INC_DIR) -I$(INC_UTILS_DIR)
 # Names for all utils header files
